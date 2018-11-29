@@ -7,7 +7,7 @@ __We also hope to grow and improve on this project in future.__
 
 ## Required Tools For Project
 * HTML5 & CSS3
-* Javascrpt
+* Javascript
 * PHP
 
 
