@@ -1,5 +1,5 @@
 -- DATABASE NAME
-CREATE DATABASE account;
+CREATE DATABASE accounts;
 
 --USER_ACCOUNT TABLE--
 CREATE TABLE users_account(
