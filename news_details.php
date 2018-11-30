@@ -369,7 +369,7 @@ if (isset($_GET['news_id'])) {
              <div class="col pb-20 pt-10">
                <div class="ee-product">
                  <div class="image">
-                   <a class="img"><img src="/myProject/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="Product Image"></a>
+                   <a class="img"><img src="/FUOBoxMedia/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="Product Image"></a>
                  </div>
                </div>
              </div>
@@ -384,7 +384,7 @@ if (isset($_GET['news_id'])) {
                 <div class="col pb-20 pt-10">
                   <div class="ee-product">
                     <div class="image" style="width:500px; margin:auto">
-                      <a class="img"><img src="/myProject/admin-panel/uploaded_images/<?php echo $single_newsImg; ?>" alt="Product Image" height="300px" width="100%"></a>
+                      <a class="img"><img src="/FUOBoxMedia/admin-panel/uploaded_images/<?php echo $single_newsImg; ?>" alt="Product Image" height="300px" width="100%"></a>
                     </div>
                   </div>
                 </div>
@@ -458,7 +458,7 @@ if (isset($_GET['news_id'])) {
                     <button id="lik_<?php if(isset($main_newsDesc)){ echo $_row['unique_no']; }else{ echo $_row['Id']; } ?>"
                       like="<?php if(isset($main_newsDesc)){ echo $_row['unique_no']; }else{ echo $_row['Id']; } ?>"
                       class="pull-right like_btn news_like">
-                      <i class="fa fa-heart-o" id="heart_<?php if(isset($main_newsDesc)){ echo $_row['unique_no']; }else{ echo $_row['Id']; } ?>"></i> 
+                      <i class="fa fa-heart-o" id="heart_<?php if(isset($main_newsDesc)){ echo $_row['unique_no']; }else{ echo $_row['Id']; } ?>"></i>
                     </button>
                     <?php
                   }
@@ -554,7 +554,7 @@ if (isset($_GET['news_id'])) {
                 <a>
                   <div class="pull-left">
                     <a class="img_box" href="friends/friend_profile.php?friend_id=<?php echo $user['Id']; ?>">
-                      <img src="/myProject/uploaded_images/<?php echo $user['profile_img']; ?>" alt="img" width="100%" height="100%"/>
+                      <img src="/FUOBoxMedia/uploaded_images/<?php echo $user['profile_img']; ?>" alt="img" width="100%" height="100%"/>
                     </a>
                   </div>
                   <div class="pull-left" style="margin-left:3%; padding-top:15px">

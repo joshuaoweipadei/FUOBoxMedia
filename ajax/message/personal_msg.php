@@ -2,7 +2,7 @@
 
 // if (!isset($_SESSION['Id'])) {
 //
-//   header('location: /myProject/index.php');
+//   header('location: /FUOBoxMedia/index.php');
 // }
 
 // SENDING MESSAGES
@@ -54,7 +54,7 @@ if (is_ajax()) {
                   <div class='chat'>
                     <div class='col-xs-3 col-sm-2 col-md-2 col-lg-2 pull-left'>
                       <div class='user-photo' style='margin-right'>
-                        <img src='/myProject/uploaded_images/".$row['profile_img']."' alt='".$row['username']."'>
+                        <img src='/FUOBoxMedia/uploaded_images/".$row['profile_img']."' alt='".$row['username']."'>
                       </div>
                     </div>
                     <div class='col-xs-9 pull-left send'>
@@ -78,10 +78,10 @@ if (is_ajax()) {
 
     }
   }  else {
-    header('location: /myProject/profile_page.php');
+    header('location: /FUOBoxMedia/profile_page.php');
   }
 } else {
-  header('location: /myProject/profile_page.php');
+  header('location: /FUOBoxMedia/profile_page.php');
 }
 
 

@@ -33,7 +33,7 @@ $(".Avatar").click(function(){
 //
 //           $(".de").click(function (){
 //             $.ajax({
-//               url : "/myProject/ajax/add_comment.php",
+//               url : "/FUOBoxMedia/ajax/add_comment.php",
 //               method : "POST",
 //               data : {
 //                 task : "image",
@@ -85,7 +85,7 @@ $(document).ready(function(){
     } else {
       form_data.append("file", document.getElementById('newAvatar').files[0]);
       $.ajax({
-        url : "/myProject/users/change_pro_img.php",
+        url : "/FUOBoxMedia/users/change_pro_img.php",
         method : "POST",
         data : form_data,
         contentType : false,
@@ -107,7 +107,7 @@ $(document).ready(function(){
     var user_id = $('#userID').val();
 
       $.ajax({
-        url : "/myProject/ajax/friends/friend_request.php",
+        url : "/FUOBoxMedia/ajax/friends/friend_request.php",
         method : "POST",
         data : {
           action : "send_friend",
@@ -116,7 +116,7 @@ $(document).ready(function(){
         },
         beforeSend:function(){
           $('.request').attr('disabled', 'disabled');
-          $('.request').html('<img src"/myProject/images/advert/crate.gif">');
+          $('.request').html('<img src"/FUOBoxMedia/images/advert/crate.gif">');
         },
         success:function(data){
           setInterval(function(){
@@ -135,7 +135,7 @@ $(document).ready(function(){
     var user_id = $('#userID').val();
 
     $.ajax({
-      url : "/myProject/ajax/friends/accept_friend_request.php",
+      url : "/FUOBoxMedia/ajax/friends/accept_friend_request.php",
       method : "POST",
       data : {
         action : "accept_request",
@@ -164,7 +164,7 @@ $(document).ready(function(){
     var user_id = $('#userID').val();
 
     $.ajax({
-      url : "/myProject/ajax/friends/delete_friend_request.php",
+      url : "/FUOBoxMedia/ajax/friends/delete_friend_request.php",
       method : "POST",
       data : {
         action : "delete_request",
@@ -195,7 +195,7 @@ $(document).ready(function(){
 
     if (message != null && message.length > 1) {
       $.ajax({
-        url : "/myProject/ajax/message/personal_msg.php",
+        url : "/FUOBoxMedia/ajax/message/personal_msg.php",
         method : "POST",
         data : {
           action : "send_message",
@@ -233,7 +233,7 @@ $(document).ready(function(){
     var user_id = $('#userID').val();
 
     $.ajax({
-      url : "/myProject/ajax/likes/likes_unlikes.php",
+      url : "/FUOBoxMedia/ajax/likes/likes_unlikes.php",
       method : "POST",
       data : {
         action : "likes_unlikes",
@@ -262,7 +262,7 @@ $(document).ready(function(){
         var user_id = $('#userID').val();
 
         $.ajax({
-          url : "/myProject/ajax/news/quote.php",
+          url : "/FUOBoxMedia/ajax/news/quote.php",
           method : "POST",
           data : {
             action : "daily_quote",
@@ -290,7 +290,7 @@ $(document).ready(function(){
     var user_id = $('#userID').val();
 
     $.ajax({
-      url : "/myProject/ajax/news/quote.php",
+      url : "/FUOBoxMedia/ajax/news/quote.php",
       method : "POST",
       data : {
         action : "delete_quote",

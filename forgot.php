@@ -58,7 +58,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ){
 
               Please click this link to reset your password:
 
-              http://localhost/myProject/reset.php?email='.$email.'&hash='.$hash;
+              http://localhost/FUOBoxMedia/reset.php?email='.$email.'&hash='.$hash;
 
               mail( $to, $subject, $message_body, "From: $from\n" );
 

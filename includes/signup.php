@@ -76,7 +76,7 @@ if (is_ajax()) {
 
                               Please click this link to activate your account:
 
-                              http://localhost/myProject/verify.php?email='.$email.'&hash='.$hash;
+                              http://localhost/FUOBoxMedia/verify.php?email='.$email.'&hash='.$hash;
 
                               mail( $to, $subject, $message_body, "From: $from\n" );
                               echo 'Registration successfully! Verification link has been sent to '.$email.', please verify your account by clicking on the link in the message!';

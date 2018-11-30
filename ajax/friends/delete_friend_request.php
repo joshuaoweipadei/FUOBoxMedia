@@ -1,10 +1,4 @@
 <?php
-// 
-// if (!isset($_SESSION['Id'])) {
-//
-//   header('location: /myProject/index.php');
-//
-// }
 
 // delete friend request
 // delete friend request
@@ -43,13 +37,13 @@ if (is_ajax()) {
           }
 
         } else {
-          header('location: /myProject/profile_page.php');
+          header('location: /FUOBoxMedia/profile_page.php');
         }
       }
     }
   }
 } else {
-  header('location: /myProject/profile_page.php');
+  header('location: /FUOBoxMedia/profile_page.php');
 }
 
 

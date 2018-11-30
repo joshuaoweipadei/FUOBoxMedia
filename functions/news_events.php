@@ -20,7 +20,7 @@ function trendingNews($full = false){
               while ($row = mysqli_fetch_array($query)) {
               echo '<div class="col-xs-6">
                       <div class="news_img_box">
-                        <img src="/myProject/admin-panel/uploaded_images/'.$row['news_img'].'" alt="" width="100%">
+                        <img src="/FUOBoxMedia/admin-panel/uploaded_images/'.$row['news_img'].'" alt="" width="100%">
                       </div>
                     </div>';
               }

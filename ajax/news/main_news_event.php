@@ -144,7 +144,7 @@ function is_ajax(){
 
 
 } else {
-  header('Location: /myProject/profile_page.php?tine');
+  header('Location: /FUOBoxMedia/profile_page.php?tine');
 }
 
 

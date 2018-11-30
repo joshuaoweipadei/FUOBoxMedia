@@ -1,10 +1,5 @@
 <?php
 
-// if (!isset($_SESSION['Id'])) {
-//
-//   header('location: /myProject/index.php');
-// }
-
 // accept friend request
 // accept friend request
 // accept friend request
@@ -51,13 +46,13 @@ if (is_ajax()) {
           }
 
         } else {
-          header('location: /myProject/profile_page.php');
+          header('location: /FUOBoxMedia/profile_page.php');
         }
       }
     }
   }
 } else {
-  header('location: /myProject/profile_page.php');
+  header('location: /FUOBoxMedia/profile_page.php');
 }
 
 

@@ -22,7 +22,7 @@ function is_ajax(){
         $status = test_input($_POST["status"]);
         $userId = test_input((int)$_POST["userId"]);
         $userEmail = test_input($_POST["userEmail"]);
-        
+
         $sql = "SELECT * FROM users_account WHERE Id = '$userId' AND email = '$userEmail'";
         $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
         if ($query) {
@@ -63,10 +63,10 @@ function is_ajax(){
     }
 
   } else {
-    header('Location: /myProject/profile_page.php?timline');
+    header('Location: /FUOBoxMedia/profile_page.php?timline');
   }
 } else {
-  header('Location: /myProject/profile_page.php?timline');
+  header('Location: /FUOBoxMedia/profile_page.php?timline');
 }
 
 

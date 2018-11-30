@@ -118,7 +118,7 @@ if (!isset($_SESSION['Id'])) {
             <i class="fa fa-comments" style="font-size:17px; color:#fff; padding-right:8px"></i>
           </span>
           <span class="likes">
-            <button class="like" id="<?php echo $status->status_id; ?>" value="sunglasses"><img src="/myProject/images/icon/sunglasses.png" alt="cool" width="27px" height="27px" title="Cool">
+            <button class="like" id="<?php echo $status->status_id; ?>" value="sunglasses"><img src="/FUOBoxMedia/images/icon/sunglasses.png" alt="cool" width="27px" height="27px" title="Cool">
               <span id="like_<?php echo $status->status_id; ?>">
                 <?php
                   $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'sunglasses'";
@@ -132,7 +132,7 @@ if (!isset($_SESSION['Id'])) {
           </span>
 
           <span class="likes">
-            <button class="like" id="<?php echo $status->status_id; ?>" value="laughing"><img src="/myProject/images/icon/laughing.png" alt="laughing" width="27px" height="27px" title="Laughing">
+            <button class="like" id="<?php echo $status->status_id; ?>" value="laughing"><img src="/FUOBoxMedia/images/icon/laughing.png" alt="laughing" width="27px" height="27px" title="Laughing">
               <span id="like_<?php echo $status->status_id; ?>">
                 <?php
                   $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'laughing'";
@@ -146,7 +146,7 @@ if (!isset($_SESSION['Id'])) {
           </span>
 
           <span class="likes">
-            <button class="like" id="<?php echo $status->status_id; ?>" value="shocked"><img src="/myProject/images/icon/flushed.png" alt="shocked" width="27px" height="27px" title="Shocked">
+            <button class="like" id="<?php echo $status->status_id; ?>" value="shocked"><img src="/FUOBoxMedia/images/icon/flushed.png" alt="shocked" width="27px" height="27px" title="Shocked">
               <span id="like_<?php echo $status->status_id; ?>">
                 <?php
                   $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'shocked'";
@@ -160,7 +160,7 @@ if (!isset($_SESSION['Id'])) {
           </span>
 
           <span class="likes">
-            <button class="like" id="<?php echo $status->status_id; ?>" value="smiles"><img src="/myProject/images/icon/smile.png" alt="smiles" width="27px" height="27px" title="Smiles">
+            <button class="like" id="<?php echo $status->status_id; ?>" value="smiles"><img src="/FUOBoxMedia/images/icon/smile.png" alt="smiles" width="27px" height="27px" title="Smiles">
               <span id="like_<?php echo $status->status_id; ?>">
                 <?php
                   $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'smiles'";
@@ -174,7 +174,7 @@ if (!isset($_SESSION['Id'])) {
           </span>
 
           <span class="likes">
-            <button class="like" id="<?php echo $status->status_id; ?>" value="angry"><img src="/myProject/images/icon/angry.png" alt="angry" width="27px" height="27px" title="Angry">
+            <button class="like" id="<?php echo $status->status_id; ?>" value="angry"><img src="/FUOBoxMedia/images/icon/angry.png" alt="angry" width="27px" height="27px" title="Angry">
               <span id="like_<?php echo $status->status_id; ?>">
                 <?php
                   $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'angry'";
@@ -284,7 +284,7 @@ if (!isset($_SESSION['Id'])) {
                   endswitch;
                     ?>
                     <div class='comment-cont' id="del_<?php echo $comment_id; ?>">
-                      <img src='/myProject/uploaded_images/<?php echo $userRow['profile_img']; ?>'/>
+                      <img src='/FUOBoxMedia/uploaded_images/<?php echo $userRow['profile_img']; ?>'/>
                         <p class='comment-head'>
                           <a href='friends/friend_profile.php?friend_id=<?php echo $userRow['Id']; ?>' class='text-muted'>@ <?php echo $userRow['username']; ?> </a>
                         </p>

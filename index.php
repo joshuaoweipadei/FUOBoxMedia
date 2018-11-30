@@ -152,7 +152,7 @@ include ('functions/news_events.php');
                   <div class="small_news">
                     <div class="news_img_box">
                       <a href="news_details.php?news_id=<?php echo $row['Id']; ?>">
-                        <img src="/myProject/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="">
+                        <img src="/FUOBoxMedia/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="">
                         <h5><?php echo $row['news_title']; ?></h5>
                       </a>
                     </div>
@@ -206,7 +206,7 @@ include ('functions/news_events.php');
                    <div class="small_news">
                      <div class="news_img_box">
                        <a href="news_details.php?news_id=<?php echo $row['Id']; ?>">
-                         <img src="/myProject/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="">
+                         <img src="/FUOBoxMedia/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="">
                          <h5><?php echo $row['news_title']; ?></h5>
                        </a>
                      </div>
@@ -341,7 +341,7 @@ include ('functions/news_events.php');
                       <div class="img_section magnifier2">
                         <a href="uploaded_images/<?php echo $user['profile_img']; ?>" data-fancybox-group="gallery" class="fancybox image pull-left" title="<?php echo $user['first_name']." ".$user['last_name']; ?>">
                           <div class="img_container">
-                            <img src="/myProject/uploaded_images/<?php echo $user['profile_img']; ?>" alt="" width="100%" height="100%">
+                            <img src="/FUOBoxMedia/uploaded_images/<?php echo $user['profile_img']; ?>" alt="" width="100%" height="100%">
                           </div>
                         </a>
                       </div>

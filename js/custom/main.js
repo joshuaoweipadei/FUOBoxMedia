@@ -9,7 +9,7 @@ $(document).ready(function(){
 // alert(user_id);
     if (text != " " && text.length > 0) {
       $.ajax({
-        url : "/myProject/ajax/news/main_news_event.php",
+        url : "/FUOBoxMedia/ajax/news/main_news_event.php",
         method : "POST",
         data : {
           action : "news_comment",
@@ -33,7 +33,7 @@ $(document).ready(function(){
   var like_id = $(this).attr('like');
 
     $.ajax({
-      url : "/myProject/ajax/news/main_news_event.php",
+      url : "/FUOBoxMedia/ajax/news/main_news_event.php",
       method : "POST",
       data : {
         action : "news_likes",

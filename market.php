@@ -21,7 +21,7 @@ include ('database.php');
 ?>
 
 
-<?php// require_once $_SERVER['DOCUMENT_ROOT'] . '/myProject/defines.php'; ?>
+<?php// require_once $_SERVER['DOCUMENT_ROOT'] . '/FUOBoxMedia/defines.php'; ?>
 
 <!doctype html>
 <html lang="en">

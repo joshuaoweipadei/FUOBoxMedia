@@ -334,7 +334,7 @@ if ($fetch_user) {
 
             <div class="sidemenubar">
               <li><a href="profile_page.php?timeline" class="list-group-item list-group-item-action"><i style="font-size:18px" class="fa fa-newspaper-o"></i> Timelines <i style="float:right; font-size:18px" class="fa fa-angle-right"></i></a></li>
-              <li><a href="/myProject/friends/friend_personal_msg.php" class="list-group-item list-group-item-action"><i style="font-size:18px" class="fa fa-envelope-o"></i> Messages <i style="float:right; font-size:18px" class="fa fa-angle-right"></i></a></li>
+              <li><a href="/FUOBoxMedia/friends/friend_personal_msg.php" class="list-group-item list-group-item-action"><i style="font-size:18px" class="fa fa-envelope-o"></i> Messages <i style="float:right; font-size:18px" class="fa fa-angle-right"></i></a></li>
               <li><a href="profile_page.php?user%theirsafefriendslist" class="list-group-item list-group-item-action"><i style="font-size:18px" class="fa fa-users"></i> Friends <i style="float:right; font-size:18px" class="fa fa-angle-right"></i></a></li>
               <li><a href="profile_page.php?edit-account" class="list-group-item list-group-item-action"><i style="font-size:18px" class="fa fa-edit"></i> Edit Account<i style="float:right; font-size:18px" class="fa fa-angle-right"></i></a></li>
               <li><a href="#" class="list-group-item list-group-item-action"><i style="font-size:18px" class="fa fa-cogs"></i> Settings <i style="float:right; font-size:18px" class="fa fa-angle-right"></i></a></li>
@@ -538,7 +538,7 @@ if ($fetch_user) {
                             if ($user_row = mysqli_fetch_array($query5)) {
                               ?>
                               <div class="sidebar-name">
-                                <a href="/myProject/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
+                                <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
                                   <img width="30" height="30" src="uploaded_images/<?php echo $user_row['profile_img']; ?>" />
                                   <span><?php echo $user_row['first_name']." ".$user_row['last_name']; ?></span>
                                   <span class="pull-right"><?php if ($user_row['active'] == 1){ echo "Online";} ?></span>
@@ -554,7 +554,7 @@ if ($fetch_user) {
                                 if ($offline_user_row = mysqli_fetch_array($query7)) {
                                   ?>
                                   <div class="sidebar-name">
-                                    <a href="/myProject/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
+                                    <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
                                       <img width="30" height="30" src="uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
                                       <span><?php echo $offline_user_row['first_name']." ".$offline_user_row['last_name']; ?></span>
                                       <span class="pull-right"><?php if ($offline_user_row['active'] == 0){ echo "Offline";} ?></span>
@@ -582,7 +582,7 @@ if ($fetch_user) {
                             if ($user_row = mysqli_fetch_array($query6)) {
                               ?>
                                <div class="sidebar-name" id="<?php echo $user_row['email']; ?>">
-                                 <a href="/myProject/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
+                                 <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
                                    <img width="30" height="30" src="uploaded_images/<?php echo $user_row['profile_img']; ?>" />
                                    <span><?php echo $user_row['first_name']." ".$user_row['last_name']; ?></span>
                                    <span class="pull-right"><?php if ($user_row['active'] == 1){ echo "Online";} ?></span>
@@ -598,7 +598,7 @@ if ($fetch_user) {
                                 if ($offline_user_row = mysqli_fetch_array($query7)) {
                                   ?>
                                   <div class="sidebar-name">
-                                    <a href="/myProject/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
+                                    <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
                                       <img width="30" height="30" src="uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
                                       <span><?php echo $offline_user_row['first_name']." ".$offline_user_row['last_name']; ?></span>
                                       <span class="pull-right"><?php if ($offline_user_row['active'] == 0){ echo "Offline";} ?></span>
@@ -640,7 +640,7 @@ if ($fetch_user) {
                             while ($row = mysqli_fetch_array($query2)) {
                     ?>
                     <div class="w3-container">
-                      <img src="/myProject/uploaded_images/<?php echo $row['profile_img']; ?>" alt="Avatar" width="55px" height="55px">
+                      <img src="/FUOBoxMedia/uploaded_images/<?php echo $row['profile_img']; ?>" alt="Avatar" width="55px" height="55px">
                       <span><?php echo $row['first_name']." ".$row['last_name']; ?></span>
                       <div class="w3-row text-center">
                         <div class="w3-half">
@@ -732,7 +732,7 @@ if ($fetch_user) {
 // // alert(formdata);
 //               if (formdata) {
 //                 $.ajax({
-//                   url : "/myProject/ajax/add_comment.php",
+//                   url : "/FUOBoxMedia/ajax/add_comment.php",
 //                   type : "POST",
 //                   data : formdata,
 //                   processData : false,

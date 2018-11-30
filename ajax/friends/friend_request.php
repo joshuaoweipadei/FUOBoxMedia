@@ -51,6 +51,8 @@ if (is_ajax()) {
       }
     }
   }
+} else {
+  header('location: /FUOBoxMedia/profile_page.php');
 }
 
 

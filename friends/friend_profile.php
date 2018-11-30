@@ -13,7 +13,7 @@ if (isset($_SESSION['Id'])) {
   $active = $_SESSION['active'];
 
 } else {
-  header('location: /myProject/index.php');
+  header('location: /FUOBoxMedia/index.php');
 }
 
 include '../database.php';
@@ -33,11 +33,11 @@ include '../database.php';
     <title>Welcome | Market Place</title>
 
     <!-- <link rel="stylesheet" href="css/plugins/bootstrap-4.0.0/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="/myProject/css/plugins/font-awesome/css/font-awesome.min.css">
-    <link href="/myProject/css/plugins/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/FUOBoxMedia/css/plugins/font-awesome/css/font-awesome.min.css">
+    <link href="/FUOBoxMedia/css/plugins/bootstrap.min.css" rel="stylesheet">
 
     <!-- main custom style -->
-    <link rel="stylesheet" href="/myProject/css/custom/friend_profile.css">
+    <link rel="stylesheet" href="/FUOBoxMedia/css/custom/friend_profile.css">
 
 </head>
 <body>
@@ -57,7 +57,7 @@ include '../database.php';
 
     if (is_numeric($friend_Id)) {
       if ($userID == $friend_Id) {
-        header('location: /myProject/profile_page.php');
+        header('location: /FUOBoxMedia/profile_page.php');
       } else {
         $sql = "SELECT * FROM users_account WHERE Id = '$friend_Id'";
         $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -67,12 +67,12 @@ include '../database.php';
             $friend_Id = $row['Id'];
 
           } else {
-            header('location: /myProject/profile_page.php');
+            header('location: /FUOBoxMedia/profile_page.php');
           }
         }
       }
     } else {
-      header('location: /myProject/profile_page.php?user%theirsafefriendslist');
+      header('location: /FUOBoxMedia/profile_page.php?user%theirsafefriendslist');
     }
 
 
@@ -101,7 +101,7 @@ include '../database.php';
 
   // end of the GET Id
 } else {
-  header('location: /myProject/');
+  header('location: /FUOBoxMedia/');
 }
  ?>
 
@@ -123,7 +123,7 @@ include '../database.php';
         <div class="col-sm-12" style="position:relative">
           <div class="col-sm-3">
             <div class="friend_profile_img">
-              <img src="/myProject/uploaded_images/<?php echo $row['profile_img']; ?>" alt="">
+              <img src="/FUOBoxMedia/uploaded_images/<?php echo $row['profile_img']; ?>" alt="">
             </div>
             <h3 class="profile_name2">Joshua Oweipadei</h3>
             <h6 class="profile_name_3"><i class="fa fa-at"></i>joshiee</h6>
@@ -147,7 +147,7 @@ include '../database.php';
               </div>
               <div class="col-sm-4" style="padding:0">
                 <?php if (isset($MsgAlreadyFriends)) {
-                  echo "<a href='/myProject/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsg=".$row['Id']."'><button class='btn btn-default pro_box'><i class='fa fa-envelope'></i> Send <br> Message</button></a>";}
+                  echo "<a href='/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsg=".$row['Id']."'><button class='btn btn-default pro_box'><i class='fa fa-envelope'></i> Send <br> Message</button></a>";}
                 ?>
               </div>
             </div>
@@ -185,7 +185,7 @@ include '../database.php';
               <div class="col-lg-1 col-md-2 col-xs-3 col-sm-2 friend_col">
                 <div class="fri">
                   <div class="friend">
-                    <img src="/myProject/images/me/josh1.jpg"/>
+                    <img src="/FUOBoxMedia/images/me/josh1.jpg"/>
                     <span>fghjgfhfg ghdfghgf</span>
                   </div>
                 </div>
@@ -193,7 +193,7 @@ include '../database.php';
               <div class="col-lg-1 col-md-2 col-xs-3 col-sm-2 friend_col">
                 <div class="fri">
                   <div class="friend">
-                    <img src="/myProject/images/me/josh1.jpg"/>
+                    <img src="/FUOBoxMedia/images/me/josh1.jpg"/>
                     <span>fghjgfhfg ghdfghgf</span>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ include '../database.php';
               <div class="col-lg-1 col-md-2 col-xs-3 col-sm-2 friend_col">
                 <div class="fri">
                   <div class="friend">
-                    <img src="/myProject/images/me/josh1.jpg"/>
+                    <img src="/FUOBoxMedia/images/me/josh1.jpg"/>
                     <span>fghjgfhfg ghdfghgf</span>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ include '../database.php';
               <div class="col-lg-1 col-md-2 col-xs-3 col-sm-2 friend_col">
                 <div class="fri">
                   <div class="friend">
-                    <img src="/myProject/images/me/josh1.jpg"/>
+                    <img src="/FUOBoxMedia/images/me/josh1.jpg"/>
                     <span>fghjgfhfg ghdfghgf</span>
                   </div>
                 </div>
@@ -217,7 +217,7 @@ include '../database.php';
               <div class="col-lg-1 col-md-2 col-xs-3 col-sm-2 friend_col">
                 <div class="fri">
                   <div class="friend">
-                    <img src="/myProject/images/me/josh1.jpg"/>
+                    <img src="/FUOBoxMedia/images/me/josh1.jpg"/>
                     <span>fghjgfhfg ghdfghgf</span>
                   </div>
                 </div>
@@ -225,7 +225,7 @@ include '../database.php';
               <div class="col-lg-1 col-md-2 col-xs-3 col-sm-2 friend_col">
                 <div class="fri">
                   <div class="friend">
-                    <img src="/myProject/images/me/josh1.jpg"/>
+                    <img src="/FUOBoxMedia/images/me/josh1.jpg"/>
                     <span>fghjgfhfg ghdfghgf</span>
                   </div>
                 </div>
@@ -233,7 +233,7 @@ include '../database.php';
               <div class="col-lg-1 col-md-2 col-xs-3 col-sm-2 friend_col">
                 <div class="fri">
                   <div class="friend">
-                    <img src="/myProject/images/me/josh1.jpg"/>
+                    <img src="/FUOBoxMedia/images/me/josh1.jpg"/>
                     <span>fghjgfhfg ghdfghgf</span>
                   </div>
                 </div>
@@ -241,7 +241,7 @@ include '../database.php';
               <div class="col-lg-1 col-md-2 col-xs-3 col-sm-2 friend_col">
                 <div class="fri">
                   <div class="friend">
-                    <img src="/myProject/images/me/josh1.jpg"/>
+                    <img src="/FUOBoxMedia/images/me/josh1.jpg"/>
                     <span>fghjgfhfg ghdfghgf</span>
                   </div>
                 </div>
@@ -266,9 +266,9 @@ include '../database.php';
   <!-- Jq-->
   <script type="text/javascript" src="../js/plugins/jquery/jquery-3.3.1.min.js"></script>
 
-    <script src="/myProject/js/plugins/bootstrap.min.js"></script>
-    <script src="/myProject/js/custom/dist/custom.min.js"></script>
-    <script src="/myProject/js/custom/profile.js"></script>
+    <script src="/FUOBoxMedia/js/plugins/bootstrap.min.js"></script>
+    <script src="/FUOBoxMedia/js/custom/dist/custom.min.js"></script>
+    <script src="/FUOBoxMedia/js/custom/profile.js"></script>
 
 
   </body>

@@ -41,7 +41,7 @@ function comment_post_btn_click(){
 
     //PROCESS WITH AJAX CALLBACK
     //PASSING TO THE SERVER USING AJAX(to the PHP Script)
-    jQuery.post("/myProject/ajax/status-insert.php",{
+    jQuery.post("/FUOBoxMedia/ajax/status-insert.php",{
       task: "status_insert",
       status: _status,
       userId: _userId,
@@ -61,7 +61,7 @@ function comment_post_btn_click(){
 
         // HOW TO IMAGES WITH THE STATUS
         // I HAVE BEEN TRY HARD SINCE
-        
+
         // var input = document.getElementById('fileUpload'),
         // formdata = false;
         //
@@ -86,7 +86,7 @@ function comment_post_btn_click(){
         //
         //   if (formdata && input) {
         //     $.ajax({
-        //       url : "/myProject/ajax/add_comment.php",
+        //       url : "/FUOBoxMedia/ajax/add_comment.php",
         //       type : "POST",
         //       data : formdata,
         //       processData : false,
@@ -126,7 +126,7 @@ function add_comment(){
 
       if (_comment != null && _comment.length > 0) {
         $.ajax({
-          url : "/myProject/ajax/add_comment.php",
+          url : "/FUOBoxMedia/ajax/add_comment.php",
           method : "POST",
           data : {
             task : "adding_comment",
@@ -180,7 +180,7 @@ function comment(data){
         var _userId = $('#commented_userID').val();
         // alert(comment_id);
         $.ajax({
-          url : "/myProject/ajax/delete_comment.php",
+          url : "/FUOBoxMedia/ajax/delete_comment.php",
           method : "POST",
           data : {
             action : "delete_comment",
@@ -208,7 +208,7 @@ function comment(data){
 //     var send = this;
 //     var comment_id = send.id;
 //         $.ajax({
-//           url : "/myProject/ajax/add_comment.php",
+//           url : "/FUOBoxMedia/ajax/add_comment.php",
 //           method : "POST",
 //           data : {
 //             task : "fetch_comment",
@@ -231,7 +231,7 @@ function comment_count(){
     var send = this;
     var comment_id = send.id;
         $.ajax({
-          url : "/myProject/ajax/add_comment.php",
+          url : "/FUOBoxMedia/ajax/add_comment.php",
           method : "POST",
           data : {
             count : "count_comment",
@@ -267,7 +267,7 @@ function add_delete_handlers(){
 
 //delete STATUS function
 function status_delete(_status_id){
-  $.post("/myProject/ajax/status-delete.php",
+  $.post("/FUOBoxMedia/ajax/status-delete.php",
     {
       task : "status_delete",
       status_id : _status_id,

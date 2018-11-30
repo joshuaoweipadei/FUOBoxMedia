@@ -1,7 +1,7 @@
 <?php
 // if (!isset($_SESSION['Id'])) {
 //
-//   header('location: /myProject/index.php');
+//   header('location: /FUOBoxMedia/index.php');
 // }
 
 
@@ -149,7 +149,7 @@
 
 
 } else {
-  header('Location: /myProject/profile_page.php?tine');
+  header('Location: /FUOBoxMedia/profile_page.php?tine');
 }
 
 

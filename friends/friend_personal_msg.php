@@ -68,16 +68,16 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
             }
 
           } else {
-            header('location: /myProject/profile_page.php?user%theirsafefriendslist');
+            header('location: /FUOBoxMedia/profile_page.php?user%theirsafefriendslist');
           }
         }
       } else {
-        header('location: /myProject/profile_page.php');
+        header('location: /FUOBoxMedia/profile_page.php');
       }
     }
 
   } else {
-    header('location: /myProject/profile_page.php?user%theirsafefriendslist');
+    header('location: /FUOBoxMedia/profile_page.php?user%theirsafefriendslist');
   }
 
 
@@ -96,33 +96,33 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
     <title>Gentelella Alela! | </title>
 
     <!-- Bootstrap -->
-    <link href="/myProject/admin-panel/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/FUOBoxMedia/admin-panel/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="/myProject/admin-panel/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/FUOBoxMedia/admin-panel/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="/myProject/admin-panel/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="/FUOBoxMedia/admin-panel/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="/myProject/admin-panel/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="/FUOBoxMedia/admin-panel/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 
     <!-- bootstrap-progressbar -->
-    <link href="/myProject/admin-panel/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="/FUOBoxMedia/admin-panel/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link href="/myProject/admin-panel/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <link href="/FUOBoxMedia/admin-panel/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link href="/myProject/admin-panel/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="/FUOBoxMedia/admin-panel/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="/myProject/admin-panel/build/css/plugins/custom.min.css" rel="stylesheet">
+    <link href="/FUOBoxMedia/admin-panel/build/css/plugins/custom.min.css" rel="stylesheet">
 
     <!-- popup style -->
     <!-- <link href="../css/plugins/dist/custom.css" rel="stylesheet"> -->
 
     <!-- main custom style -->
-    <link rel="stylesheet" href="/myProject/css/custom/main.css">
-    <link rel="stylesheet" href="/myProject/css/custom/profile-style.css">
+    <link rel="stylesheet" href="/FUOBoxMedia/css/custom/main.css">
+    <link rel="stylesheet" href="/FUOBoxMedia/css/custom/profile-style.css">
 
     <!-- Begin emoji-picker Stylesheets -->
-    <!-- <link href="/myProject/asset/emoji/lib/css/emoji.css" rel="stylesheet"> -->
+    <!-- <link href="/FUOBoxMedia/asset/emoji/lib/css/emoji.css" rel="stylesheet"> -->
     <!-- End emoji-picker Stylesheets -->
     <style media="screen">
       .pro_pic{
@@ -151,7 +151,7 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
             <div class="profile clearfix">
               <div class="profile_pic">
                 <div class="pro_pic">
-                  <img src="/myProject/uploaded_images/<?php echo $profile_img; ?>"  alt="..." width="100%" height="100%">
+                  <img src="/FUOBoxMedia/uploaded_images/<?php echo $profile_img; ?>"  alt="..." width="100%" height="100%">
                 </div>
 
               </div>
@@ -206,8 +206,8 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
                                       ?>
                                       <li style="margin-bottom:5px">
                                         <div class="sidebar-name">
-                                          <a href="/myProject/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
-                                            <img width="30" height="30" src="/myProject/uploaded_images/<?php echo $user_row['profile_img']; ?>" />
+                                          <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
+                                            <img width="30" height="30" src="/FUOBoxMedia/uploaded_images/<?php echo $user_row['profile_img']; ?>" />
                                             <span><?php echo $user_row['first_name']." ".$user_row['last_name']; ?></span>
                                             <span class="pull-right"><?php if ($user_row['active'] == 1){ echo "Online";} ?></span>
                                           </a>
@@ -224,8 +224,8 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
                                            ?>
                                            <li>
                                              <div class="sidebar-name">
-                                               <a href="/myProject/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
-                                                 <img width="30" height="30" src="/myProject/uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
+                                               <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
+                                                 <img width="30" height="30" src="/FUOBoxMedia/uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
                                                  <span><?php echo $offline_user_row['first_name']." ".$offline_user_row['last_name']; ?></span>
                                                  <span class="pull-right"><?php if ($offline_user_row['active'] == 0){ echo "Offline";} ?></span>
                                                </a>
@@ -254,8 +254,8 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
                                         ?>
                                         <li>
                                           <div class="sidebar-name">
-                                            <a href="/myProject/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
-                                              <img width="30" height="30" src="/myProject/uploaded_images/<?php echo $user_row['profile_img']; ?>" />
+                                            <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
+                                              <img width="30" height="30" src="/FUOBoxMedia/uploaded_images/<?php echo $user_row['profile_img']; ?>" />
                                               <span><?php echo $user_row['first_name']." ".$user_row['last_name']; ?></span>
                                               <span class="pull-right"><?php if ($user_row['active'] == 1){ echo "Online";} ?></span>
                                             </a>
@@ -272,8 +272,8 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
                                              ?>
                                              <li>
                                                <div class="sidebar-name">
-                                                 <a href="/myProject/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
-                                                   <img width="30" height="30" src="/myProject/uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
+                                                 <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
+                                                   <img width="30" height="30" src="/FUOBoxMedia/uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
                                                    <span><?php echo $offline_user_row['first_name']." ".$offline_user_row['last_name']; ?></span>
                                                    <span class="pull-right"><?php if ($offline_user_row['active'] == 0){ echo "Offline";} ?></span>
                                                  </a>
@@ -400,7 +400,7 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
           <div class="row tile_count">
             <div class="content-frame-to">
               <div class="page-title">
-                <a href="/myProject/profile_page.php?timeline" class="btn btn-secondary pull-left" style="margin-left:4%; margin-right:2%"><i class="fa fa-mail-reply-all"></i> Back</a>
+                <a href="/FUOBoxMedia/profile_page.php?timeline" class="btn btn-secondary pull-left" style="margin-left:4%; margin-right:2%"><i class="fa fa-mail-reply-all"></i> Back</a>
                 <h2 class="pull-left" style=""><i class="fa fa-comments"></i> Messages</h2>
               </div>
             </div>
@@ -511,7 +511,7 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
                                     <div class='chat'>
                                       <div class='col-xs-3 col-sm-2 col-md-2 col-lg-2 pull-left'>
                                         <div class='user-photo' style='margin-right'>
-                                          <img src='/myProject/uploaded_images/".$user['profile_img']."' alt='".$user['username']."'>
+                                          <img src='/FUOBoxMedia/uploaded_images/".$user['profile_img']."' alt='".$user['username']."'>
                                         </div>
                                       </div>
                                       <div class='col-xs-9 pull-left send'>
@@ -535,7 +535,7 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
                                        <div class='chat'>
                                          <div class='col-xs-3 pull-left'>
                                            <div class='user-photo'>
-                                             <img src='/myProject/uploaded_images/".$_user['profile_img']."' alt='".$_user['username']."'>
+                                             <img src='/FUOBoxMedia/uploaded_images/".$_user['profile_img']."' alt='".$_user['username']."'>
                                            </div>
                                          </div>
                                          <div class='col-xs-9 pull-left recieve'>
@@ -568,53 +568,53 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
     </div>
 
     <!-- jQuery -->
-    <script src="/myProject/admin-panel/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/jquery/dist/jquery.min.js"></script>
     <!-- MY CUSTOM  -->
-    <script src="/myProject/js/custom/profile.js"></script>
+    <script src="/FUOBoxMedia/js/custom/profile.js"></script>
     <!-- Bootstrap -->
-    <script src="/myProject/admin-panel/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="/myProject/admin-panel/vendors/fastclick/lib/fastclick.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="/myProject/admin-panel/vendors/nprogress/nprogress.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/nprogress/nprogress.js"></script>
     <!-- Chart.js -->
-    <script src="/myProject/admin-panel/vendors/Chart.js/dist/Chart.min.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/Chart.js/dist/Chart.min.js"></script>
     <!-- gauge.js -->
-    <script src="/myProject/admin-panel/vendors/gauge.js/dist/gauge.min.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/gauge.js/dist/gauge.min.js"></script>
     <!-- bootstrap-progressbar -->
-    <script src="/myProject/admin-panel/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
     <!-- iCheck -->
-    <script src="/myProject/admin-panel/vendors/iCheck/icheck.min.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/iCheck/icheck.min.js"></script>
     <!-- Skycons -->
-    <script src="/myProject/admin-panel/vendors/skycons/skycons.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/skycons/skycons.js"></script>
     <!-- Flot -->
-    <script src="/myProject/admin-panel/vendors/Flot/jquery.flot.js"></script>
-    <script src="/myProject/admin-panel/vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="/myProject/admin-panel/vendors/Flot/jquery.flot.time.js"></script>
-    <script src="/myProject/admin-panel/vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="/myProject/admin-panel/vendors/Flot/jquery.flot.resize.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/Flot/jquery.flot.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/Flot/jquery.flot.resize.js"></script>
     <!-- Flot plugins -->
-    <script src="/myProject/admin-panel/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="/myProject/admin-panel/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="/myProject/admin-panel/vendors/flot.curvedlines/curvedLines.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/flot.curvedlines/curvedLines.js"></script>
     <!-- DateJS -->
-    <script src="/myProject/admin-panel/vendors/DateJS/build/date.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/DateJS/build/date.js"></script>
     <!-- JQVMap -->
-    <script src="/myProject/admin-panel/vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="/myProject/admin-panel/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="/myProject/admin-panel/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
     <!-- bootstrap-daterangepicker -->
-    <script src="/myProject/admin-panel/vendors/moment/min/moment.min.js"></script>
-    <script src="/myProject/admin-panel/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/moment/min/moment.min.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="/myProject/admin-panel/build/js/plugins/custom.min.js"></script>
+    <script src="/FUOBoxMedia/admin-panel/build/js/plugins/custom.min.js"></script>
 
     <!-- Begin emoji-picker JavaScript -->
-    <!-- <script src="/myProject/asset/emoji/lib/js/config.js"></script>
-    <script src="/myProject/asset/emoji/lib/js/util.js"></script>
-    <script src="/myProject/asset/emoji/lib/js/jquery.emojiarea.js"></script>
-    <script src="/myProject/asset/emoji/lib/js/emoji-picker.js"></script> -->
+    <!-- <script src="/FUOBoxMedia/asset/emoji/lib/js/config.js"></script>
+    <script src="/FUOBoxMedia/asset/emoji/lib/js/util.js"></script>
+    <script src="/FUOBoxMedia/asset/emoji/lib/js/jquery.emojiarea.js"></script>
+    <script src="/FUOBoxMedia/asset/emoji/lib/js/emoji-picker.js"></script> -->
     <!-- End emoji-picker JavaScript -->
 
     <!-- <script>
@@ -622,7 +622,7 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
         // Initializes and creates emoji set from sprite sheet
         window.emojiPicker = new EmojiPicker({
           emojiable_selector: '[data-emojiable=true]',
-          assetsPath: '/myProject/asset/emoji/lib/img/',
+          assetsPath: '/FUOBoxMedia/asset/emoji/lib/img/',
           popupButtonClasses: 'fa fa-smile-o'
         });
         // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
