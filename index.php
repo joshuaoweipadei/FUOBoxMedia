@@ -7,12 +7,8 @@
 
     //SESSION VARIABLE DECLARED
     $userID = $_SESSION['Id'];
-    $firstname = $_SESSION['first_name'];
-    $lastname = $_SESSION['last_name'];
     $email = $_SESSION['email'];
-    $user_name = $_SESSION['username'];
     $active = $_SESSION['active'];
-    $profile_img = $_SESSION['profile_img'];
 
   }
 

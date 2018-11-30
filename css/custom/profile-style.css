@@ -247,11 +247,12 @@ h1, h2, h3, h4, h5, h6 {
 .fri{
 	height: 90px;
 	padding: 0px;
-  position: relative;
+	position: relative;
+	overflow: hidden;
 }
 .friend {
-  width: 100%;
-	height: 100%;
+  width: 95%;
+	height: 95%;
   text-align: center;
   padding: 1px 0px;
   font-weight: 600;

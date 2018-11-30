@@ -10,16 +10,15 @@ if (!isset($_SESSION['Id']) && !isset($_SESSION['email'])) {
   //SESSION VARIABLE DECLARED
   // Makes it easier to read
   $userID = $_SESSION['Id'];
-  $first = $_SESSION['first_name'];
-  $last = $_SESSION['last_name'];
   $email = $_SESSION['email'];
-  $user_name = $_SESSION['username'];
   $active = $_SESSION['active'];
 }
 
 include_once 'database.php';
 
 ?>
+
+
 <?php
 $sql = "SELECT * FROM users_account WHERE Id = '$userID' AND email = '$email'";
 $fetch_user = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -258,78 +257,80 @@ if ($fetch_user) {
                 $query = "SELECT * FROM quotes WHERE userId = '$userID'";
                 $resultQuote = mysqli_query($conn, $query) or die(mysqli_error($conn));
                 if ($resultQuote) {
-                  if ($user_quote = mysqli_fetch_array($resultQuote)) {
-                    $quote = $user_quote['quote'];
-                    $quote_time = $user_quote['time'];
-
-                    date_default_timezone_set("Africa/Lagos");
-                    $time_ago = strtotime($quote_time);
-                    $time = time() - $time_ago;
-
-                    switch($time):
-                      // seconds
-                      case $time <= 60;
-                      $ago =  'Just now';
-                      break;
-
-                      // minutes
-                      case $time >= 60 && $time < 3600;
-                      if (round($time/60) == 1) {
-                        $ago = 'a minute';
-                      } else {
-                        $ago = round($time/60).' minutes ago';
-                      }
-                      break;
-
-                      // hour
-                      case $time >= 3600 && $time < 86400;
-                      if (round($time/3600) == 1) {
-                        $ago = 'an hour ago';
-                      } else {
-                        $ago = round($time/3600).' hours ago';
-                      }
-                      break;
-
-                      // days
-                      case $time >= 86400 && $time < 604800;
-                      if (round($time/86400) == 1) {
-                        $ago = 'a day ago';
-                      } else {
-                        $ago = round($time/86400).' days ago';
-                      }
-                      break;
-
-                      // weeks
-                      case $time >= 604800 && $time < 2600640;
-                      if (round($time/604800) == 1) {
-                        $ago = 'a week ago';
-                      } else {
-                        $ago = round($time/604800).' weeks ago';
-                      }
-                      break;
-
-                      // months
-                      case $time >= 2600640 && $time < 31207680;
-                      if (round($time/2600640) == 1) {
-                        $ago = 'a month ago';
-                      } else {
-                        $ago = round($time/2600640).' months ago';
-                      }
-                      break;
-
-                      // years
-                      case $time >= 31207680;
-                      if (round($time/31207680) == 1) {
-                        $ago = 'a year ago';
-                      } else {
-                        $ago = round($time/31207680).' year ago';
-                      }
-                      break;
-                    endswitch;
+                  if (mysqli_num_rows($resultQuote) == 1) {
+                    if ($user_quote = mysqli_fetch_array($resultQuote)) {
+                      $quote = $user_quote['quote'];
+                      $quote_time = $user_quote['time'];
+  
+                      date_default_timezone_set("Africa/Lagos");
+                      $time_ago = strtotime($quote_time);
+                      $time = time() - $time_ago;
+  
+                      switch($time):
+                        // seconds
+                        case $time <= 60;
+                        $ago =  'Just now';
+                        break;
+  
+                        // minutes
+                        case $time >= 60 && $time < 3600;
+                        if (round($time/60) == 1) {
+                          $ago = 'a minute';
+                        } else {
+                          $ago = round($time/60).' minutes ago';
+                        }
+                        break;
+  
+                        // hour
+                        case $time >= 3600 && $time < 86400;
+                        if (round($time/3600) == 1) {
+                          $ago = 'an hour ago';
+                        } else {
+                          $ago = round($time/3600).' hours ago';
+                        }
+                        break;
+  
+                        // days
+                        case $time >= 86400 && $time < 604800;
+                        if (round($time/86400) == 1) {
+                          $ago = 'a day ago';
+                        } else {
+                          $ago = round($time/86400).' days ago';
+                        }
+                        break;
+  
+                        // weeks
+                        case $time >= 604800 && $time < 2600640;
+                        if (round($time/604800) == 1) {
+                          $ago = 'a week ago';
+                        } else {
+                          $ago = round($time/604800).' weeks ago';
+                        }
+                        break;
+  
+                        // months
+                        case $time >= 2600640 && $time < 31207680;
+                        if (round($time/2600640) == 1) {
+                          $ago = 'a month ago';
+                        } else {
+                          $ago = round($time/2600640).' months ago';
+                        }
+                        break;
+  
+                        // years
+                        case $time >= 31207680;
+                        if (round($time/31207680) == 1) {
+                          $ago = 'a year ago';
+                        } else {
+                          $ago = round($time/31207680).' year ago';
+                        }
+                        break;
+                      endswitch;
+                    }
                   }
                 }
                ?>
-              <p><span class="says">Quote: </span> <span class="quote"><?php echo $quote; ?></span> <i class="fa fa-pencil"></i> <span class="time"><?php echo $ago; ?></span> </p>
+              <p><span class="says">Quote: </span> <span class="quote"><?php if(isset($quote)){ echo $quote; } ?></span> <i class="fa fa-pencil"></i> <span class="time"><?php if(isset($ago)){ echo $ago; } ?></span> </p>
             </div>
 
             <div class="sidemenubar">
