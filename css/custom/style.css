@@ -1,0 +1,430 @@
+body{
+  overflow-x: hidden !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*HEADER MENU BAR*/
+.menu {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    float: right;
+    overflow-x: hidden;
+}
+.menu li{
+    float: left;
+}
+.menu a{
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*THE SECOND HEADER MENU WITH DROPDOWN LIST*/
+.menu li a:hover, .dropmenu2:hover .dropmenuBtn2 {
+    background-color: #0099FF;
+}
+.menubar,.dropmenu2 {
+    display: inline-block;
+    position: inherit;
+}
+.dropmenu-content2 {
+    display: none;
+    position: relative;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+    overflow-x: hidden;
+}
+.dropmenu-content2 a {
+    color: black;
+    padding: 3px 16px;
+    font-size: 80%;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    position: relative;
+}
+.dropmenu-content2 a:hover {background-color: #f1f1f1}
+.show2 {display:block;}
+
+
+/* MENU BAR FOR SMALLER SCREENS */
+/* MENU BAR FOR SMALLER SCREENS */
+.dropbutton {
+    border: none;
+    transition-duration: 2s;
+}
+.dropMeun {
+    position: relative;
+    display: inline-block;
+    transition-duration: 2s;
+}
+.menuList {
+    display: none;
+    position: relative;
+    transition-duration: 2s;
+    overflow-x: auto;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+}
+.menuList a {
+    padding: 3px 16px;
+    text-decoration: none;
+    display: block;
+    transition-duration: 2s;
+    font-size: 80%;
+}
+.menuList a:hover {background-color: #f0f0f0}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+@media only screen and (max-width: 719px) {
+  .menu {display: none}}
+@media only screen and (min-width: 720px) {
+  .dropMenu {display: none}}
+
+/*Login Button*/
+.loginBtn{
+  float: right;
+  font-weight: 600;
+}
+.loginBtn button{
+  border: 1px solid #000;
+  padding: 5px 5%;
+  font-size: 80%;
+  background: #d0d0d0;
+}
+.loginBtn button:hover{
+  background: red;
+  color: #fff;
+  border: 1px solid #d0d0d0;
+}
+/*Search field*/
+.search{
+  float: right;
+  margin-right: 2%;
+  background: #D0D0D0;
+  padding: 0.1% 0.6% 0.4% 0.6%;
+
+}
+/* When the input field gets focus, change its width to 100% */
+
+
+/*SLIDE MENU BAR
+.side_nav{
+    height: 100%;
+    width: 0px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-image: url(../images/wallpapers/wallpaper1.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.7;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 1s;
+}
+.side_nav a{
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    display: block;
+    transition: 0.3s;
+    color: white;
+}
+.side_nav a:hover{
+    color: red;
+}
+.side_nav .btn-close{
+    position: absolute;
+    top: 0px;
+    right: 22px;
+    font-size: 45px;
+    margin-left: 50px;
+}*/
+
+
+
+
+
+
+
+/*THE MAIN SECTION OF THE PAGE*/
+#body .major-row{
+  background-color: #fff;
+}
+
+
+
+
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ASIDE SECTION*/
+.profilePicture{
+  margin-bottom: 6px;
+  padding: 5% 5%;
+  text-align: center;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+  border-radius: 3%;
+  overflow-x: hidden;
+
+}
+
+
+.edu_section,.activity{
+    display: block;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #E6E6E6;
+    margin-bottom: 13px;
+}
+.edu_section h3,.activity h3{
+    padding: 16px 0px 12px 8px;
+    background-color: #D9D9D9;
+    font-size: 17px;
+    border-bottom: 1px solid
+}
+.edu_section h4{
+    margin: 5px 0px;
+    padding-left: 8px;
+    text-decoration: underline;
+    font-size: 12px
+}
+.faculty{
+    position: relative;
+    display: inline-block;
+    padding: 0px 6px 0px 11px;
+    margin-bottom: 20px;
+}
+/*EDUCATION SECTIONAL BUTTONS*/
+.faculty_btn{
+    ;
+    width: 100%;
+    background-color:darkred;
+    color: white;
+    margin: 6px 0px 6px 0px/*top right bottom left*/;
+    border-radius: 5px;
+    padding: 6px 4px;
+    cursor: pointer;
+    border: none;
+    font-size: 17px;
+}
+.faculty_btn:hover, .faculty_btn:focus{
+    background-color: orangered/*#2980b9 #3498db*/
+}
+.dropdown_content{
+    display: none;
+    position: absolute;
+    background-color: #4f4f4f;
+    box-shadow: 0px 8px 16px 0px rgba (0,0,0,0,2);
+    z-index: 1;
+    overflow: auto;
+    opacity: 0.9;
+    border-radius: 12px
+}
+.dropdown_content a{
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 12px;
+    border-bottom: 2px solid #fff
+}
+.dropdown_content a:hover{
+    background-color: orangered;
+}
+/*Show the dropdown menu (use JS to add this class to the .dropdown_content container when the user clicks on the dropdown button)*/
+.show{display: block;}
+
+.faculty_name{float: left}
+.faculty_size{float: right}
+
+
+
+
+/*FOOTER*/
+#main_footer .major-row{
+  background-color: ;
+  margin-top: 20px;
+}
+.footBackground{
+  background:url( ../../images/wallpapers/background1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width:100%;
+  overflow-x:hidden;
+  margin: auto;
+}
+.base-logo{
+  position: relative;
+  font-family: arial;
+  font-size: 150%;
+  font-weight: 900;
+  padding-left: 3%;
+  color: blue;
+  text-shadow:5px -4px 1.8px #fff;/*right/left, top/bottom, blurness */
+}
+.footMenu h1{
+  font-size: 120%;
+  font-size: 700;
+  border-right: 1px solid red;
+  color: #fff;
+  padding: 0px 0px 0px 4%
+
+}
+.footMenu p a{
+  margin-right: 15px;
+  color: #1E90FF
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+/*COMMENT COMMENT COMMENT COMMENT
+.wrapper{
+  width: 45%;
+  height: auto;
+  margin: 10px auto;
+  border: 1px solid #cbcbcb;
+  background: white;
+}
+/*COMMENT FORM
+.comment_form{
+  width: 80%;
+  margin: 100px auto;
+  border: 1px solid green;
+  background: #fafcfc;
+  padding: 20px;
+}
+.comment_form label{
+  display: block;
+  margin: 5px 0px 5px 0px;
+}
+.comment_form input, textarea{
+  width: 95%;
+  padding: 5px;
+}
+#submit_btn, #update_btn{
+  padding: 8px 15px;
+  color: white;
+  background: #339;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+#update_btn{
+  background: #1c7600;
+}
+/**COMMENT DISPLAY AREA*
+#display_area{
+  width: 90%;
+  padding-top: 15px;
+  margin-left: 10px auto;
+}
+.comment_box{
+  cursor: default;
+  margin: 5px;
+  border: 1px solid #cbcbcb;
+  padding: 5px 10px;
+  position: relative;
+}
+.delete{
+  position: absolute;
+  top: 0px;
+  right: 3px;
+  color: red;
+  display: none;
+  cursor: pointer;
+}
+.edit{
+  position: absolute;
+  top: 0px;
+  right: 45px;
+  color: green;
+  display: none;
+  cursor: pointer;
+}
+.comment_box:hover .edit, .comment_box:hover .delete{
+  display: block;
+}
+.comment_text{
+  text-align: justify;
+}
+.display_name{
+  color: blue;
+  padding: 0px;
+  margin: 0px 0px 5px 0px;
+}
+*/

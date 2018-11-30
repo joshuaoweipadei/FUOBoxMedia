@@ -1,0 +1,201 @@
+/*
+*
+* SLIDE SHOW
+*
+*/
+#slider {
+  padding-bottom: 7px;
+  padding-top: 0;
+  margin-bottom: 60px;
+  background: #fff;
+}
+.carousel-indicators li {
+  background: #C4C4BE;
+}
+.carousel-indicators li.active {
+	 background: #00004d;
+}
+.item {
+  padding: 0;
+  width: 100%;
+  height: 400px;
+}
+.carousel-inner{
+  height: 400px;
+  width: 100%;
+}
+.control-carousel {
+  position: absolute;
+  top: 50%;
+  font-size: 60px;
+  color: #fff;
+}
+.control-carousel:hover{
+  color: #006666;
+}
+.right {
+  right: 0;
+}
+.item_box{
+  position: relative;
+}
+.item_box h3{
+  position: absolute;
+  top: 180px;
+  font-size: 160%;
+  font-weight: 600;
+  color: #006666;
+  text-transform: capitalize;
+}
+.item_box h3 span{
+  text-transform: uppercase;
+  color: #595959;
+}
+.item_box a{
+  position: absolute;
+  top: 258px;
+  left: 3%;
+  font-size: 100%;
+  font-weight: 600;
+  text-transform: capitalize;
+  background: #00004d
+}
+
+
+/*
+*
+*  CATEGORY
+*
+*/
+.sec {
+  margin-bottom: 10px;
+  margin-top: 0px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #006666;
+}
+.sec .A{
+  text-align: center;
+  padding: 20px 10px;
+  margin: 5px 55px;
+  background: #fff;
+  color: #00004d
+}
+.sec .B{
+  text-align: center;
+  padding: 20px 10px;
+  margin: 5px 55px;
+  background: #fff;
+  color: #00004d
+}
+.sec .C{
+  text-align: center;
+  padding: 20px 10px;
+  margin: 5px 55px;
+  background: #fff;
+  color: #00004d
+}
+.sec h4{
+  font-size: 15px;
+  color: #00004d
+}
+.A i, .B i, .C i{
+  font-size: 29px;
+  color: #d1d1d1
+}
+
+
+
+/*
+*
+* advertisement
+*
+*/
+.ads{
+  padding: 2px 18px;
+}
+.ads h3{
+  background: #;
+  color: #565656;
+  padding: 8px 1px 12px 1px;
+  font-size: 32px;
+  text-transform: capitalize;
+  border-bottom: 1px solid #e1e1e1
+}
+.ads i{
+  color: #00004d
+}
+.ads span{
+  color: #4d4d4d;
+  padding: 1px 0px;
+  font-size: 14px
+}
+.item_search input{
+  border-radius: 5px
+}
+.panel .profile {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: -webkit-linear-gradient(top right, #fff, #fff, #00ff80, #fff, #fff, #fff);
+  background: -o-linear-gradient(top right, #fff, #fff, #00ff80, #fff, #fff, #fff);
+  background: -moz-linear-gradient(top right, #fff, #fff, #00ff80, #fff, #fff, #fff);
+  background: linear-gradient(top right, #fff, #fff, #00ff80, #fff, #fff, #fff);
+  padding: 11px
+}
+.profile-data-name{
+  font-size: 18px
+}
+.profile-controls{
+  font-size: 12px
+}
+.profile-controls p{
+  line-height: 0em
+}
+
+
+
+
+/*
+*
+* UPLAOD ITEMS
+*
+*/
+.empty{
+  background:#00004d;
+  height:700px
+}
+ .upload_item{
+  margin-top: 20px;
+  padding-left: 30px;
+  padding-bottom: 90px;;
+  color: #4d4d4d
+}
+.upload_item h3{
+ text-transform: uppercase;
+ font-family: cursive;
+ color: #00004d
+}
+.form{
+  margin-top: 38px;
+}
+@media only screen and (max-width: 768px) {
+  .empty{
+    height: 70px;
+    margin-bottom: 30px;
+  }
+  .upload_item{
+   padding-bottom: 310px;
+ }
+ .bt{
+   margin-bottom: 10px
+ }
+}
+
+
+
+/*
+*
+* ALL FEATURES/ITEMS
+*
+*/
+.all_items{
+  height: auto;
+}
