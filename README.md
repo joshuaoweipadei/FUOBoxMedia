@@ -10,4 +10,4 @@ __We also hope to grow and improve on this project in future.__
 * Javascript
 * PHP
 
-
+*Note:* FUOBoxMedia is the main directory.
