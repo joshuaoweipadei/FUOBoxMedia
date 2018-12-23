@@ -16,4 +16,4 @@ __*Note:*__ FUOBoxMedia is the main directory.
 
 
 ### things to finalize
-* verify email on sign_up.php
+* verify email in sign_up.php
