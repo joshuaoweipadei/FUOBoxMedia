@@ -30,84 +30,85 @@
 <div id="particles-js">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12" style="position:absolute; width:100%">
+      <div class="col-sm-12">
 
-        <div class="col-sm-6">
-          <form id="sign_in" method="post">
-            <div class="col-xs-6">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 col-sm-offset-2 col-md-offset-3">
+          <form id="sign_up" method="post">
+            <div class="col-sm-6">
               <div class="form-group">
-                <label for="fitnae">First Name: </label>
+                <label for="fitnae">First Name: </label> <span id="required"> *</span>
                 <input type="text" id="fisrtname" name="fitnae" class="form-control" placeholder="Josh" required
                 data-parsley-pattern="^[a-zA-Z]+$" data-parsley-trigger="keyup">
+                <span id="firstnameErr"></span>
               </div>
             </div>
-            <div class="col-xs-6">
+            <div class="col-sm-6">
               <div class="form-group">
-                <label for="lastname">Last Name: </label>
+                <label for="lastname">Last Name: </label> <span id="required"> *</span>
                 <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Baye" required
                 data-parsley-pattern="^[a-zA-Z]+$" data-parsley-trigger="keyup">
+                <span id="lastnameErr"></span>
               </div>
             </div>
             <div class="col-xs-12">
               <div class="form-group">
-                <label for="username">Email: </label>
+                <label for="username">Email: </label> <span id="required"> *</span>
                 <input type="email" id="email" name="email" class="form-control" placeholder="Email Address" required
                 data-parsley-type="email" data-parsley-trigger="keyup">
+                <span id="emailErr"></span>
               </div>
             </div>
             <div class="col-xs-12">
               <div class="form-group">
-                <label for="username">Choose Username: </label>
+                <label for="username">Choose Username: </label> <span id="required"> *</span>
                 <input type="text" id="username" name="username" class="form-control" placeholder="Username" required
                 data-parsley-length="[3,16]" data-parsley-trigger="keyup">
+                <span id="usernameErr"></span>
               </div>
             </div>
             <div class="col-xs-12">
-              <label>Gender :</label>
+              <label>Gender :</label> <span id="required"> *</span>
               <p>
                 Male : <input type="radio" class="flat" name="gender" id="genderM" value="Male" checked="" required />
                 Female : <input type="radio" class="flat" name="gender" id="genderF" value="Female" />
               </p>
             </div>
             <div class="col-xs-12">
+              <br>
               <div class="form-group">
-                <label for="paasword">Password: </label>
+                <label for="paasword">Password: </label> <span id="required"> *</span>
                 <input type="password" id="password" name="password" class="form-control" placeholder="Password" required
                 data-parsley-length="[6,16]" data-parsley-trigger="keyup">
               </div>
             </div>
             <div class="col-xs-12">
               <div class="form-group">
-                <label for="fisrtname">Confirm Password: </label>
+                <label for="fisrtname">Confirm Password: </label> <span id="required"> *</span>
                 <input type="password" id="confirm_password" name="verPassword" class="form-control" placeholder="Confirm Password" required
                 data-parsley-equalto="#password" data-parsley-trigger="keyup">
+                <span id="passwordErr"></span>
               </div>
             </div>
+
+            <!-- Reg successfully message -->
             <div class="col-xs-12">
               <div class="form-group">
-                <h1 id="message" style="font-size:15px; padding:2px 9px; color:#ff4d4d"></h1>
+                <h1 id="message"></h1>
               </div>
             </div>
-            <div class="col-xs-12">
+            <!-- end of Reg successfully message -->
+
+            <div class="col-sm-6">
+              <h5 class="acct_log">Already have an Account | <a href="login.php">Login</a> </h5>
+            </div>
+            <div class="col-sm-6">
               <div class="form-group pull-right">
                 <button type="submit" id="submit" name="submit" class="btn btn-success">Sign up</button>
               </div>
             </div>
           </form>
         </div>
-        <div class="col-sm-2">
 
-        </div>
-        <div class="col-sm-3">
-          <div class="form-group">
-            <div id="company_logo">
-              <a href="index.php"><img src="images/logos/b.png" alt="" width="100%" height="100%"></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-1">
-
-        </div>
       </div>
     </div>
   </div>
@@ -117,11 +118,11 @@
 <!-- PARSLEY VALIDATION WITH AJAX -->
 <script>
   $(document).ready(function(){
-    $('#sign_in').parsley();
+    $('#sign_up').parsley();
 
-    $('#sign_in').on('submit', function(event){
+    $('#sign_up').on('submit', function(event){
       event.preventDefault();
-      if ($('#sign_in').parsley().isValid()) {
+      if ($('#sign_up').parsley().isValid()) {
         $.ajax({
           url: "includes/signup.php",
           method: "POST",
@@ -131,12 +132,31 @@
             $('#submit').val('Submitting...');
           },
           success:function(data){
-            $('#sign_in')[0].reset();
-            $('#sign_in').parsley().reset();
+            $('#sign_up')[0].reset();
+            $('#sign_up').parsley().reset();
             $('#submit').attr('disabled', false);
             $('#submit').val('submit');
 
-            $('#message').html(data);
+            if (data == "Please fill out all required fields") {
+              $('#firstnameErr').html(data);
+              $('#lastnameErr').html(data);
+              $('#emailErr').html(data);
+              $('#usernameErr').html(data);
+              $('#passwordErr').html(data);
+            }
+            if (data == "Invalid email" || data == "User with this email already exists") {
+              $('#emailErr').html(data);
+            }
+            if (data == "Passwords do not match") {
+              $('#passwordErr').html(data);
+            }
+            if (data == "User with this username already exists") {
+              $('#usernameErr').html(data);
+            }
+            if (data == "Registration successfully") {
+              $('#message').html("Registration successfully! A verification link has been sent to your email address, please verify your account by clicking on the link in below!");
+            }
+
           }
         });
       }

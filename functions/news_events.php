@@ -26,7 +26,7 @@ function trendingNews($full = false){
               }
                 echo '<div class="news">
                         <h4><a href="news_details.php?news_id='.$_row['unique_no'].'">'.$_row['news_title'].'</a></h4>
-                        <div style="padding-bottom:0px; border-bottom:1px solid #e1e1e1">
+                        <div>
                           <p>'.$_row['news_desc'].'</p>
                         </div>';
 

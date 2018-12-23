@@ -139,12 +139,12 @@ include ('functions/news_events.php');
 
                 <!-- MINOR NEWS -->
                 <?php
-                $sql = "SELECT * FROM news_single ORDER BY Id DESC LIMIT 3";
+                $sql = "SELECT * FROM news_single ORDER BY Id DESC LIMIT 2";
                 $singleNews_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
                 if ($singleNews_query) {
                   while ($row = mysqli_fetch_array($singleNews_query)) {
                 ?>
-                <div class="col-sm-4" style="padding:2px; margin:0">
+                <div class="col-sm-6" style="padding:2px; margin:0">
                   <div class="small_news">
                     <div class="news_img_box">
                       <a href="news_details.php?news_id=<?php echo $row['Id']; ?>">
@@ -175,7 +175,6 @@ include ('functions/news_events.php');
                           data-parent="#accordion" href="#collapse_<?php echo $row['Id']; ?>" aria-expanded="false" aria-controls="collapse_<?php echo $row['Id']; ?>"> <i class="fa fa-bars"></i>
                         </button>
                       </div>
-                      <!-- <div class="clearfix"></div> -->
                       <div class="panel">
                         <div id="collapse_<?php echo $row['Id']; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_<?php echo $row['Id']; ?>">
                           <div class="panel-body news_desc">
@@ -183,7 +182,6 @@ include ('functions/news_events.php');
                           </div>
                         </div>
                       </div>
-                      <div class="clearfix"></div>
                     </div>
                   </div>
                 </div>
@@ -191,64 +189,122 @@ include ('functions/news_events.php');
                   }
                 }
                  ?>
-                 <div class="clearfix"></div>
-                 <?php
-                 $sql = "SELECT * FROM news_single ORDER BY Id DESC LIMIT 3,2";
-                 $singleNews_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                 if ($singleNews_query) {
-                   while ($row = mysqli_fetch_array($singleNews_query)) {
-                 ?>
-                 <div class="col-sm-6" style="padding:2px; margin:0">
-                   <div class="small_news">
-                     <div class="news_img_box">
-                       <a href="news_details.php?news_id=<?php echo $row['Id']; ?>">
-                         <img src="/FUOBoxMedia/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="">
-                         <h5><?php echo $row['news_title']; ?></h5>
-                       </a>
-                     </div>
-                     <div class="newss">
-                       <?php
-                        $sql2 = "SELECT * FROM news_comments WHERE unique_no = '".$row['Id']."'";
-                        $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
-                        if ($query2) {
-                          $comm_count = mysqli_num_rows($query2);
+               <div class="clearfix"></div>
 
-                          $sql3 = "SELECT * FROM news_likes WHERE news_unique_no = '".$row['Id']."'";
-                          $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
-                          if ($query3) {
-                            $like_count = mysqli_num_rows($query3);
-                            ?>
-                            <span><?php echo $like_count; ?> <i class="fa fa-heart-o"></i></span>
-                            <span><?php echo $comm_count; ?> <i class="fa fa-comments-o"></i></span>
-                            <?php
-                          }
+              <?php
+              $sql = "SELECT * FROM news_single ORDER BY Id DESC LIMIT 2,3";
+              $singleNews_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+              if ($singleNews_query) {
+                while ($row = mysqli_fetch_array($singleNews_query)) {
+              ?>
+              <div class="col-sm-4" style="padding:2px; margin:0">
+                <div class="small_news">
+                  <div class="news_img_box">
+                    <a href="news_details.php?news_id=<?php echo $row['Id']; ?>">
+                      <img src="/FUOBoxMedia/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="">
+                      <h5><?php echo $row['news_title']; ?></h5>
+                    </a>
+                  </div>
+                  <div class="newss">
+                    <?php
+                     $sql2 = "SELECT * FROM news_comments WHERE unique_no = '".$row['Id']."'";
+                     $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
+                     if ($query2) {
+                       $comm_count = mysqli_num_rows($query2);
+
+                       $sql3 = "SELECT * FROM news_likes WHERE news_unique_no = '".$row['Id']."'";
+                       $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
+                       if ($query3) {
+                         $like_count = mysqli_num_rows($query3);
+                         ?>
+                         <span><?php echo $like_count; ?> <i class="fa fa-heart-o"></i></span>
+                         <span><?php echo $comm_count; ?> <i class="fa fa-comments-o"></i></span>
+                         <?php
+                       }
+                     }
+                     ?>
+                    <div class="pull-right">
+                      <button class="btn panel-heading collapsed" role="tab" id="heading_<?php echo $row['Id']; ?>" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapse_<?php echo $row['Id']; ?>" aria-expanded="false" aria-controls="collapse_<?php echo $row['Id']; ?>"> <i class="fa fa-bars"></i>
+                      </button>
+                    </div>
+                    <!-- <div class="clearfix"></div> -->
+                    <div class="panel">
+                      <div id="collapse_<?php echo $row['Id']; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_<?php echo $row['Id']; ?>">
+                        <div class="panel-body news_desc">
+                            <?php echo $row['news_desc']; ?>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+              <?php
+                }
+              }
+               ?>
+               <div class="clearfix"></div>
+
+               <?php
+               $sql = "SELECT * FROM news_single ORDER BY Id DESC LIMIT 5,3";
+               $singleNews_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+               if ($singleNews_query) {
+                 while ($row = mysqli_fetch_array($singleNews_query)) {
+               ?>
+               <div class="col-sm-4" style="padding:2px; margin:0">
+                 <div class="small_news">
+                   <div class="news_img_box">
+                     <a href="news_details.php?news_id=<?php echo $row['Id']; ?>">
+                       <img src="/FUOBoxMedia/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="">
+                       <h5><?php echo $row['news_title']; ?></h5>
+                     </a>
+                   </div>
+                   <div class="newss">
+                     <?php
+                      $sql2 = "SELECT * FROM news_comments WHERE unique_no = '".$row['Id']."'";
+                      $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
+                      if ($query2) {
+                        $comm_count = mysqli_num_rows($query2);
+
+                        $sql3 = "SELECT * FROM news_likes WHERE news_unique_no = '".$row['Id']."'";
+                        $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
+                        if ($query3) {
+                          $like_count = mysqli_num_rows($query3);
+                          ?>
+                          <span><?php echo $like_count; ?> <i class="fa fa-heart-o"></i></span>
+                          <span><?php echo $comm_count; ?> <i class="fa fa-comments-o"></i></span>
+                          <?php
                         }
-                        ?>
-                       <div class="pull-right">
-                         <button class="btn panel-heading collapsed" role="tab" id="heading_<?php echo $row['Id']; ?>" data-toggle="collapse"
-                           data-parent="#accordion" href="#collapse_<?php echo $row['Id']; ?>" aria-expanded="false" aria-controls="collapse_<?php echo $row['Id']; ?>"> <i class="fa fa-bars"></i>
-                         </button>
-                       </div>
-                       <div class="panel">
-                         <div id="collapse_<?php echo $row['Id']; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_<?php echo $row['Id']; ?>">
-                           <div class="panel-body news_desc">
-                               <?php echo $row['news_desc']; ?>
-                           </div>
+                      }
+                      ?>
+                     <div class="pull-right">
+                       <button class="btn panel-heading collapsed" role="tab" id="heading_<?php echo $row['Id']; ?>" data-toggle="collapse"
+                         data-parent="#accordion" href="#collapse_<?php echo $row['Id']; ?>" aria-expanded="false" aria-controls="collapse_<?php echo $row['Id']; ?>"> <i class="fa fa-bars"></i>
+                       </button>
+                     </div>
+                     <!-- <div class="clearfix"></div> -->
+                     <div class="panel">
+                       <div id="collapse_<?php echo $row['Id']; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_<?php echo $row['Id']; ?>">
+                         <div class="panel-body news_desc">
+                             <?php echo $row['news_desc']; ?>
                          </div>
                        </div>
                      </div>
+                     <div class="clearfix"></div>
                    </div>
                  </div>
-                 <?php
-                   }
+               </div>
+               <?php
                  }
-                  ?>
+               }
+                ?>
                 <div class="clearfix"></div>
-              </div>
+
+            </div>
           </div>
 
-        </div>
-        <!-- END OF RIGHT SIDE -->
+        </div><!-- END OF RIGHT SIDE -->
 
 
         <!-- LEFT SIDE -->
@@ -344,7 +400,7 @@ include ('functions/news_events.php');
                       <div class="content ">
                         <a href="friends/friend_profile.php?friend_id=<?php echo $user['Id']; ?>" class="title">
                           <i class="fa fa-quote-left" style="font-size:6px; color:rgb(255, 92, 51)"></i>
-                          <?php echo $quotes['quote']; ?>
+                          <?php if($quotes['quote']){ echo $quotes['quote']; } ?>
                           <i class="fa fa-quote-right" style="font-size:6px; color:rgb(255, 92, 51)"></i>
                         </a>
                         <span class="date"><?php echo $ago; ?></span>
@@ -360,117 +416,10 @@ include ('functions/news_events.php');
           <!-- END OF STUDENTS LATEST QUOTE POST -->
         </div>
         <!-- END OF LEFT SIDE -->
-
-
       </div>
-    </div>
-    <div class="container-fluid">
-      <!-- STEPS IN CREATING AN CREATE -->
-      <div class="co-service-section-3 section">
-        <div class="">
-          <!--Single Service-->
-          <div class="col-sm-4" style="padding:0">
-            <div class="co-single-service-3">
-              <span class="icon"><i class="icon-chat"></i></span>
-              <div class="content fix">
-                <h3>Social Events on Campus</h3>
-                <p>We update you will the trending and famous events right here on campus.</p>
-              </div>
-            </div>
-          </div>
-          <!--Single Service-->
-          <div class="col-sm-4" style="padding:0">
-            <div class="co-single-service-3">
-              <span class="icon"><i class="icon-tools"></i></span>
-              <div class="content fix">
-                <h3>Chat up a Friend</h3>
-                <p>Making life easy fro people around campus to chat up themselves(group) up. E.g when is lecture time etc.</p>
-              </div>
-            </div>
-          </div>
-          <!--Single Service-->
-          <div class="col-sm-4" style="padding:0">
-            <div class="co-single-service-3">
-              <span class="icon"><i class="icon-tools-2"></i></span>
-              <div class="content fix">
-                <h3>FUO Marketplace</h3>
-                <p>Students can easy sell and buy things online E.g accessories, student household items etc.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- END OF STEPS IN CREATING AN CREATE -->
     </div>
   </section>
 
-
-    <!--PAGE FOOTER-->
-    <footer id="main_footer">
-      <div class="container-fluid">
-        <div class=" row footBackground">
-          <!--Main footer contain-->
-          <div class="row start-xs start-sm start-md start-lg major-row">
-            <h2 class="base-logo">Education <span style="font-family:segoe script"> Center (FUO)</span> </h2>
-          </div>
-
-          <hr style="height:0.0005em; background-color:white; width:94%">
-
-          <!--FOOT ROW 1-->
-          <div class="row start-xs start-sm start-md start-lg major-row">
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 footMenu">
-              <h1>About</h1>
-            </div>
-            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 footMenu">
-              <p>
-                <a href="#">Our Company</a>
-                <a href="#">Career</a>
-                <a href="#">Advertise with Us</a>
-                <a href="#">Terms and Conditions</a>
-                <a href="#">Privacy Policy</a>
-              </p>
-            </div>
-          </div>
-          <!--FOOT ROW 2-->
-          <div class="row start-xs start-sm start-md start-lg major-row">
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 footMenu">
-              <h1>Contact</h1>
-            </div>
-            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 footMenu">
-              <p>
-                <a href="#">Customer Service</a>
-                <a href="#">Agent</a>
-                <a href="#">Location</a>
-                <a href="includes/about.author.php">Author</a>
-              </p>
-            </div>
-          </div>
-          <!--FOOT ROW 3-->
-          <div class="row start-xs start-sm start-md start-lg major-row">
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 footMenu">
-              <h1>Connect</h1>
-            </div>
-            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 footMenu">
-              <p>
-                <a href="#">Email Newsletter</a>
-                <a href="#"><img src="images/social_media/facebook1.png" alt="facebook" width="25"> Facebook</a>
-                <a href="#"><img src="images/social_media/twitter1.png" alt="twitter" width="25"> Twitter</a>
-                <a href="#"><img src="images/social_media/gmail1.png" alt="google" width="25"> Google</a>
-                <a href="#"><img src="images/social_media/instagram1.png" alt="instagram" width="25"> Instagram</a>
-                <a href="#"><img src="images/social_media/whatsapp1.png" alt="whatsapp" width="25"> WhatsApp</a>
-              </p>
-            </div>
-          </div>
-
-          <!--FOOT BASE-->
-          <div class="row center-xs center-sm center-md center-lg major-row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center">
-              <p style="color:#fff"> &copy; 2018 Home of FUO. All Right Reserved | Design By Joshie O. Bayefa</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer> <!--FOOTER OF THE PAGE-->
 
 
 

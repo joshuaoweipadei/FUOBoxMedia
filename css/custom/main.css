@@ -558,13 +558,15 @@ button.edit:hover{
 .co-blog-sidebar{
   margin-top: 10px !important;
   background: #fff !important;
-  height: 1000px !important;
+  padding-right: 14px !important;
+  padding-left: 14px !important;
+  padding-bottom: 20px !important;
 }
 .co-blog-sidebar h5{
   padding: 10px 10px 0px 10px !important;
   background: #fff !important;
   color: rgba(93,84,240,8.5) !important;
-  font-size: 30px !important;
+  font-size: 26px !important;
   font-family: Gabriola !important;
 }
 .co-blog-sidebar .co-sidebar-post{
@@ -591,7 +593,7 @@ button.edit:hover{
   border: 1px solid #d1d1d1 !important;
 }
 .co-blog-sidebar .co-sidebar-post .content .title{
-  font-size: 14px !important;
+  font-size: 12px !important;
   line-height: 1.5em !important
 }
 .co-blog-sidebar .co-sidebar-post .content .title:hover{
@@ -762,20 +764,19 @@ ul.timeline li {
   border: 1px solid #fff;
   padding: 7px;
   height: 100%;
+  background: #fff;
 }
 .localNews{
   width:100%;
   overflow-x:hidden;
-  padding: 6px 4px 0px 4px;
-  margin-bottom: 10px;
+  padding: 6px 4px 14px 4px;
+  margin-bottom: 7px;
   color: #2F4F4F;
-  font-style: oblique;
 }
 .localNews h3.header{
-  font-size: 26px;
-  font-weight: 600;
-  color: #fff;
-  text-transform: capitalize;
+  font-size: 140%;
+  font-weight: 500;
+  color: rgba(93,84,240,8.5);
 }
 .localNews .col-xs-6{
   padding: 0px;
@@ -785,7 +786,7 @@ ul.timeline li {
   padding: 1px;
   margin: 3px;
   border: 1px solid #e1e1e1;
-  background: #fff
+  background: #f2f2f2
 }
 .localNews img{
   height: 300px;
@@ -800,11 +801,14 @@ ul.timeline li {
 }
 .localNews .news p{
   font-size: 14px;
-  color: #fff
+  color: #262626;
+  font-family: Arial
 }
 .localNews .views_likes_comments{
   margin: 5px 0 13px 0;
   padding: 1px 0 5px 0;
+  font-family: cursive;
+  font-size: 15px;
 }
 .localNews .single_news_comment{
   background: #fff;
@@ -812,7 +816,8 @@ ul.timeline li {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 18px
+  font-size: 15px;
+  font-family: cursive;
 }
 .localNews .comment_comment_box{
   margin: 1px 3%;
@@ -823,8 +828,9 @@ ul.timeline li {
   background: #fff
 }
 .localNews .comment_comment_box div.title{
-  font-size: 15px;
-  color: #666666;
+  font-size: 14px;
+  color: #262626;
+  line-height: 0.7em
 }
 .localNews .comment_comment_box div.title:hover{
   color: #00004d !important
@@ -858,7 +864,7 @@ ul.timeline li {
   padding: 8px;
   margin-top: 24px;
   margin-bottom: 30px;
-  border: 1px solid #d1d1d1;
+  border: 1px solid rgba(93,84,240,8.5);
   background: #fff
 }
 .small_news .news_img_box{
@@ -911,7 +917,7 @@ ul.timeline li {
   background: none !important;
   font-size: 11px !important;
   border: none !important;
-  color: #595959 !important;
+  color: rgba(93,84,240,8.5) !important;
   margin-bottom: 10px !important;
 
 }

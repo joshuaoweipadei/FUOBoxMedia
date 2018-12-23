@@ -88,7 +88,7 @@ canvas{
 
 #particles-js{
   width: 100%;
-  height: 110%;
+  height: 120%;
   background-color: #00004d;
 	background-image: url('');
   background-size: cover;
@@ -98,63 +98,83 @@ canvas{
 }
 
 
+
 /*
 *
 * REGISTER ACCOUNT
 *
 */
-#sign_in{
+#sign_up{
 	position: absolute;
 	background: #fff;
-	opacity: 0.9;
-	top: 80px;
-	padding: 34px 26px 20px 26px;
+	top: 82px;
+	padding: 34px 26px 35px 26px;
 	border-radius: 4px;
 	margin: auto;
 }
-#sign_in p{
+#sign_up p{
 	margin-bottom: 11px
 }
-#company_logo{
-	position: absolute;
-	height:200px;
-	background: #fff;
-	opacity: 1;
-	top: 170px;
-	border-radius: 14px;
-	margin: auto;
-	overflow: hidden;
-	position: relative;
-}
-#sign_in input{
+#sign_up input{
+	/* background: #f2f2f2; */
 	background: #f2f2f2;
 	padding-top: 18px;
-	padding-bottom: 18px
+	padding-bottom: 18px;
+	border: none;
+	border-bottom: 1px solid #d1d1d1
+}
+#sign_up input:focus{
+	background: #d1d1d1;
+	color: #262626
+}
+#sign_up h5.acct_log a{
+	font-size: 15px;
+	font-weight: 600;
+	color: #0000cc;
+}
+#sign_up h5.acct_log a:hover{
+	color: #4d4dff;
+	text-decoration: none;
+}
+#sign_up button.btn-success{
+	padding-left: 23px;
+	padding-right: 23px;
+	font-size: 15px;
+	font-weight: 500;
+	font-family: arial;
+	background: #008000;
+	text-transform: capitalize;
+	border-radius: 3px;
+	border: 1px solid #004d00
+}
+#sign_up button.btn-success:hover{
+	background: #009900
+}
+#required{
+	font-size: 15px;
+	color: #ff0000
+}
+#firstnameErr,
+#lastnameErr,
+#emailErr,
+#usernameErr,
+#passwordErr{
+	font-size: 12px;
+	color: #ff0000
+}
+#message{
+	font-size: 14px;
+	padding: 19px 10px;
+	color: #008000;
+	margin: auto;
+	text-align: justify;
 }
 @media only screen and (max-width: 768px) {
-	#company_logo{
-		top: 20px;
-		margin: auto;
-	}
-	#sign_in{
-		top: 300px;
-		padding: 34px 4px 20px 4px;
-	}
-	#particles-js{
-	  height: 150%;
+	#sign_up{
+		top: 30px;
+		padding: 34px 2px 44px 2px;
 	}
 }
-/* @media only screen and (max-width : 709px){
-	#company_logo{
-	 margin-left: 10%;
- }
-}
-@media only screen and (max-width : 315px){
-	#company_logo{
-	 top: 20px;
-	 margin-left: 10%;
- }
-} */
 
 
 
@@ -166,72 +186,72 @@ canvas{
 * LOGIN
 *
 */
-.login-containe{
-	top: 10px;
-	padding: 18px 40px;
-	background: none;
-	position: relative;
-	height: 500px;
+.login-box{
+	background: #fff;
+	top: 82px;
+	padding: 34px 26px 35px 26px;
+	border-radius: 4px;
 	margin: auto;
 }
-.log{
-	background: #00004d;
-	opacity: 0.9;
-	padding: 88px 56px;
-	border-radius: 4px
-}
-.login-box{
-	position: relative;
-	height: auto;
-	padding: 40px 30px;
-	padding-bottom: 100px;
-	background: #fff;
+.logo{
+	margin-bottom: 17px
 }
 .login-box .login-title{
-	font-size: 140%;
-	margin-bottom: 10px
+	font-size: 110%;
+	padding-top: 17px
+}
+.logo .logo-img{
+  margin: auto;
+}
+.logo .logo-name{
+  margin: auto;
+}
+.logo .logo-name span.a{
+  font-size: 100%;
+  font-weight: 600;
+  color: rgb(255, 92, 51)
+}
+.logo .logo-name span.b{
+  font-size: 115%;
+  font-weight: 700;
+  font-family: arial;
+  font-style: italic;
+  color: rgba(93,84,240,8.5);
+  color: -webkit-linear-gradient(right, rgba(0,168,255,8.5), rgba(185,8,255,0.5));
+  color: -o-linear-gradient(right, rgba(0,168,255,8.5), rgba(185,0,255,0.5));
+  color: -moz-linear-gradient(right, rgba(0,168,255,8.5), rgba(185,0,255,0.5));
+  color: linear-gradient(right, rgba(0,168,255,0.5), rgba(185,0,255,0.5));
 }
 .form-horizontal{
-	padding: 10px
+	padding-top: 10px
 }
 .form-horizontal input{
 	font-size: 15px;
 }
 .login-footer{
-	position: relative;
+	margin-top: 9px;
+}
+.login-footer .foot-side1{
+	font-size: 13px
+}
+.login-footer .foot-side2{
+	font-size: 13px
 }
 @media only screen and (max-width: 768px) {
-	.log{
-		padding: 70px 40px
-	}
 	.login-box{
-		padding: 50px 6px 60px 6px;
+		padding: 50px 1px 60px 1px;
 	}
-	.login-containe{
-		top: 50px;
-		margin: 0;
-		padding: 0
+	.login-footer{
+		padding: 1px 1px
 	}
-	.form-horizontal{
-		padding: 5px
-	}
-	.login-box .login-title{
-		font-size: 130%;
-	}
-}
-@media only screen and (max-width: 480px) {
-	.log{
-		padding: 70px 10px
-	}
-	.login-box .login-title{
-		font-size: 120%;
-	}
-}
-@media only screen and (max-width: 480px) {
-	.log{
-		padding: 50px 4px
-	}
-	.login-box .login-title{
+	.logo .logo-name{
 		font-size: 110%;
+	}
+	.login-box .login-title{
+		font-size: 90%;
+	}
+	.login-footer .foot-side2{
+
+
 	}
 }

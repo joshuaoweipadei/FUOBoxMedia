@@ -261,17 +261,17 @@ if ($fetch_user) {
                     if ($user_quote = mysqli_fetch_array($resultQuote)) {
                       $quote = $user_quote['quote'];
                       $quote_time = $user_quote['time'];
-  
+
                       date_default_timezone_set("Africa/Lagos");
                       $time_ago = strtotime($quote_time);
                       $time = time() - $time_ago;
-  
+
                       switch($time):
                         // seconds
                         case $time <= 60;
                         $ago =  'Just now';
                         break;
-  
+
                         // minutes
                         case $time >= 60 && $time < 3600;
                         if (round($time/60) == 1) {
@@ -280,7 +280,7 @@ if ($fetch_user) {
                           $ago = round($time/60).' minutes ago';
                         }
                         break;
-  
+
                         // hour
                         case $time >= 3600 && $time < 86400;
                         if (round($time/3600) == 1) {
@@ -289,7 +289,7 @@ if ($fetch_user) {
                           $ago = round($time/3600).' hours ago';
                         }
                         break;
-  
+
                         // days
                         case $time >= 86400 && $time < 604800;
                         if (round($time/86400) == 1) {
@@ -298,7 +298,7 @@ if ($fetch_user) {
                           $ago = round($time/86400).' days ago';
                         }
                         break;
-  
+
                         // weeks
                         case $time >= 604800 && $time < 2600640;
                         if (round($time/604800) == 1) {
@@ -307,7 +307,7 @@ if ($fetch_user) {
                           $ago = round($time/604800).' weeks ago';
                         }
                         break;
-  
+
                         // months
                         case $time >= 2600640 && $time < 31207680;
                         if (round($time/2600640) == 1) {
@@ -316,7 +316,7 @@ if ($fetch_user) {
                           $ago = round($time/2600640).' months ago';
                         }
                         break;
-  
+
                         // years
                         case $time >= 31207680;
                         if (round($time/31207680) == 1) {

@@ -36,17 +36,8 @@ if (isset($emailUsername) && isset($password)) {
           mysqli_query($conn, $ssql) or die(mysqli_error($conn));
 
           $_SESSION['Id'] = $user['Id'];
-          $_SESSION['first_name'] = $user['first_name'];
-          $_SESSION['last_name'] = $user['last_name'];
           $_SESSION['email'] = $user['email'];
-          $_SESSION['username'] = $user['username'];
           $_SESSION['active'] = $user['active'];
-          $_SESSION['profile_img'] = $user['profile_img'];
-
-
-          // This is how we'll know the user is logged in
-          //$_SESSION['logged_in'] = true;
-
 
           header("location: index.php");
         }
