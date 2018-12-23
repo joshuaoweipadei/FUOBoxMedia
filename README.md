@@ -13,5 +13,7 @@ __We also hope to grow and improve on this project in future.__
 __*Note:*__ FUOBoxMedia is the main directory.
 
 
-## things to finalize
+
+
+### things to finalize
 * verify email on sign_up.php
