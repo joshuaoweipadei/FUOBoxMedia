@@ -156,6 +156,7 @@ h1, h2, h3, h4, h5, h6 {
 .picture p .quote{
   font-size: 15px;
   text-transform: inherit;
+  font-family: arial;
 }
 .picture p .time{
   font-size: 11px;
@@ -171,13 +172,13 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-.pull{
+.right-big-side{
 	width: 72%;
 	float: left;
 	height: auto;
 	background: #fff;
 }
-.push{
+.right-small-side{
 	float:left;
 	width:28%;
 	height: 1000px;
@@ -194,10 +195,13 @@ h1, h2, h3, h4, h5, h6 {
 .quote_box{
   margin-bottom: 120px;
 }
+.quote_box .modal-header{
+  background: rgba(93,84,240,8.5);
+}
 .quote_box .modal-header h4{
-  color: rgba(93,84,240,8.5);
-  font-size: ;
-  font-family: ;
+  background: rgba(93,84,240,8.5);
+  color: #fff;
+  font-family: arial;
 }
 .quote_box .modal-body span{
   font-size: 18px;
@@ -206,15 +210,22 @@ h1, h2, h3, h4, h5, h6 {
 .quote_box .quote_footer_btn button.btn-success{
   border-radius: 50px;
   margin-right: 5%;
-  background: #008000;
+  background: rgba(93,84,240,8.5);
   border: none
+}
+.quote_box .quote_footer_btn button.btn-success:hover{
+  background: #3333ff
 }
 .quote_box .quote_footer_btn button.btn-danger{
   border-radius: 50px;
   margin-right: 2%;
-  background: #ff0000;
+  background: #f2f2f2;
   border: none;
-  font-weight: 600
+  font-weight: 600;
+  color: #262626;
+}
+.quote_box .quote_footer_btn button.btn-danger:hover{
+  background: #d1d1d1;
 }
 
 
@@ -583,18 +594,22 @@ ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
 		right: 0px;
 		top: 0px;
 		padding-top: 10px;
-		padding-bottom: 10px;
-		border: 1px solid #00004d;
+		padding-bottom: px;
+    background: rgba(93,84,240,8.5);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    margin-right: 4px;
 		/*box-shadow: ;*/
 }
 .sidebar-name{
-		padding-left: 10px;
-		padding-right: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
 		margin-bottom: 0px;
 		font-size: 12px;
 }
 .sidebar-name span{
-		padding-left: 5px;
+		padding-left: 1px;
+    font-size: 13px;
 }
 .sidebar-name a{
 		display: block;
@@ -603,11 +618,11 @@ ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
 		color: inherit;
 }
 .sidebar-name:hover{
-		background-color:#e1e2e5;
+		background-color: #e1e2e5;
 }
 .sidebar-name img{
-		width: 32px;
-		height: 32px;
+		width: 36px;
+		height: 36px;
 		vertical-align:middle;
 }
 .popup-box{
@@ -644,22 +659,23 @@ ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
 		overflow-y: scroll;
 }
 @media only screen and (max-width : 960px){
-		.chat-sidebar{
-			display: none !important;
-		}
-		.chat-popup{
-			display: none !important;
-		}
-		.pull{
-			width: 96%;
+		.right-big-side{
+			width: 100%;
 			margin: auto;
 			padding-left: 1%;
 			padding-right: 1%
 		}
-		.push{
-			display: none;
-
+		.right-small-side{
+			display: none !important;
 		}
+}
+.chat-sidebar-2{
+  margin: 2px 8px 15px 8px;
+}
+@media only screen and (min-width : 961px){
+		.chat-sidebar-2{
+      display: none;
+    }
 }
 /*
 *
@@ -676,27 +692,58 @@ ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
 *
 */
 .friend_request_box{
-	padding: 4px;
-	margin: 4px;
-	border: 1px solid #d1d1d1;
-	border-radius: 1px;
+	padding: 5px;
 	height: auto;
+  background: #00004d;
+  font-family: arial;
 }
-.friend_request_box img{
-	margin-top: 5px;
-	margin-bottom: 2px;
-	margin-right: 2%;
-	margin-left: 3%;
-	border: 1px solid #00004d
+.friend_request_box h4{
+  color: #fff;
+  font-family: arial;
 }
 .friend_request_box .w3-container{
+  margin: auto;
+  background: #fff;
+  margin-bottom: 1px;
+  padding: 1px
+}
+.friend_request_box .w3-container img{
+	margin-top: 5px;
+	margin-bottom: 2px;
+	margin-right: 1%;
+	margin-left: 1%;
 	border: 1px solid #00004d;
-	border: 1px solid #00004d;
-	margin-bottom: 4px;
+  border-radius: 8px
+}
+.friend_request_box .w3-container span{
+	font-size: 88.5%;
+  font-family: arial;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 .friend_request_box .w3-container .w3-row{
-	margin-top: 7px;
-	margin-bottom: 7px
+	margin-top: 3px;
+	margin-bottom: 3px;
+  margin: auto;
+}
+.friend_request_box .w3-container .request-btn .accept_request{
+  padding: 2px 18px;
+  margin-bottom: 3px;
+  border: none;
+  background: #00004d;
+}
+.friend_request_box .w3-container .request-btn .accept_request:hover{
+  background: rgba(93,84,240,8.5);
+}
+.friend_request_box .w3-container .request-btn .delete_request{
+  padding: 2px 18px;
+  margin-bottom: 3px;
+  border: 1px solid #d1d1d1;
+  background: #f2f2f2;
+  color: #262626;
+}
+.friend_request_box .w3-container .request-btn .delete_request:hover{
+  background: #e1e1e1;
 }
 /*
 *

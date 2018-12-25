@@ -341,6 +341,302 @@ if ($fetch_user) {
               <li><a href="#" class="list-group-item list-group-item-action"><i style="font-size:18px" class="fa fa-cogs"></i> Settings <i style="float:right; font-size:18px" class="fa fa-angle-right"></i></a></li>
             </div>
 
+            <!-- hide the active users inedit page -->
+            <?php if(!isset($_GET['user%theirsafefriendslist'])): ?>
+              <?php if(!isset($_GET['edit-account'])): ?>
+                <div class="chat-sidebar chat-sidebar-2">
+                  <?php
+                  $sql2 = "SELECT * FROM myfriends WHERE myId = '$userID' OR myfriends = '$userID'";
+                  $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
+                  if ($query2) {
+                    if (mysqli_num_rows($query2) != 0) {
+
+                      while ($_row = mysqli_fetch_array($query2)) {
+                        $myId = $_row['myId'];
+                        $friend_Id = $_row['myfriends'];
+                        $userID = $_SESSION['Id'];
+
+                        if ($userID == $myId) {
+                          $sql3 = "SELECT * FROM myfriends WHERE myfriends = '$friend_Id'";
+                          $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
+                          if ($query3) {
+                            $row = mysqli_fetch_array($query3);
+                            $user_id_1 = $row['myfriends'];
+
+                            $sql5 = "SELECT * FROM users_account WHERE Id = '$user_id_1' AND active = 1";
+                            $query5 = mysqli_query($conn, $sql5) or die(mysqli_error($conn));
+                            if ($query5) {
+                              if (mysqli_num_rows($query5) != 0) {
+                                if ($user_row = mysqli_fetch_array($query5)) {
+                                  ?>
+                                  <div class="sidebar-name">
+                                    <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
+                                      <img src="uploaded_images/<?php echo $user_row['profile_img']; ?>" />
+                                      <span><?php echo $user_row['first_name']." ".$user_row['last_name']; ?></span>
+                                      <span class="pull-right"><?php if ($user_row['active'] == 1){ echo " <span style='font-size:8px'> Online</span> <i class='fa fa-circle' style='color:#00cc00'></i>";} ?></span>
+                                    </a>
+                                    <div class="clearfix"></div>
+                                  </div>
+                                 <?php
+                                }
+                              } else {
+                                $sql7 = "SELECT * FROM users_account WHERE Id = '$user_id_1' AND active = 0";
+                                $query7 = mysqli_query($conn, $sql7) or die(mysqli_error($conn));
+                                if ($query7) {
+                                  if (mysqli_num_rows($query7) != 0) {
+                                    if ($offline_user_row = mysqli_fetch_array($query7)) {
+
+                                      // DISPLAYING THE SEEN OF THE USER
+                                      date_default_timezone_set("Africa/Lagos");
+                                      $time_ago = strtotime($offline_user_row['last_seen']);
+                                      $time = time() - $time_ago;
+
+                                        switch($time):
+                                          // seconds
+                                          case $time <= 60;
+                                          $ago =  'Just now';
+                                          break;
+
+                                          // minutes
+                                          case $time >= 60 && $time < 3600;
+                                          if (round($time/60) == 1) {
+                                            $ago = 'a minute';
+                                          } else {
+                                            $ago = round($time/60).' min(s) ago';
+                                          }
+                                          break;
+
+                                          // hour
+                                          case $time >= 3600 && $time < 86400;
+                                          if (round($time/3600) == 1) {
+                                            $ago = 'an hour ago';
+                                          } else {
+                                            $ago = round($time/3600).' hr(s) ago';
+                                          }
+                                          break;
+
+                                          // days
+                                          case $time >= 86400 && $time < 604800;
+                                          if (round($time/86400) == 1) {
+                                            $ago = 'a day ago';
+                                          } else {
+                                            $ago = round($time/86400).' day(s) ago';
+                                          }
+                                          break;
+
+                                          // weeks
+                                          case $time >= 604800 && $time < 2600640;
+                                          if (round($time/604800) == 1) {
+                                            $ago = 'a week ago';
+                                          } else {
+                                            $ago = round($time/604800).' wk(s) ago';
+                                          }
+                                          break;
+
+                                          // months
+                                          case $time >= 2600640 && $time < 31207680;
+                                          if (round($time/2600640) == 1) {
+                                            $ago = 'a month ago';
+                                          } else {
+                                            $ago = round($time/2600640).' mnth(s) ago';
+                                          }
+                                          break;
+
+                                          // years
+                                          case $time >= 31207680;
+                                          if (round($time/31207680) == 1) {
+                                            $ago = 'a year ago';
+                                          } else {
+                                            $ago = round($time/31207680).' year ago';
+                                          }
+                                          break;
+                                        endswitch;
+                                      ?>
+                                      <div class="sidebar-name">
+                                        <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
+                                          <img src="uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
+                                          <span><?php echo $offline_user_row['first_name']." ".$offline_user_row['last_name']; ?></span>
+                                          <span class="pull-right"><?php if ($offline_user_row['active'] == 0){ echo " <span style='font-size:8px'> ".$ago."</span> <i class='fa fa-circle' style='color:#ff6666'></i>";} ?></span>
+                                        </a>
+                                        <div class="clearfix"></div>
+                                      </div>
+                                     <?php
+                                    }
+                                  }
+                                }
+                              }
+                            }
+
+                          }
+                        } else {
+                          $sql4 = "SELECT * FROM myfriends WHERE myfriends = '$userID'";
+                          $query4 = mysqli_query($conn, $sql4) or die(mysqli_error($conn));
+                          if ($query4) {
+                            $rrow = mysqli_fetch_array($query4);
+                            $user_id_2 = $rrow['myId'];
+
+                            $sql6 = "SELECT * FROM users_account WHERE Id = '$user_id_2' AND active = 1";
+                            $query6 = mysqli_query($conn, $sql6) or die(mysqli_error($conn));
+                            if ($query6) {
+                              if (mysqli_num_rows($query6) != 0) {
+                                if ($user_row = mysqli_fetch_array($query6)) {
+                                  ?>
+                                  <div class="sidebar-name" id="<?php echo $user_row['email']; ?>">
+                                    <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
+                                      <img src="uploaded_images/<?php echo $user_row['profile_img']; ?>" />
+                                      <span><?php echo $user_row['first_name']." ".$user_row['last_name']; ?></span>
+                                      <span class="pull-right"><?php if ($user_row['active'] == 1){ echo " <span style='font-size:8px'> Online</span> <i class='fa fa-circle' style='color:#00cc00'></i>";} ?></span>
+                                    </a>
+                                  </div>
+                                 <?php
+                                }
+                              } else {
+                                $sql7 = "SELECT * FROM users_account WHERE Id = '$user_id_2' AND active = 0";
+                                $query7 = mysqli_query($conn, $sql7) or die(mysqli_error($conn));
+                                if ($query7) {
+                                  if (mysqli_num_rows($query7) != 0) {
+                                    if ($offline_user_row = mysqli_fetch_array($query7)) {
+
+                                      // DISPLAYING THE SEEN OF THE USER
+                                      date_default_timezone_set("Africa/Lagos");
+                                      $time_ago = strtotime($offline_user_row['last_seen']);
+                                      $time = time() - $time_ago;
+
+                                        switch($time):
+                                          // seconds
+                                          case $time <= 60;
+                                          $ago =  'Just now';
+                                          break;
+
+                                          // minutes
+                                          case $time >= 60 && $time < 3600;
+                                          if (round($time/60) == 1) {
+                                            $ago = 'a minute';
+                                          } else {
+                                            $ago = round($time/60).' min(s) ago';
+                                          }
+                                          break;
+
+                                          // hour
+                                          case $time >= 3600 && $time < 86400;
+                                          if (round($time/3600) == 1) {
+                                            $ago = 'an hour ago';
+                                          } else {
+                                            $ago = round($time/3600).' hr(s) ago';
+                                          }
+                                          break;
+
+                                          // days
+                                          case $time >= 86400 && $time < 604800;
+                                          if (round($time/86400) == 1) {
+                                            $ago = 'a day ago';
+                                          } else {
+                                            $ago = round($time/86400).' day(s) ago';
+                                          }
+                                          break;
+
+                                          // weeks
+                                          case $time >= 604800 && $time < 2600640;
+                                          if (round($time/604800) == 1) {
+                                            $ago = 'a week ago';
+                                          } else {
+                                            $ago = round($time/604800).' wk(s) ago';
+                                          }
+                                          break;
+
+                                          // months
+                                          case $time >= 2600640 && $time < 31207680;
+                                          if (round($time/2600640) == 1) {
+                                            $ago = 'a month ago';
+                                          } else {
+                                            $ago = round($time/2600640).' mnth(s) ago';
+                                          }
+                                          break;
+
+                                          // years
+                                          case $time >= 31207680;
+                                          if (round($time/31207680) == 1) {
+                                            $ago = 'a year ago';
+                                          } else {
+                                            $ago = round($time/31207680).' year ago';
+                                          }
+                                          break;
+                                        endswitch;
+                                      ?>
+                                      <div class="sidebar-name">
+                                        <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
+                                          <img src="uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
+                                          <span><?php echo $offline_user_row['first_name']." ".$offline_user_row['last_name']; ?></span>
+                                          <span class="pull-right"><?php if ($offline_user_row['active'] == 0){ echo " <span style='font-size:8px'> ".$ago."</span> <i class='fa fa-circle' style='color:#ff6666'></i>";} ?></span>
+                                        </a>
+                                      </div>
+                                     <?php
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+      //gg
+                      }
+                    } else {
+                      echo "<span style='padding-left:10px; font-family:Gabriola; font-size:18px; color:#fff'>
+                              You do not have any friends yet.
+                            </span>";
+                    }
+                  }
+      //end
+                   ?>
+                    <!-- FRIEND REQUEST -->
+                    <div class="" style="margin-top:50px">
+                      <div class="friend_request_box">
+                        <h4 class="text-center">Friend Requests</h4>
+                        <?php
+                        $sql = "SELECT * FROM friendship WHERE receiver = '$userID'";
+                        $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                        if ($query) {
+                          if (mysqli_num_rows($query) > 0) {
+                            while ($_row = mysqli_fetch_array($query)) {
+                              $friend_Id = $_row['sender'];
+
+                              $sql2 = "SELECT * FROM users_account WHERE Id = '$friend_Id'";
+                              $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
+                              if ($query2) {
+                                while ($row = mysqli_fetch_array($query2)) {
+                        ?>
+                        <div class="w3-container">
+                          <img src="/FUOBoxMedia/uploaded_images/<?php echo $row['profile_img']; ?>" alt="<?php echo $row['username']; ?>" width="50px" height="50px">
+                          <span><?php echo $row['first_name']." ".$row['last_name']; ?></span>
+                          <div class="w3-row text-center">
+                            <div class="request-btn text-center">
+                              <button id="accept_<?php echo $row['Id']; ?>" accept="<?php echo $row['Id']; ?>" class="btn btn-success accept_request" title="Accept">Accept</button>
+                              <button id="delete_<?php echo $row['Id']; ?>" delete="<?php echo $row['Id']; ?>" class="btn btn-danger delete_request" title="Decline">Decline</button>
+                            </div>
+                            <?php if (isset($_SESSION['Id'])): ?>
+                              <input type="hidden" id="userID" value="<?php echo $userID; ?>">
+                            <?php endif; ?>
+                          </div>
+                        </div>
+                        <?php
+                                }
+                              }
+                            }
+                          } else {
+                            echo "<span style='font-family:Gabriola; font-size:20px; line-height:0.9em; color:#fff'>
+                                    You do not have any friend request pending.
+                                  </span>";
+                          }
+                        }
+                         ?>
+                      </div>
+                    </div>
+                    <!-- END OF FRIEND REQUEST -->
+                </div>
+              <?php endif; ?>
+            <?php endif; ?>
+            <!-- end of hide the active users in friends-list, edit-account page -->
+
             <div class="panel-body friends_photos">
               <!--friends-->
               <h4 class="text-title">People You May Know</h4>
@@ -397,7 +693,7 @@ if ($fetch_user) {
         <div class="col-sm-9">
         <!-- START TIMELINE ITEM -->
           <!-- STATUS AND POST -->
-          <div class="pull">
+          <div class="right-big-side">
             <?php
             if (!isset($_GET['timeline'])) {
               if (!isset($_GET['usertheirsafephotos'])) {
@@ -410,8 +706,7 @@ if ($fetch_user) {
                   <h4 class="modal-title">Daily Saying</h4>
                 </div>
                 <div class="modal-body">
-                  <div class='quote_msg'></div>
-                  <span>Everyone sees your status <span>(255).</span></span>
+                  <span>Your daily status is visible to everyone <i class="fa fa-eye"></i> <span>(255 words).</span></span>
                   <p style="font-size:11px"><span class="err pull-right"></span> </p>
                   <?php
                   $get_quote = "SELECT * FROM quotes WHERE userId = $userID";
@@ -425,7 +720,7 @@ if ($fetch_user) {
                   }
                    ?>
                   <div class="form-group">
-                    <input type="text" class="form-control quote_text" placeholder="<?php if (!isset($user_quote)) { echo "You said..!";} ?>"
+                    <input type="text" class="form-control quote_text" placeholder="<?php if (!isset($user_quote)) { echo "Your daily saying..!";} ?>"
                     value="<?php if (isset($user_quote)) { echo $user_quote;} ?>" data-emojiable="true">
                   </div>
                 </div>
@@ -433,6 +728,8 @@ if ($fetch_user) {
                   <button type="submit" class="btn btn-success pull-right quote"> <i class="fa fa-send"></i> </button>
                   <button type="button" class="btn btn-danger pull-right delete_quote">Delete</button>
                 </div>
+                <br><br>
+                <div class='quote_msg'></div>
               </div>
             </div>
             <?php
@@ -471,19 +768,19 @@ if ($fetch_user) {
             if (!isset($_GET['timeline'])) {
               if (!isset($_GET['user%theirsafefriendslist'])) {
                 if (!isset($_GET['edit-account'])) {
-                  echo "<div style='padding:0px 30px 130px 30px; color:#4d4d4d'>
+                  echo "<div style='padding:0px 30px 130px 30px; color:#4d4d4d; font-family:arial'>
 
                           <h2 style='font-style:oblique; font-size:16px; text-transform:uppercase; color:rgba(93,84,240,8.5)'><b>Make the most of your profile.</b></h2>
                           <div style='height:3px; background:#e1e1e1'></div>
                           <br>
-                          <p>Everything here is optional, it just feels nice to have a profile that is complete and lookin' good.</p>
-                          <p>You're lot more recognizable around JEWELRY ONLINE with an avatar.</p>
+                          <p>Everything here is optional, it just feels nice to have a profile that is complete and looking good.</p>
+                          <p>You're lot more recognizable around FUOBoxMedia with an avatar.</p>
                           <h4><b>Upload a new avatar</b></h4>
-                          <div style='width:260px; border:2px dashed #00004d; background:#e1e1e1; padding:20px'>
-                            <p>TO CHANGE YOUR AVATAR, CLICK ON THE CAMERA ICON AND SELECT A FILE (not more than 1MB). THEN HIT ON UPLOADS
+                          <div style='width:260px; border:2px dashed #fff; background:rgb(255, 92, 51); color:#fff; padding:20px'>
+                            <p>TO CHANGE YOUR AVATAR, CLICK ON THE CAMERA ICON AND SELECT A FILE (not more than 2MB). Your picture will be automatically be uploaded.
                           </div>
                           <div class='pull-left' style='margin-top:10px'>
-                            <b style='color:#00004d; padding:1px 3px; background:#00ffff; border-radius:3px'><em>NOTE :</em></b>
+                            <b style='color:#fff; padding:1px 3px; background:rgba(93,84,240,8.5); border-radius:3px'><em>NOTE :</em></b>
                             Please, Select the only images (.jpg, .jpeg, .png) to upload with the size of minimum 2MB.
                           </div>
                         </div>";
@@ -511,167 +808,306 @@ if ($fetch_user) {
           </div>
 
           <!-- hide the active users inedit page -->
-          <?php if(!isset($_GET['edit-account'])): ?>
-          <div class="push">
-            <div class="chat-sidebar">
-              <?php
-              $sql2 = "SELECT * FROM myfriends WHERE myId = '$userID' OR myfriends = '$userID'";
-              $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
-              if ($query2) {
-                if (mysqli_num_rows($query2) != 0) {
+          <?php if(!isset($_GET['user%theirsafefriendslist'])): ?>
+            <?php if(!isset($_GET['edit-account'])): ?>
+              <div class="right-small-side">
+                <div class="chat-sidebar">
+                  <?php
+                  $sql2 = "SELECT * FROM myfriends WHERE myId = '$userID' OR myfriends = '$userID'";
+                  $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
+                  if ($query2) {
+                    if (mysqli_num_rows($query2) != 0) {
 
-                  while ($_row = mysqli_fetch_array($query2)) {
-                    $myId = $_row['myId'];
-                    $friend_Id = $_row['myfriends'];
-                    $userID = $_SESSION['Id'];
+                      while ($_row = mysqli_fetch_array($query2)) {
+                        $myId = $_row['myId'];
+                        $friend_Id = $_row['myfriends'];
+                        $userID = $_SESSION['Id'];
 
-                    if ($userID == $myId) {
-                      $sql3 = "SELECT * FROM myfriends WHERE myfriends = '$friend_Id'";
-                      $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
-                      if ($query3) {
-                        $row = mysqli_fetch_array($query3);
-                        $user_id_1 = $row['myfriends'];
+                        if ($userID == $myId) {
+                          $sql3 = "SELECT * FROM myfriends WHERE myfriends = '$friend_Id'";
+                          $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
+                          if ($query3) {
+                            $row = mysqli_fetch_array($query3);
+                            $user_id_1 = $row['myfriends'];
 
-                        $sql5 = "SELECT * FROM users_account WHERE Id = '$user_id_1' AND active = 1";
-                        $query5 = mysqli_query($conn, $sql5) or die(mysqli_error($conn));
-                        if ($query5) {
-                          if (mysqli_num_rows($query5) != 0) {
-                            if ($user_row = mysqli_fetch_array($query5)) {
-                              ?>
-                              <div class="sidebar-name">
-                                <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
-                                  <img width="30" height="30" src="uploaded_images/<?php echo $user_row['profile_img']; ?>" />
-                                  <span><?php echo $user_row['first_name']." ".$user_row['last_name']; ?></span>
-                                  <span class="pull-right"><?php if ($user_row['active'] == 1){ echo "Online";} ?></span>
-                                </a>
-                              </div>
-                             <?php
-                            }
-                          } else {
-                            $sql7 = "SELECT * FROM users_account WHERE Id = '$user_id_1' AND active = 0";
-                            $query7 = mysqli_query($conn, $sql7) or die(mysqli_error($conn));
-                            if ($query7) {
-                              if (mysqli_num_rows($query7) != 0) {
-                                if ($offline_user_row = mysqli_fetch_array($query7)) {
+                            $sql5 = "SELECT * FROM users_account WHERE Id = '$user_id_1' AND active = 1";
+                            $query5 = mysqli_query($conn, $sql5) or die(mysqli_error($conn));
+                            if ($query5) {
+                              if (mysqli_num_rows($query5) != 0) {
+                                if ($user_row = mysqli_fetch_array($query5)) {
                                   ?>
                                   <div class="sidebar-name">
-                                    <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
-                                      <img width="30" height="30" src="uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
-                                      <span><?php echo $offline_user_row['first_name']." ".$offline_user_row['last_name']; ?></span>
-                                      <span class="pull-right"><?php if ($offline_user_row['active'] == 0){ echo "Offline";} ?></span>
+                                    <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
+                                      <img src="uploaded_images/<?php echo $user_row['profile_img']; ?>" />
+                                      <span><?php echo $user_row['first_name']." ".$user_row['last_name']; ?></span>
+                                      <span class="pull-right"><?php if ($user_row['active'] == 1){ echo " <span style='font-size:8px'> Online</span> <i class='fa fa-circle' style='color:#00cc00'></i>";} ?></span>
                                     </a>
+                                    <div class="clearfix"></div>
                                   </div>
                                  <?php
+                                }
+                              } else {
+                                $sql7 = "SELECT * FROM users_account WHERE Id = '$user_id_1' AND active = 0";
+                                $query7 = mysqli_query($conn, $sql7) or die(mysqli_error($conn));
+                                if ($query7) {
+                                  if (mysqli_num_rows($query7) != 0) {
+                                    if ($offline_user_row = mysqli_fetch_array($query7)) {
+
+                                      // DISPLAYING THE SEEN OF THE USER
+                                      date_default_timezone_set("Africa/Lagos");
+                                      $time_ago = strtotime($offline_user_row['last_seen']);
+                                      $time = time() - $time_ago;
+
+                                        switch($time):
+                                          // seconds
+                                          case $time <= 60;
+                                          $ago =  'Just now';
+                                          break;
+
+                                          // minutes
+                                          case $time >= 60 && $time < 3600;
+                                          if (round($time/60) == 1) {
+                                            $ago = 'a minute';
+                                          } else {
+                                            $ago = round($time/60).' min(s) ago';
+                                          }
+                                          break;
+
+                                          // hour
+                                          case $time >= 3600 && $time < 86400;
+                                          if (round($time/3600) == 1) {
+                                            $ago = 'an hour ago';
+                                          } else {
+                                            $ago = round($time/3600).' hr(s) ago';
+                                          }
+                                          break;
+
+                                          // days
+                                          case $time >= 86400 && $time < 604800;
+                                          if (round($time/86400) == 1) {
+                                            $ago = 'a day ago';
+                                          } else {
+                                            $ago = round($time/86400).' day(s) ago';
+                                          }
+                                          break;
+
+                                          // weeks
+                                          case $time >= 604800 && $time < 2600640;
+                                          if (round($time/604800) == 1) {
+                                            $ago = 'a week ago';
+                                          } else {
+                                            $ago = round($time/604800).' wk(s) ago';
+                                          }
+                                          break;
+
+                                          // months
+                                          case $time >= 2600640 && $time < 31207680;
+                                          if (round($time/2600640) == 1) {
+                                            $ago = 'a month ago';
+                                          } else {
+                                            $ago = round($time/2600640).' mnth(s) ago';
+                                          }
+                                          break;
+
+                                          // years
+                                          case $time >= 31207680;
+                                          if (round($time/31207680) == 1) {
+                                            $ago = 'a year ago';
+                                          } else {
+                                            $ago = round($time/31207680).' year ago';
+                                          }
+                                          break;
+                                        endswitch;
+                                      ?>
+                                      <div class="sidebar-name">
+                                        <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
+                                          <img src="uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
+                                          <span><?php echo $offline_user_row['first_name']." ".$offline_user_row['last_name']; ?></span>
+                                          <span class="pull-right"><?php if ($offline_user_row['active'] == 0){ echo " <span style='font-size:8px'> ".$ago."</span> <i class='fa fa-circle' style='color:#ff6666'></i>";} ?></span>
+                                        </a>
+                                        <div class="clearfix"></div>
+                                      </div>
+                                     <?php
+                                    }
+                                  }
+                                }
+                              }
+                            }
+
+                          }
+                        } else {
+                          $sql4 = "SELECT * FROM myfriends WHERE myfriends = '$userID'";
+                          $query4 = mysqli_query($conn, $sql4) or die(mysqli_error($conn));
+                          if ($query4) {
+                            $rrow = mysqli_fetch_array($query4);
+                            $user_id_2 = $rrow['myId'];
+
+                            $sql6 = "SELECT * FROM users_account WHERE Id = '$user_id_2' AND active = 1";
+                            $query6 = mysqli_query($conn, $sql6) or die(mysqli_error($conn));
+                            if ($query6) {
+                              if (mysqli_num_rows($query6) != 0) {
+                                if ($user_row = mysqli_fetch_array($query6)) {
+                                  ?>
+                                   <div class="sidebar-name" id="<?php echo $user_row['email']; ?>">
+                                     <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
+                                       <img src="uploaded_images/<?php echo $user_row['profile_img']; ?>" />
+                                       <span><?php echo $user_row['first_name']." ".$user_row['last_name']; ?></span>
+                                       <span class="pull-right"><?php if ($user_row['active'] == 1){ echo " <span style='font-size:8px'> Online</span> <i class='fa fa-circle' style='color:#00cc00'></i>";} ?></span>
+                                     </a>
+                                   </div>
+                                 <?php
+                                }
+                              } else {
+                                $sql7 = "SELECT * FROM users_account WHERE Id = '$user_id_2' AND active = 0";
+                                $query7 = mysqli_query($conn, $sql7) or die(mysqli_error($conn));
+                                if ($query7) {
+                                  if (mysqli_num_rows($query7) != 0) {
+                                    if ($offline_user_row = mysqli_fetch_array($query7)) {
+
+                                      // DISPLAYING THE SEEN OF THE USER
+                                      date_default_timezone_set("Africa/Lagos");
+                                      $time_ago = strtotime($offline_user_row['last_seen']);
+                                      $time = time() - $time_ago;
+
+                                        switch($time):
+                                          // seconds
+                                          case $time <= 60;
+                                          $ago =  'Just now';
+                                          break;
+
+                                          // minutes
+                                          case $time >= 60 && $time < 3600;
+                                          if (round($time/60) == 1) {
+                                            $ago = 'a minute';
+                                          } else {
+                                            $ago = round($time/60).' min(s) ago';
+                                          }
+                                          break;
+
+                                          // hour
+                                          case $time >= 3600 && $time < 86400;
+                                          if (round($time/3600) == 1) {
+                                            $ago = 'an hour ago';
+                                          } else {
+                                            $ago = round($time/3600).' hr(s) ago';
+                                          }
+                                          break;
+
+                                          // days
+                                          case $time >= 86400 && $time < 604800;
+                                          if (round($time/86400) == 1) {
+                                            $ago = 'a day ago';
+                                          } else {
+                                            $ago = round($time/86400).' day(s) ago';
+                                          }
+                                          break;
+
+                                          // weeks
+                                          case $time >= 604800 && $time < 2600640;
+                                          if (round($time/604800) == 1) {
+                                            $ago = 'a week ago';
+                                          } else {
+                                            $ago = round($time/604800).' wk(s) ago';
+                                          }
+                                          break;
+
+                                          // months
+                                          case $time >= 2600640 && $time < 31207680;
+                                          if (round($time/2600640) == 1) {
+                                            $ago = 'a month ago';
+                                          } else {
+                                            $ago = round($time/2600640).' mnth(s) ago';
+                                          }
+                                          break;
+
+                                          // years
+                                          case $time >= 31207680;
+                                          if (round($time/31207680) == 1) {
+                                            $ago = 'a year ago';
+                                          } else {
+                                            $ago = round($time/31207680).' year ago';
+                                          }
+                                          break;
+                                        endswitch;
+                                      ?>
+                                      <div class="sidebar-name">
+                                        <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
+                                          <img src="uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
+                                          <span><?php echo $offline_user_row['first_name']." ".$offline_user_row['last_name']; ?></span>
+                                          <span class="pull-right"><?php if ($offline_user_row['active'] == 0){ echo " <span style='font-size:8px'> ".$ago."</span> <i class='fa fa-circle' style='color:#ff6666'></i>";} ?></span>
+                                        </a>
+                                      </div>
+                                     <?php
+                                    }
+                                  }
                                 }
                               }
                             }
                           }
                         }
-
+      //gg
                       }
                     } else {
-                      $sql4 = "SELECT * FROM myfriends WHERE myfriends = '$userID'";
-                      $query4 = mysqli_query($conn, $sql4) or die(mysqli_error($conn));
-                      if ($query4) {
-                        $rrow = mysqli_fetch_array($query4);
-                        $user_id_2 = $rrow['myId'];
+                      echo "<div style='padding:1px 8px; font-family:Gabriola; font-size:20px; color:#fff'>
+                              <span>You do not have any friends yet.</span>
+                            </div>";
+                    }
+                  }
+      //end
+                   ?>
+                    <!-- FRIEND REQUEST -->
+                    <div class="" style="margin-top:50px">
+                      <div class="friend_request_box">
+                        <h4 class="text-center">Friend Requests</h4>
+                        <?php
+                        $sql = "SELECT * FROM friendship WHERE receiver = '$userID' ORDER BY Id DESC";
+                        $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                        if ($query) {
+                          if (mysqli_num_rows($query) > 0) {
+                            while ($_row = mysqli_fetch_array($query)) {
+                              $friend_Id = $_row['sender'];
 
-                        $sql6 = "SELECT * FROM users_account WHERE Id = '$user_id_2' AND active = 1";
-                        $query6 = mysqli_query($conn, $sql6) or die(mysqli_error($conn));
-                        if ($query6) {
-                          if (mysqli_num_rows($query6) != 0) {
-                            if ($user_row = mysqli_fetch_array($query6)) {
-                              ?>
-                               <div class="sidebar-name" id="<?php echo $user_row['email']; ?>">
-                                 <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $user_row['Id']; ?>">
-                                   <img width="30" height="30" src="uploaded_images/<?php echo $user_row['profile_img']; ?>" />
-                                   <span><?php echo $user_row['first_name']." ".$user_row['last_name']; ?></span>
-                                   <span class="pull-right"><?php if ($user_row['active'] == 1){ echo "Online";} ?></span>
-                                 </a>
-                               </div>
-                             <?php
-                            }
-                          } else {
-                            $sql7 = "SELECT * FROM users_account WHERE Id = '$user_id_2' AND active = 0";
-                            $query7 = mysqli_query($conn, $sql7) or die(mysqli_error($conn));
-                            if ($query7) {
-                              if (mysqli_num_rows($query7) != 0) {
-                                if ($offline_user_row = mysqli_fetch_array($query7)) {
-                                  ?>
-                                  <div class="sidebar-name">
-                                    <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsgmessage=<?php echo $offline_user_row['Id']; ?>">
-                                      <img width="30" height="30" src="uploaded_images/<?php echo $offline_user_row['profile_img']; ?>" />
-                                      <span><?php echo $offline_user_row['first_name']." ".$offline_user_row['last_name']; ?></span>
-                                      <span class="pull-right"><?php if ($offline_user_row['active'] == 0){ echo "Offline";} ?></span>
-                                    </a>
-                                  </div>
-                                 <?php
+                              $sql2 = "SELECT * FROM users_account WHERE Id = '$friend_Id'";
+                              $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
+                              if ($query2) {
+                                while ($row = mysqli_fetch_array($query2)) {
+                        ?>
+                        <div class="w3-container">
+                          <img src="/FUOBoxMedia/uploaded_images/<?php echo $row['profile_img']; ?>" alt="<?php echo $row['username']; ?>" width="50px" height="50px">
+                          <span><?php echo $row['first_name']." ".$row['last_name']; ?></span>
+                          <div class="w3-row text-center">
+                            <div class="request-btn text-center">
+                              <button id="accept_<?php echo $row['Id']; ?>" accept="<?php echo $row['Id']; ?>" class="btn btn-success accept_request" title="Accept">Accept</button>
+                              <button id="delete_<?php echo $row['Id']; ?>" delete="<?php echo $row['Id']; ?>" class="btn btn-danger delete_request" title="Decline">Decline</button>
+                            </div>
+                            <?php if (isset($_SESSION['Id'])): ?>
+                              <input type="hidden" id="userID" value="<?php echo $userID; ?>">
+                            <?php endif; ?>
+                          </div>
+                        </div>
+                        <?php
                                 }
                               }
                             }
+                          } else {
+                            echo "<span style='font-family:Gabriola; font-size:20px; line-height:0.9em; color:#fff'>
+                                    You do not have any friend request pending.
+                                  </span>";
                           }
                         }
-                      }
-                    }
-//gg
-                  }
-                } else {
-                  echo "<span style='padding-left:10px; font-family:Gabriola; font-size:18px; color:#262626'>
-                          You do not have any friends yet.
-                        </span>";
-                }
-              }
-//end
-               ?>
-                <!-- FRIEND REQUEST -->
-                <div class="" style="margin-top:50px">
-                  <div class="friend_request_box">
-                    <h4 class="text-center">Friend Requests</h4>
-                    <?php
-                    $sql = "SELECT * FROM friendship WHERE receiver = '$userID'";
-                    $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                    if ($query) {
-                      if (mysqli_num_rows($query) > 0) {
-                        while ($_row = mysqli_fetch_array($query)) {
-                          $friend_Id = $_row['sender'];
-
-                          $sql2 = "SELECT * FROM users_account WHERE Id = '$friend_Id'";
-                          $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
-                          if ($query2) {
-                            while ($row = mysqli_fetch_array($query2)) {
-                    ?>
-                    <div class="w3-container">
-                      <img src="/FUOBoxMedia/uploaded_images/<?php echo $row['profile_img']; ?>" alt="Avatar" width="55px" height="55px">
-                      <span><?php echo $row['first_name']." ".$row['last_name']; ?></span>
-                      <div class="w3-row text-center">
-                        <div class="w3-half">
-                          <button id="accept_<?php echo $row['Id']; ?>" accept="<?php echo $row['Id']; ?>" class="btn btn-success accept_request" title="Accept">Accept <i class="fa fa-check"></i></button>
-                        </div>
-                        <div class="w3-half">
-                          <button id="delete_<?php echo $row['Id']; ?>" delete="<?php echo $row['Id']; ?>" class="btn btn-danger delete_request" title="Decline">Decline <i class="fa fa-remove"></i></button>
-                        </div>
-                        <input type="hidden" id="userID" value="<?php echo $userID; ?>">
+                         ?>
                       </div>
                     </div>
-                    <?php
-                            }
-                          }
-                        }
-                      } else {
-                        echo "<span> You do not have any friend request pending. </span>";
-                      }
-                    }
-                     ?>
-                  </div>
+                    <!-- END OF FRIEND REQUEST -->
                 </div>
-                <!-- END OF FRIEND REQUEST -->
-            </div>
-          </div>
+              </div>
+            <?php endif; ?>
           <?php endif; ?>
-          <!-- end of hide the active users inedit page -->
+          <!-- end of hide the active users in friends-list, edit-account page -->
           <!-- END OF STATUS AND POST -->
-        </div>
-        <!-- END TIMELINE ITEM -->
+
+        </div><!-- END right-hand-side -->
+
       </div>
     </div>
 

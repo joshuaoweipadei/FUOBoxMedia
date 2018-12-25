@@ -269,6 +269,9 @@ $(document).ready(function(){
             quote : text,
             userId : user_id,
           },
+          beforeSend:function(){
+            $('.quote_msg').html("Updating...")
+          },
           success:function(data){
             $('.quote_msg').html(data);
           }

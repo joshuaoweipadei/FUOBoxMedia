@@ -23,7 +23,7 @@ function is_ajax(){
         $quote = mysqli_real_escape_string($conn, $_POST["quote"]);
 
         if (is_numeric($userId)) {
-          if (strlen($quote) > 2 && strlen($quote) < 255) {
+          if (strlen($quote) > 2 && strlen($quote) < 256) {
 
             $sql = "SELECT * FROM quotes WHERE userId = '$userId'";
             $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -32,20 +32,20 @@ function is_ajax(){
                 $sql2 = "UPDATE quotes SET quote = '$quote' WHERE userId = '$userId'";
                 $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
                 if ($query2) {
-                  echo "<div class='alert alert-success alert-dismissible fade in' role='alert' style='background:#00004d; color:#fff; padding:7px 10px'>
-                          <button style='color:#fff' type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true' style='color:#fff'>×</span>
+                  echo "<div class='alert alert-success alert-dismissible fade in' role='alert' style='background:#fff; color:green; padding:7px 10px; border:none'>
+                          <button style='color:green' type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true' style='color:red'>×</span>
                           </button>
-                          <strong>Whoops!</strong> You have just updated your daily status.
+                          You just updated your daily status.
                         </div>";
                 }
               } else {
                 $sql3 = "INSERT INTO quotes (userId, quote, `time`) VALUES ('$userId', '$quote', NOW())";
                 $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
                 if ($query3) {
-                  echo "<div class='alert alert-success alert-dismissible fade in' role='alert' style='background:#00004d; color:#fff; padding:7px 10px'>
-                          <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span>
+                  echo "<div class='alert alert-success alert-dismissible fade in' role='alert' style='background:#fff; color:green; padding:7px 10px; border:none'>
+                          <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true' style='color:red'>×</span>
                           </button>
-                          <strong>Good!</strong> You have uploaded your daily status.
+                          You have uploaded your new daily status.
                         </div>";
 
                 }
