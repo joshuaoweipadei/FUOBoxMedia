@@ -5,16 +5,15 @@ if (!isset($_SESSION['Id'])) {
 };
  ?>
 <div class="w3-row-padding">
-  <div class="w3-col m12">
-    <div class="w3-card w3-round w3-white">
+  <div class="">
+    <div class="w3-card">
       <div class="w3-container w3-padding">
-        <h6 class="w3-opacity who-says"><strong>Says:</strong> Joshua</h6>
+        <h4 class="w3-opacity who-says">Status</h4>
         <p class="w3-padding">
           <!-- <input id="fileUpload" type="file" name="images[]" multiple accept="image/x-png, image/gif, image/jpeg, image/jpg"> -->
-          <textarea contenteditable="false" id="comment-post-text" class="comment-insert-text"></textarea>
-          <br> <br>
-          <a href="" class="btn w3-button w3-theme pull-left"><i class="fa fa-photo" style="font-size:21px"></i> Photos</a>
-          <button type="button" id="comment-post-btn" class="btn w3-button w3-theme pull-right"><i class="fa fa-pencil"></i>  Post</button>
+          <textarea contenteditable="false" id="comment-post-text" class="comment-insert-text" placeholder="Write something"></textarea>
+          <br>
+          <button type="button" id="comment-post-btn" class="btn pull-right">Post</button>
           <div class="clearfix"></div>
 
           <input type="hidden" id="userID" value="<?php echo $userID ?>">
