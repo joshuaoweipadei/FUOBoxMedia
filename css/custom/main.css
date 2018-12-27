@@ -642,7 +642,7 @@ ul.timeline li {
     overflow: hidden;
     width: 100%;
     white-space: nowrap;
-    text-overflow: ellipsis
+    text-overflow: ellipsis;
 }
 .tag {
     line-height: 1;

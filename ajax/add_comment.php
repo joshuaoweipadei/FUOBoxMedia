@@ -93,7 +93,6 @@
 
       $commentId = test_input($_POST["Id"]);
 
-
     }
   }
 

@@ -227,7 +227,7 @@ function comment(data){
 
 //COUNT COMMENTS FUNCTION
 function comment_count(){
-  $('.comment-holder').each(function(){
+  $('.status-id').each(function(){
     var send = this;
     var comment_id = send.id;
         $.ajax({
@@ -238,7 +238,11 @@ function comment_count(){
             count_Id : comment_id,
           },
           success:function(data){
-            $('#comment_count_' + comment_id).html(data);
+            if (data == 0) {
+              $('#comment_count_'+comment_id).html("<span style='font-size:10px; color:#c1c1c1'>Be the first to comment on this.</span>");
+            }else {
+              $('#comment_count_'+comment_id).html(data);
+            }
           }
         });
   });

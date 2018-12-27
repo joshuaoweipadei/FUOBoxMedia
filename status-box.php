@@ -87,6 +87,7 @@ if (!isset($_SESSION['Id'])) {
 
  ?>
 <li class="comment-holder timeline-item" id="del_status_<?php echo $status->status_id; ?>">
+  <div class="status-id" id="<?php echo $status->status_id; ?>"></div>
   <div class="date">
     <span class="pull-right"><?php echo $ago; ?></span>
     <span class="pull-left"> Public <i class="fa fa-globe"></i></span>
@@ -97,26 +98,29 @@ if (!isset($_SESSION['Id'])) {
   <div class="container" style="padding-bottom:10px; padding-top:10px">
     <!--USER IMAGE-->
     <div class="user-img">
-      <a href="friends/friend_profile.php?friend_id=<?php echo $status->userId; ?>" ><img src="uploaded_images/<?php echo $user->profile_img; ?>" class="user-img-pic" alt="upload picture"></a>
+      <a href="friends/friend_profile.php?friend_id=<?php echo $status->userId; ?>" >
+        <img src="uploaded_images/<?php echo $user->profile_img; ?>" class="user-img-pic" alt="upload picture">
+      </a>
     </div>
     <div class="comment-body">
       <!--USER NAME-->
       <h3 class="username-field">
-        <a href="friends/friend_profile.php?friend_id=<?php echo $status->userId; ?>"><?php echo $user->username; ?> </a><span style="font-size:12px"> added an article</span>
+        <a href="friends/friend_profile.php?friend_id=<?php echo $status->userId; ?>"> <i class="fa fa-at"></i><?php echo $user->username; ?> </a>
       </h3>
-
+      <div class="clearfx"></div>
       <!--USER COMMENT-->
       <div class="comment-text">
-        <?php echo $status->status; ?>
+        <p><?php echo $status->status; ?></p>
       </div>
       <div class="clearfix"></div>
       <!--comment footer-->
       <div class="timeline-footer">
         <div class="">
           <span class="likes">
-            <span id="comment_count_<?php echo $status->status_id; ?>" style="font-size:16px; color:#fff"></span>
-            <i class="fa fa-comments" style="font-size:17px; color:#fff; padding-right:8px"></i>
+            <i class="fa fa-comment-o" style="font-size:17px; color:#6a6a6a;"></i>
+            <span id="comment_count_<?php echo $status->status_id; ?>" style="font-size:16px; color:#6a6a6a; font-family:cursive"></span>
           </span>
+
           <span class="likes">
             <button class="like" id="<?php echo $status->status_id; ?>" value="sunglasses"><img src="/FUOBoxMedia/images/icon/sunglasses.png" alt="cool" width="27px" height="27px" title="Cool">
               <span id="like_<?php echo $status->status_id; ?>">
