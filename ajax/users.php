@@ -5,7 +5,7 @@ class Users {
   public static function getUsers($userId){
 
     global $conn;
-    $sql = "SELECT username, profile_img FROM users_account WHERE Id = '$userId'";
+    $sql = "SELECT first_name, last_name, username, profile_img FROM users_account WHERE Id = '$userId'";
     $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     if ($query) {

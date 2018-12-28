@@ -88,14 +88,8 @@ if (!isset($_SESSION['Id'])) {
  ?>
 <li class="comment-holder timeline-item" id="del_status_<?php echo $status->status_id; ?>">
   <div class="status-id" id="<?php echo $status->status_id; ?>"></div>
-  <div class="date">
-    <span class="pull-right"><?php echo $ago; ?></span>
-    <span class="pull-left"> Public <i class="fa fa-globe"></i></span>
-  </div>
 
-  <div style="clear:both; margin-bottom:5px"></div>
-
-  <div class="container" style="padding-bottom:10px; padding-top:10px">
+  <div class="container-area" style="padding-bottom:10px; padding-top:10px">
     <!--USER IMAGE-->
     <div class="user-img">
       <a href="friends/friend_profile.php?friend_id=<?php echo $status->userId; ?>" >
@@ -105,14 +99,20 @@ if (!isset($_SESSION['Id'])) {
     <div class="comment-body">
       <!--USER NAME-->
       <h3 class="username-field">
-        <a href="friends/friend_profile.php?friend_id=<?php echo $status->userId; ?>"> <i class="fa fa-at"></i><?php echo $user->username; ?> </a>
+        <a href="friends/friend_profile.php?friend_id=<?php echo $status->userId; ?>"> <?php echo $user->first_name." ".$user->last_name; ?> </a>
       </h3>
       <div class="clearfx"></div>
       <!--USER COMMENT-->
       <div class="comment-text">
         <p><?php echo $status->status; ?></p>
       </div>
+
+      <div class="date">
+        <span class=""><?php echo $ago; ?></span>
+      </div>
+
       <div class="clearfix"></div>
+
       <!--comment footer-->
       <div class="timeline-footer">
         <div class="">
@@ -202,7 +202,7 @@ if (!isset($_SESSION['Id'])) {
       <!-- reply comment -->
       <div class="comment-write">
         <textarea id="comment_<?php echo $status->status_id; ?>" class="form-control" placeholder="Write a comment" rows="1"></textarea>
-        <input id="<?php echo $status->status_id; ?>" type="submit" value="Send" class="send_comment btn btn-success pull-right">
+        <input id="<?php echo $status->status_id; ?>" type="submit" value="Send comment" class="send_comment btn btn-success pull-right">
       </div>
       <!-- end of reply comment -->
       <div class="comment-item" id="adding_comment_<?php echo $status->status_id; ?>">
@@ -290,14 +290,19 @@ if (!isset($_SESSION['Id'])) {
                     <div class='comment-cont' id="del_<?php echo $comment_id; ?>">
                       <img src='/FUOBoxMedia/uploaded_images/<?php echo $userRow['profile_img']; ?>'/>
                         <p class='comment-head'>
-                          <a href='friends/friend_profile.php?friend_id=<?php echo $userRow['Id']; ?>' class='text-muted'>@ <?php echo $userRow['username']; ?> </a>
+                          <a href='friends/friend_profile.php?friend_id=<?php echo $userRow['Id']; ?>'> <?php echo $userRow['first_name']." ".$userRow['last_name']; ?> </a>
                         </p>
-                        <p><?php echo $statusRow['comment']; ?></p>
-                          <small class='text-muted'> <i class='fa fa-calendar'></i> <?php echo $ago; ?>
+                        <p class="replied_comments"><?php echo $statusRow['comment']; ?></p>
+
+                        <div class="clearfix"></div>
+                          <small class=''> <i class='fa fa-clock-o'></i> <?php echo $ago; ?>
                             <?php if($userID == $userRow['Id']) { ?>
-                            <button class='delete_comment pull-right' id="<?php echo $comment_id; ?>"> Delete <i class='fa fa-close'></i></button>
+                            <button class='delete_comment pull-right' id="<?php echo $comment_id; ?>">Edit | <i class="fa fa-trash"></i> </button>
+
                             <?php } ?>
                           </small>
+                        <div class="clearfix"></div>
+
                     </div>
                     <input type="hidden" id="commented_userID" value="<?php echo $userID; ?>">
                     <input type="hidden" id="statusId" value="<?php echo $status->status_id; ?>">

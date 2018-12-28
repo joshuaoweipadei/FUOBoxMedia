@@ -178,8 +178,7 @@ h1, h2, h3, h4, h5, h6 {
 	height: auto;
 	background: #fff;
   position: relative;
-  overflow: scroll;
-  text-overflow:
+  overflow: hidden;
 }
 .right-small-side{
 	float:left;
@@ -348,9 +347,12 @@ ul.comments-holder-ul li.comment-holder:hover{
 
 }
 ul.comments-holder-ul li.comment-holder .date{
-  padding: 7px 17px;
-	font-size: 11px;
+  padding: 1px 12px;
+	font-size: 16px;
   color: rgba(93,84,240,8.5)
+}
+ul.comments-holder-ul li.comment-holder .container-area{
+  padding: 1px 12px;
 }
 ul.comments-holder-ul li.comment-holder .user-img{
   float: left;
@@ -372,35 +374,35 @@ ul.comments-holder-ul li.comment-holder .user-img img.user-img-pic{
   position: relative;
 }
 ul.comments-holder-ul li.comment-holder h3.username-field{
-  padding: 5px 1px;
-  font-size: 130%;
+  padding: 10px 1px;
+  font-size: 140%;
   margin: 0px 0px 10px 10px;
   color: #cccccc;
   text-transform: lowercase;
 }
-ul.comments-holder-ul li.comment-holder h3.username-field .fa-at{
+ul.comments-holder-ul li.comment-holder .container-area h3.username-field .fa-at{
   font-size: 150%;
   color: #;
 }
-ul.comments-holder-ul li.comment-holder h3.username-field a{
+ul.comments-holder-ul li.comment-holder .container-area h3.username-field a{
   color: #8080ff;
   text-transform: capitalize;
 }
-ul.comments-holder-ul li.comment-holder h3.username-field:hover{
+ul.comments-holder-ul li.comment-holder .container-area h3.username-field:hover{
   color: #fff/*#104a93*/;
 }
-ul.comments-holder-ul li.comment-holder .comment-text{
-  display: block;
-
+ul.comments-holder-ul li.comment-holder .container-area .comment-text{
+  display: inline;
+  overflow: hidden;
   font-size: 110%;
   text-align: justify;
-  margin: auo;
-  color: pink;
+  color: #000;
   position: relative;
-  width: 57%;
+  font-family: arial;
 }
 ul.comments-holder-ul li.comment-holder .comment-text p{
-
+  padding: 1px 10px;
+  font-family: arial;
 }
 ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
   display: block;
@@ -435,15 +437,9 @@ ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
   background: #6d8dcd;
   color: red;
 }
-/* .comment-insert{
-  height: 159px;
-  width: auto;
-  margin: 10px 5px 10px 5px;
-  border: 1px solid #e1e1e1;
-  position: relative;
-  padding: 6px;
-  background: #f2f2f2;
-} */
+ul.comments-holder-ul li.comment-holder .container-area .timeline-footer{
+  padding: 1px 10px;
+}
 .w3-row-padding .w3-container .who-says{
   height: 28px;
   color: #2e5cb8;
@@ -513,9 +509,20 @@ ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
 .comments {
   float: left;
   width: 100%;
-  padding: 0px;
+  padding: 1% 2.2%;
   margin: 0px;
-  background: #f2f2f2/*#eff7ff*/;
+  background: #f2f2f2;
+}
+.comments .comment-write{
+  margin: auto;
+}
+.comments .comment-write .send_comment{
+  margin-top: 6px;
+  padding: 3px 10px;
+  font-family: arial;
+  background: rgba(93,84,240,8.5);
+  color: ;
+  border: 1px solid #fff;
 }
 .comments .comment-item {
   float: left;
@@ -526,9 +533,13 @@ ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
   border-bottom: 1px solid #000;
 }
 .comments .comment-cont{
-  margin-bottom: 1px;
   border-bottom: 2px solid #fff;
-  padding: 10px 30px;
+  padding: 4px 30px;
+}
+@media only screen and (max-width: 768px) {
+  .comments .comment-cont{
+    padding: 4px 0px;
+  }
 }
 .comments .comment-cont .delete_comment{
   border: none;
@@ -537,8 +548,8 @@ ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
   font-size: 13px !important;
 }
 .comments .comment-item img {
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
   margin: 0px 10px 20px 0px;
   border: 3px solid #FFF;
   -moz-border-radius: 20%;
@@ -551,15 +562,20 @@ ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
   line-height: 13px;
   margin-bottom: 5px;
   font-size: 14px;
-  padding-bottom: 4px
-}
-.comments .comment-item p.comment-head {
-  font-size: 12px;
+  padding-bottom: 4px;
+  text-align: justify;
+  overflow: hidden;
 }
 .comments .comment-item p.comment-head a {
-  font-size: 12px !important;
+  font-size: 13px !important;
+  font-family: arial !important;
+  text-transform: capitalize !important;
   font-weight: 600 !important;
-  color: #00004d !important;
+  color: rgba(93,84,240,8.5) !important;
+}
+.comments .comment-item .comment-cont p.replied_comments{
+  font-size: 12px;
+  font-family: arial;
 }
 .comments .comment-item small {
   line-height: 15px;
