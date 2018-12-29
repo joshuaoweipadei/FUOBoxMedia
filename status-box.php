@@ -108,7 +108,9 @@ if (!isset($_SESSION['Id'])) {
       </div>
 
       <div class="date">
-        <span class=""><?php echo $ago; ?></span>
+        <span> <i class="fa fa-globe"></i> | </span>
+        <span class="everyone">Everyone <i class="fa fa-eye"></i> </span>
+        <span class="pull-right" style="color:#595959"> <?php echo $ago; ?> </span>
       </div>
 
       <div class="clearfix"></div>
@@ -122,72 +124,77 @@ if (!isset($_SESSION['Id'])) {
           </span>
 
           <span class="likes">
-            <button class="like" id="<?php echo $status->status_id; ?>" value="sunglasses"><img src="/FUOBoxMedia/images/icon/sunglasses.png" alt="cool" width="27px" height="27px" title="Cool">
-              <span id="like_<?php echo $status->status_id; ?>">
-                <?php
-                  $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'sunglasses'";
-                  $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                  if ($query) {
-                    echo mysqli_num_rows($query);
-                  }
-                ?>
-              </span>
+            <button class="like" id="<?php echo $status->status_id; ?>" value="sunglasses" title="Cool">
+              <img src="/FUOBoxMedia/images/icon/sunglasses.png" alt="cool" width="21px" height="21px">
+                <span id="sunglasses_<?php echo $status->status_id; ?>">
+                  <?php
+                    $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'sunglasses'";
+                    $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                    if ($query) {
+                      echo mysqli_num_rows($query);
+                    }
+                  ?>
+                </span>
             </button>
           </span>
 
           <span class="likes">
-            <button class="like" id="<?php echo $status->status_id; ?>" value="laughing"><img src="/FUOBoxMedia/images/icon/laughing.png" alt="laughing" width="27px" height="27px" title="Laughing">
-              <span id="like_<?php echo $status->status_id; ?>">
-                <?php
-                  $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'laughing'";
-                  $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                  if ($query) {
-                    echo mysqli_num_rows($query);
-                  }
-                ?>
-              </span>
+            <button class="like" id="<?php echo $status->status_id; ?>" value="laughing" title="Laughing">
+              <img src="/FUOBoxMedia/images/icon/laughing.png" alt="laughing" width="21px" height="21px">
+                <span id="laughing_<?php echo $status->status_id; ?>">
+                  <?php
+                    $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'laughing'";
+                    $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                    if ($query) {
+                      echo mysqli_num_rows($query);
+                    }
+                  ?>
+                </span>
             </button>
           </span>
 
           <span class="likes">
-            <button class="like" id="<?php echo $status->status_id; ?>" value="shocked"><img src="/FUOBoxMedia/images/icon/flushed.png" alt="shocked" width="27px" height="27px" title="Shocked">
-              <span id="like_<?php echo $status->status_id; ?>">
-                <?php
-                  $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'shocked'";
-                  $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                  if ($query) {
-                    echo mysqli_num_rows($query);
-                  }
-                ?>
-              </span>
+            <button class="like" id="<?php echo $status->status_id; ?>" value="shocked" title="Shocked">
+              <img src="/FUOBoxMedia/images/icon/flushed.png" alt="shocked" width="21px" height="21px">
+                <span id="shocked_<?php echo $status->status_id; ?>">
+                  <?php
+                    $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'shocked'";
+                    $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                    if ($query) {
+                      echo mysqli_num_rows($query);
+                    }
+                  ?>
+                </span>
             </button>
           </span>
 
           <span class="likes">
-            <button class="like" id="<?php echo $status->status_id; ?>" value="smiles"><img src="/FUOBoxMedia/images/icon/smile.png" alt="smiles" width="27px" height="27px" title="Smiles">
-              <span id="like_<?php echo $status->status_id; ?>">
-                <?php
-                  $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'smiles'";
-                  $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                  if ($query) {
-                    echo mysqli_num_rows($query);
-                  }
-                ?>
-              </span>
+            <button class="like" id="<?php echo $status->status_id; ?>" value="smiles" title="Smiles">
+              <img src="/FUOBoxMedia/images/icon/smile.png" alt="smiles" width="21px" height="21px">
+                <span id="smiles_<?php echo $status->status_id; ?>">
+                  <?php
+                    $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'smiles'";
+                    $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                    if ($query) {
+                      echo mysqli_num_rows($query);
+                    }
+                  ?>
+                </span>
             </button>
           </span>
 
           <span class="likes">
-            <button class="like" id="<?php echo $status->status_id; ?>" value="angry"><img src="/FUOBoxMedia/images/icon/angry.png" alt="angry" width="27px" height="27px" title="Angry">
-              <span id="like_<?php echo $status->status_id; ?>">
-                <?php
-                  $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'angry'";
-                  $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                  if ($query) {
-                    echo mysqli_num_rows($query);
-                  }
-                ?>
-              </span>
+            <button class="like" id="<?php echo $status->status_id; ?>" value="angry" title="Angry">
+              <img src="/FUOBoxMedia/images/icon/angry.png" alt="angry" width="21px" height="21px">
+                <span id="angry_<?php echo $status->status_id; ?>">
+                  <?php
+                    $sql = "SELECT * FROM like_unlike WHERE statusId = '$status->status_id' AND like_value = 'angry'";
+                    $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                    if ($query) {
+                      echo mysqli_num_rows($query);
+                    }
+                  ?>
+                </span>
             </button>
           </span>
         </div>
@@ -208,7 +215,7 @@ if (!isset($_SESSION['Id'])) {
       <div class="comment-item" id="adding_comment_<?php echo $status->status_id; ?>">
         <?php
         // TO GET THE COMMENNTS OR REPLIES FROM A PARTICULAR STATUS
-        $sql9 = "SELECT * FROM comments WHERE statusId ='$status->status_id' ORDER BY Id DESC";
+        $sql9 = "SELECT * FROM comments WHERE statusId ='$status->status_id' ORDER BY date_commented DESC";
         $query9 = mysqli_query($conn, $sql9) or die(mysqli_error($conn));
         if ($query9) {
           if (mysqli_num_rows($query9) != 0) {
@@ -216,6 +223,8 @@ if (!isset($_SESSION['Id'])) {
             while($statusRow = mysqli_fetch_array($query9)){
               $user_id =  $statusRow['userId'];
               $comment_id = $statusRow['Id'];
+
+
               //
               $sql2 = "SELECT * FROM users_account WHERE Id = '$user_id'";
               $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
@@ -287,17 +296,19 @@ if (!isset($_SESSION['Id'])) {
                     break;
                   endswitch;
                     ?>
+
                     <div class='comment-cont' id="del_<?php echo $comment_id; ?>">
                       <img src='/FUOBoxMedia/uploaded_images/<?php echo $userRow['profile_img']; ?>'/>
                         <p class='comment-head'>
-                          <a href='friends/friend_profile.php?friend_id=<?php echo $userRow['Id']; ?>'> <?php echo $userRow['first_name']." ".$userRow['last_name']; ?> </a>
+                          <a href='friends/friend_profile.php?friend_id=<?php echo $userRow['Id']; ?>'> <?php echo $userRow['first_name']." ".$userRow['last_name']; ?></a>
+                          <span class="text-muted" style="font-size:11px;">@<?php echo $userRow['username']; ?></span>
                         </p>
                         <p class="replied_comments"><?php echo $statusRow['comment']; ?></p>
 
-                        <div class="clearfix"></div>
+                        
                           <small class=''> <i class='fa fa-clock-o'></i> <?php echo $ago; ?>
                             <?php if($userID == $userRow['Id']) { ?>
-                            <button class='delete_comment pull-right' id="<?php echo $comment_id; ?>">Edit | <i class="fa fa-trash"></i> </button>
+                            <button class='delete_comment pull-right' id="<?php echo $comment_id; ?>">Delete | <i class="fa fa-trash"></i> </button>
 
                             <?php } ?>
                           </small>

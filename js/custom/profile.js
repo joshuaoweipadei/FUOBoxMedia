@@ -8,64 +8,6 @@ $(".Avatar").click(function(){
 
 
 
-//
-// $("#fileUpload").on('change', function(){
-//   var countFiles =$(this)[0].files.length;
-//
-//   var imgPath = $(this)[0].value;
-//   var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
-//   var image_holder = $("#image-holder");
-//   image_holder.empty();
-//
-//   if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
-//     if (typeof (FileReader) != "undefined") {
-//
-//       for (var i = 0; i < countFiles; i++) {
-//         var reader = new FileReader();
-//
-//         if (countFiles < 3) {
-//           reader.onload = function (e) {
-//             $("<img />", {
-//               "src": e.target.result,
-//               "class": "thumb-image"
-//             }).appendTo(image_holder);
-//           }
-//
-//           $(".de").click(function (){
-//             $.ajax({
-//               url : "/FUOBoxMedia/ajax/add_comment.php",
-//               method : "POST",
-//               data : {
-//                 task : "image",
-//                 img : imgPath
-//               },
-//               success:function(data){
-//                 console.log(" Username: ");
-//               }
-//             });
-//           });
-//
-//
-//
-//         } else {
-//           alert("life");
-//         }
-//
-//         image_holder.show();
-//         reader.readAsDataURL($(this)[0].files[i]);
-//       }
-//
-//     } else {
-//       alert("This browser does not support FileReader.");
-//     }
-//   } else {
-//     alert("Please select onlt images");
-//   }
-// });
-
-
-
-
 $(document).ready(function(){
 
   // UPLOAD OR CHANGE PROFILE $ImagE
@@ -242,9 +184,7 @@ $(document).ready(function(){
         value : likes_value
       },
       success:function(data){
-        setInterval(function(){
-          $('#like_'+status_id).html(data);
-        }, 1000);
+        $('#'+likes_value+'_'+status_id).html(data);
       }
     });
   });

@@ -1,10 +1,5 @@
 <?php
 
-// if (!isset($_SESSION['Id'])) {
-//
-//   header('location: /FUOBoxMedia/index.php');
-// }
-
 // LIKES AND UNLIKES
 // LIKES AND UNLIKES
 // LIKES AND UNLIKES
@@ -39,30 +34,44 @@ if (is_ajax()) {
             $sql2 = "DELETE FROM like_unlike WHERE userId = '$userID' AND statusId = '$statusId' AND like_value = '$likeValue'";
             $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
             if ($query2) {
-              $sql3 = "SELECT * FROM like_unlike WHERE like_value = '$likeValue'";
+              $sql3 = "SELECT * FROM like_unlike WHERE statusId = '$statusId' AND like_value = '$likeValue'";
               $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
               if ($query3) {
                 if (mysqli_num_rows($query3) == 0) {
-                  // do nothing
+                  echo 0;
                 } else {
                   echo mysqli_num_rows($query3);
                 }
               }
             }
           } else {
-            $sql4 = "INSERT INTO like_unlike (userId, statusId, like_value) VALUES ('$userID', '$statusId', '$likeValue')";
-            $query4 = mysqli_query($conn, $sql4) or die(mysqli_error($conn));
-            if ($query4) {
-              $sql5 = "SELECT * FROM like_unlike WHERE like_value = '$likeValue'";
-              $query5 = mysqli_query($conn, $sql5) or die(mysqli_error($conn));
-              if ($query5) {
-                if (mysqli_num_rows($query5) == 0) {
-                  // do nothing
-                } else {
-                  echo mysqli_num_rows($query5);
+
+            $sql6 = "SELECT * FROM like_unlike WHERE userId = '$userID' AND statusId = '$statusId'";
+            $query6 = mysqli_query($conn, $sql6) or die(mysqli_error($conn));
+            if ($query6) {
+              if (mysqli_num_rows($query6) > 0) {
+                $sql7 = "SELECT * FROM like_unlike WHERE statusId = '$statusId' AND like_value = '$likeValue'";
+                $query7 = mysqli_query($conn, $sql7) or die(mysqli_error($conn));
+                if ($query7) {
+                  echo mysqli_num_rows($query7);
+                }
+              } else {
+                $sql4 = "INSERT INTO like_unlike (userId, statusId, like_value) VALUES ('$userID', '$statusId', '$likeValue')";
+                $query4 = mysqli_query($conn, $sql4) or die(mysqli_error($conn));
+                if ($query4) {
+                  $sql5 = "SELECT * FROM like_unlike WHERE statusId = '$statusId' AND like_value = '$likeValue'";
+                  $query5 = mysqli_query($conn, $sql5) or die(mysqli_error($conn));
+                  if ($query5) {
+                    if (mysqli_num_rows($query5) == 0) {
+                      echo 0;
+                    } else {
+                      echo mysqli_num_rows($query5);
+                    }
+                  }
                 }
               }
             }
+
           }
         }
       }

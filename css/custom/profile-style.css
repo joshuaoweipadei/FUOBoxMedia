@@ -323,13 +323,14 @@ h1, h2, h3, h4, h5, h6 {
 .comments-list{
   height: auto;
   font-size: 13px;
-  margin: 16px 6px 10px 6px;
-  background: rgba(93,84,240,8.5);
+  margin: 10px 7px;
+  background: #fff;
+  border: 2px solid rgba(93,84,240,8.5);
 }
 ul.comments-holder-ul{
   list-style-type: none;
   margin: 0px;
-  padding: 10px;
+  padding: 0px;
   width: auto;
   height: auto;
   overflow: hidden;
@@ -348,8 +349,14 @@ ul.comments-holder-ul li.comment-holder:hover{
 }
 ul.comments-holder-ul li.comment-holder .date{
   padding: 1px 12px;
-	font-size: 16px;
-  color: rgba(93,84,240,8.5)
+  color: rgba(93,84,240,8.5);
+}
+ul.comments-holder-ul li.comment-holder .date .fa-globe{
+  font-size: 17px;
+}
+ul.comments-holder-ul li.comment-holder .date .everyone{
+  font-size: 13px;
+  color: #d1d1d1 !important;
 }
 ul.comments-holder-ul li.comment-holder .container-area{
   padding: 1px 12px;
@@ -357,8 +364,8 @@ ul.comments-holder-ul li.comment-holder .container-area{
 ul.comments-holder-ul li.comment-holder .user-img{
   float: left;
 	position: relative;
-  height: 68px;
-  width: 68px;
+  height: 78px;
+  width: 78px;
   margin: 2px 10px 9px 1px;
 	border-radius: 50px;
 	overflow: hidden;
@@ -380,10 +387,6 @@ ul.comments-holder-ul li.comment-holder h3.username-field{
   color: #cccccc;
   text-transform: lowercase;
 }
-ul.comments-holder-ul li.comment-holder .container-area h3.username-field .fa-at{
-  font-size: 150%;
-  color: #;
-}
 ul.comments-holder-ul li.comment-holder .container-area h3.username-field a{
   color: #8080ff;
   text-transform: capitalize;
@@ -396,13 +399,14 @@ ul.comments-holder-ul li.comment-holder .container-area .comment-text{
   overflow: hidden;
   font-size: 110%;
   text-align: justify;
-  color: #000;
+  color: #595959;
   position: relative;
   font-family: arial;
 }
 ul.comments-holder-ul li.comment-holder .comment-text p{
   padding: 1px 10px;
   font-family: arial;
+  color: #595959;
 }
 ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
   display: block;
@@ -512,6 +516,7 @@ ul.comments-holder-ul li.comment-holder .container-area .timeline-footer{
   padding: 1% 2.2%;
   margin: 0px;
   background: #f2f2f2;
+
 }
 .comments .comment-write{
   margin: auto;
@@ -521,16 +526,21 @@ ul.comments-holder-ul li.comment-holder .container-area .timeline-footer{
   padding: 3px 10px;
   font-family: arial;
   background: rgba(93,84,240,8.5);
-  color: ;
+  color: #fff;
   border: 1px solid #fff;
+}
+.comments .comment-write .send_comment:hover{
+  color: rgba(93,84,240,8.5);
+  background: #fff;
+  border: 1px solid rgba(93,84,240,8.5);
 }
 .comments .comment-item {
   float: left;
   width: 100%;
-  padding: 5px 18px 5px 10px;
+  padding: 2px 18px 1px 10px;
   margin: 1px;
-  line-height: 5px;
-  border-bottom: 1px solid #000;
+  height: 270px;
+  overflow-y: scroll;
 }
 .comments .comment-cont{
   border-bottom: 2px solid #fff;
@@ -539,6 +549,9 @@ ul.comments-holder-ul li.comment-holder .container-area .timeline-footer{
 @media only screen and (max-width: 768px) {
   .comments .comment-cont{
     padding: 4px 0px;
+  }
+  .comments .comment-item {
+    padding: 2px 3px 1px 2px;
   }
 }
 .comments .comment-cont .delete_comment{
@@ -592,13 +605,11 @@ ul.comments-holder-ul li.comment-holder .container-area .timeline-footer{
 .comments .comment-write .form-control {
   border-color: #d0e8ff;
 }
-.timeline-footer div .likes a{
-  color: #fff;
-  padding-left: 1%
-}
+
 .timeline-footer div .likes button{
   border: none;
-  background: none
+  background: none;
+  font-family: cursive;
 }
 /* END COMMENTS */
 /*

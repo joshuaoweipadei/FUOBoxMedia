@@ -155,7 +155,7 @@ function comment(data){
     c += '<div class="comment-cont">';
       c += '<img src="uploaded_images/'+data.user_img+'"/>';
         c += '<p class="comment-head">';
-          c += '<a href="friends/friend_profile.php?friend_id='+data.user_id+'">'+data.user_first+' '+data.user_last+'</a> <span class="text-muted">@'+data.user_name+'</span>';
+          c += '<a href="friends/friend_profile.php?friend_id='+data.user_id+'">'+data.user_first+' '+data.user_last+'</a> <span class="text-muted" style="font-size:11px">@'+data.user_name+'</span>';
         c += '</p>';
         c += '<p>'+data.comment+'</p>';
           c += '<small class="text-muted">Just Now</small>';
