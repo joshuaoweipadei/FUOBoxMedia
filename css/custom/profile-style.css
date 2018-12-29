@@ -444,6 +444,9 @@ ul.comments-holder-ul li.comment-holder:hover .comment-button-holder{
 ul.comments-holder-ul li.comment-holder .container-area .timeline-footer{
   padding: 1px 10px;
 }
+.w3-row-padding .w3-container{
+  background: #f2f2f2;
+}
 .w3-row-padding .w3-container .who-says{
   height: 28px;
   color: #2e5cb8;
@@ -452,22 +455,6 @@ ul.comments-holder-ul li.comment-holder .container-area .timeline-footer{
   margin: 0px 0px;
   border-bottom: 1px solid #fff
 }
-/* .comment-insert .comment-insert-container{
-  margin: 5px 10px;
-  border: none;
-  width: auto;
-  min-height: 102px;
-  position: relative;
-}
-.comment-insert-container .col-md-10{
-  position: relative;
-  height: 130px;
-}
-.comment-insert-container .col-md-2{
-  position: relative;
-  height: 75px;
-} */
-
 .w3-container textarea.comment-insert-text{
   position: relative;
   width: 100%;
@@ -476,7 +463,7 @@ ul.comments-holder-ul li.comment-holder .container-area .timeline-footer{
   right: 0; */
   margin: auto;
   border-radius: 2px;
-  border: 1px solid #4d4d4d;
+  border: 1px solid #d1d1d1;
   background: ;
   color: #4d4d4d;
   font-size: 15px;
@@ -503,7 +490,7 @@ ul.comments-holder-ul li.comment-holder .container-area .timeline-footer{
   font-family: arial;
   font-size: 14px;
   margin-top: 8px;
-  padding: 3px 14px;
+  padding: 3px 27px;
 }
 .thumb-image{
   width: 50px;
@@ -539,11 +526,10 @@ ul.comments-holder-ul li.comment-holder .container-area .timeline-footer{
   width: 100%;
   padding: 2px 18px 1px 10px;
   margin: 1px;
-  height: 270px;
-  overflow-y: scroll;
+  height
 }
 .comments .comment-cont{
-  border-bottom: 2px solid #fff;
+  border-bottom: 1px solid #fff;
   padding: 4px 30px;
 }
 @media only screen and (max-width: 768px) {

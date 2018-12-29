@@ -54,50 +54,14 @@ function comment_post_btn_click(){
           //SUCCESS
           //Task: insert html into the ul/li
           status_insert(jQuery.parseJSON(data));
-          console.log("ResponseText: " + data);
+          // console.log("ResponseText: " + data);
+
+          setInterval(function(){
+            window.location.reload();
+          }, 5000);
 
         });
         console.log("ResponseText: " + _status +" "+ _userId +" "+ _userEmail);
-
-        // HOW TO IMAGES WITH THE STATUS
-        // I HAVE BEEN TRY HARD SINCE
-
-        // var input = document.getElementById('fileUpload'),
-        // formdata = false;
-        //
-        // if (window.FormData) {
-        //   formdata = new FormData();
-        //   document.getElementById("bbtn").style.display = "none";
-        //   // document.getElementById("bbtn").innerHTML = "none";
-        // }
-        // input.addEventListener("change", function (evt){
-        //   // document.getElementById("response").innerHTML = "Uploading . . .";
-        //   var i = 0, len = this.files.length, img, reader, file;
-        //
-        //   for ( ; i < len; i++) {
-        //     file = this.files[i];
-        //
-        //     if (!!file.type.match(/image.*/)) {
-        //       if (formdata) {
-        //         formdata.append("images[]", file);
-        //       }
-        //     }
-        //   }
-        //
-        //   if (formdata && input) {
-        //     $.ajax({
-        //       url : "/FUOBoxMedia/ajax/add_comment.php",
-        //       type : "POST",
-        //       data : formdata,
-        //       processData : false,
-        //       contentType : false,
-        //       success : function (res) {
-        //         document.getElementById("image-holder").innerHTML = res;
-        //       }
-        //     });
-        //   }
-        // }, false);
-
 
   } else {
     //The textarea is empty
@@ -291,26 +255,26 @@ function status_insert(data){
   var t = '';
 
   t += '<li class="comment-holder timeline-item" id="'+data.status.status_id+'">';
-  t += '<div class="date">';
-    t += '<span class="pull-right">Just Now</span>';
-    t += '<span class="pull-left"> Public <i class="fa fa-globe"></i></span>';
-  t += '</div>';
-  t += '<div style="clear:both; margin-bottom:5px"></div>';
+
+  t += '<div class="container-area" style="padding-bottom:10px; padding-top:10px">';
     //user image
     t += '<div class="user-img">';
-    t += '<a href="#" style="text-decoration:none"><img src="uploaded_images/'+data.user.profile_img+'" class="user-img-pic" alt="upload picture"></a>';
+      t += '<a href="#" style="text-decoration:none"><img src="uploaded_images/'+data.user.profile_img+'" class="user-img-pic" alt="upload picture"></a>';
     t += '</div>';
   //comment body
-  t += '<div class="comment-body">';
-  t += '<h3 class="username-field"><a href="#" style="text-decoration:none">'+data.user.username+'</a><span style="font-size:14px"> added article</span></h3>';
-  t += '<div class="comment-text">'+data.status.status+'</div>';
-  t += '</div>';
+    t += '<div class="comment-body" style="padding-bottom: 10px; border-bottom:1px solid rgba(93,84,240,8.5)">';
+      t += '<h3 class="username-field"><a href="#" style="text-decoration:none">'+data.user.first_name+' '+data.user.last_name+'</a></h3>';
 
-  //comment footer
-  t += '<div class="timeline-footer">';
-    t += '<div class="pull-right">';
-      t += '<a href="#"><span class="fa fa-comment"></span> 35</a>';
-      t += '<a href="#"><span class="fa fa-share"></span></a>';
+    t += '<div class="comment-text">';
+      t += '<p>'+data.status.status+'</p>';
+    t += '</div>';
+
+    t += '<div class="date">';
+      t += '<span> <i class="fa fa-globe"></i> | </span>';
+      t += '<span class="everyone">Everyone <i class="fa fa-eye"></i> </span>';
+      t += '<span class="pull-right" style="color:#595959"> Just Now </span>';
+    t += '</div>';
+
     t += '</div>';
   t += '</div>';
 

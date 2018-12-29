@@ -10,19 +10,27 @@ if (!isset($_SESSION['Id']) && !isset($_SESSION['email'])) {
   //SESSION VARIABLE DECLARED
   // Makes it easier to read
   $userID = $_SESSION['Id'];
-  $firstname = $_SESSION['first_name'];
-  $lastname = $_SESSION['last_name'];
   $email = $_SESSION['email'];
-  $user_name = $_SESSION['username'];
   $active = $_SESSION['active'];
-  $profile_img = $_SESSION['profile_img'];
 }
-
 
 include_once '../database.php';
 
 ?>
-<!--CHAT BOX-->
+
+<!-- GETTING THE LOGGED IN USER DETAILS FOR THE DATABASE -->
+<?php
+$sql = "SELECT * FROM users_account WHERE Id = '$userID' AND email = '$email'";
+$fetch_user = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+if ($fetch_user) {
+  if ($logged_in_user = mysqli_fetch_array($fetch_user)) {
+    $firstname = $logged_in_user['first_name'];
+    $lastname = $logged_in_user['last_name'];
+    $profile_img = $logged_in_user['profile_img'];
+    $nickname = $logged_in_user['username'];
+  }
+}
+?>
 
 
 <?php
@@ -141,8 +149,12 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-
+            <div class="navbar nav_title">
+              <div class="pull-right">
+                <a href="/FUOBoxMedia/profile_page.php?timeline" class="btn btn-secondary pull-left"
+                 style="margin-left:2%; margin-right:1%; font-size:14px; color:#fff"><i class="fa fa-arrow-circle-o-left"></i> Back
+                </a>
+              </div>
             </div>
 
             <div class="clearfix"></div>
@@ -400,7 +412,6 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
           <div class="row tile_count">
             <div class="content-frame-to">
               <div class="page-title">
-                <a href="/FUOBoxMedia/profile_page.php?timeline" class="btn btn-secondary pull-left" style="margin-left:4%; margin-right:2%"><i class="fa fa-mail-reply-all"></i> Back</a>
                 <h2 class="pull-left" style=""><i class="fa fa-comments"></i> Messages</h2>
               </div>
             </div>

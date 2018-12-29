@@ -18,7 +18,7 @@ include_once 'database.php';
 
 ?>
 
-
+<!-- GETTING THE LOGGED IN USER DETAILS FOR THE DATABASE -->
 <?php
 $sql = "SELECT * FROM users_account WHERE Id = '$userID' AND email = '$email'";
 $fetch_user = mysqli_query($conn, $sql) or die(mysqli_error($conn));
