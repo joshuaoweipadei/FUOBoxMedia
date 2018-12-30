@@ -334,7 +334,7 @@ a.profile_icon {
   border: 2px solid #fff
 }
 .mainmenu .nav .list:hover{
-  border-bottom: 2px solid rgb(93,84,240,8.5)
+  border-bottom: 2px solid rgb(93,84,240,8.5);
 }
 /* @media only screen and (min-width: 720px) {
   .t {display: none}} */

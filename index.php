@@ -103,10 +103,6 @@ include ('functions/news_events.php');
       <div class="row">
         <!-- LEFT HNAD SIDE -->
         <div class="col-sm-9 left_side">
-          <!-- SLIDE SHOW -->
-
-          <!-- END OF SLIDE SHOW -->
-
           <!-- ABOUT OUR WEBSITE -->
           <?php if (!isset($_SESSION['Id'])) { ?>
           <div class="">

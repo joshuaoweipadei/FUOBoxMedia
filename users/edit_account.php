@@ -8,12 +8,8 @@ if (!isset($_SESSION['Id']) && !isset($_SESSION['email'])) {
   //SESSION VARIABLE DECLARED
   // Makes it easier to read
   $userID = $_SESSION['Id'];
-  $firstname = $_SESSION['first_name'];
-  $lastname = $_SESSION['last_name'];
   $email = $_SESSION['email'];
-  $user_name = $_SESSION['username'];
   $active = $_SESSION['active'];
-  $profile_img = $_SESSION['profile_img'];
 }
 
 include_once 'database.php';

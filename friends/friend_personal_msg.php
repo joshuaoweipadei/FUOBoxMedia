@@ -204,7 +204,7 @@ if (isset($_GET['fri11end1470msgfri36msge70ndmsgmessage'])) {
                             $userID = $_SESSION['Id'];
 
                             if ($userID == $myId) {
-                              $sql3 = "SELECT * FROM myfriends WHERE myfriends = '$friend_Id'";
+                              $sql3 = "SELECT * FROM myfriends WHERE myId = '$userID'";
                               $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
                               if ($query3) {
                                 $row = mysqli_fetch_array($query3);

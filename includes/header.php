@@ -1,4 +1,3 @@
-
 <header id="header"><!--header-->
   <div class="header_top"><!--header_top-->
     <div class="container">
@@ -104,11 +103,6 @@
             <div class="col-sm-6">
               <div class="shop-menu">
                 <ul class="nav navbar-nav pull-right">
-                  <?php
-                    if (isset($_SESSION['Id'])) {
-                      echo "<li><a href='profile_page.php' style='padding:4px 8px;'><i class='fa fa-user'></i> My Dashboard</a></li>";
-                    }
-                   ?>
                   <!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
                   <!-- <li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                   <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
@@ -132,6 +126,15 @@
                 <img src="images/advert/a2.jpg" alt="">
                 <h4>Made it easy to chat up a friend on campus</h4>
               </div>
+              <!-- <div class="col-md-6">
+                <div class="item_search">
+                  <div class="search_box">
+                    <form action="results.php" method="GET" enctype="multipart/form-data">
+                      <input class="search" type="text" name="search" placeholder="Your searching item..."/>
+                    </form>
+                  </div>
+                </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -152,17 +155,20 @@
 
               <div class="mainmenu pull-left">
                 <ul class="nav navbar-nav collapse navbar-collapse">
-                  <li><a href="index.php" class="list" style="font-family: 'Roboto', sans-serif;">Home</a></li>
-                  <li class="menubar dropmenu"><a href="javascript:void(0)" class="list dropMenuBtn" style="font-family: 'Roboto', sans-serif;" onclick="headerMenu1()">Programs</a>
+                  <?php
+                    if (isset($_SESSION['Id'])) {
+                      echo "<li><a href='profile_page.php' class='list' style='font-family: 'Roboto', sans-serif;'>Dashboard</a></li>";
+                    }
+                   ?>
+                   <li><a href="index.php" class="list" style="font-family: 'Roboto', sans-serif;">News</a></li>
+                   <li><a href="market.php" class="list" style="font-family: 'Roboto', sans-serif;">buy</a></li>
+                   <li><a href="business/upload.php" class="list" style="font-family: 'Roboto', sans-serif;">sell</a></li>
+                  <!-- <li class="menubar dropmenu"><a href="javascript:void(0)" class="list dropMenuBtn" style="font-family: 'Roboto', sans-serif;" onclick="headerMenu1()">Market</a>
                     <div class="dropmenu-content ty" id="menuDropdown">
-                      <a href="#" style="font-family:cursive; font-size:11px">Express Learning</a>
-                      <a href="#" style="font-family:cursive; font-size:11px">Exam Past Questions</a>
-                      <a href="#" style="font-family:cursive; font-size:12px">Faculties</a>
+                      <a href="market.php" style="font-family:cursive; font-size:11px">Buy stuffs</a>
+                      <a href="business/upload.php" style="font-family:cursive; font-size:11px">Sell stuffs</a>
                     </div>
-                  </li>
-                  <li><a href="market.php" class="list" style="font-family: 'Roboto', sans-serif;">Market</a></li>
-                  <li><a href="business/upload.php" class="list" style="font-family: 'Roboto', sans-serif;">Uploads</a></li>
-                  <li><a href="#stove" class="list" style="font-family: 'Roboto', sans-serif;">Search</a></li>
+                  </li> -->
                 </ul>
               </div>
             </div>
@@ -172,5 +178,4 @@
       </div><!--/header-bottom-->
     </div>
   </div>
-
 </header><!--/header-->

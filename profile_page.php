@@ -338,7 +338,6 @@ if ($fetch_user) {
               <li><a href="/FUOBoxMedia/friends/friend_personal_msg.php" class="list-group-item list-group-item-action"><i style="font-size:18px" class="fa fa-envelope-o"></i> Messages <i style="float:right; font-size:18px" class="fa fa-angle-right"></i></a></li>
               <li><a href="profile_page.php?user%theirsafefriendslist" class="list-group-item list-group-item-action"><i style="font-size:18px" class="fa fa-users"></i> Friends <i style="float:right; font-size:18px" class="fa fa-angle-right"></i></a></li>
               <li><a href="profile_page.php?edit-account" class="list-group-item list-group-item-action"><i style="font-size:18px" class="fa fa-edit"></i> Edit Account<i style="float:right; font-size:18px" class="fa fa-angle-right"></i></a></li>
-              <li><a href="#" class="list-group-item list-group-item-action"><i style="font-size:18px" class="fa fa-cogs"></i> Settings <i style="float:right; font-size:18px" class="fa fa-angle-right"></i></a></li>
             </div>
 
             <!-- hide the active users inedit page -->
@@ -357,7 +356,7 @@ if ($fetch_user) {
                         $userID = $_SESSION['Id'];
 
                         if ($userID == $myId) {
-                          $sql3 = "SELECT * FROM myfriends WHERE myfriends = '$friend_Id'";
+                          $sql3 = "SELECT * FROM myfriends WHERE myfriends = '$userID'";
                           $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
                           if ($query3) {
                             $row = mysqli_fetch_array($query3);
