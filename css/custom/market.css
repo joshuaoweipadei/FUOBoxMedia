@@ -112,13 +112,12 @@
 *
 */
 .ads{
-  padding: 2px 18px;
+  padding: 1px 18px;
 }
 .ads h3{
   background: #;
   color: #565656;
-  padding: 8px 1px 12px 1px;
-  font-size: 32px;
+  padding: 1px 1px 1px 1px;
   text-transform: capitalize;
   border-bottom: 1px solid #e1e1e1
 }
@@ -134,23 +133,26 @@
   border-radius: 5px
 }
 .panel .profile {
-  background: -webkit-linear-gradient(top right, #fff, #fff, #00ff80, #fff, #fff, #fff);
-  background: -o-linear-gradient(top right, #fff, #fff, #00ff80, #fff, #fff, #fff);
-  background: -moz-linear-gradient(top right, #fff, #fff, #00ff80, #fff, #fff, #fff);
-  background: linear-gradient(top right, #fff, #fff, #00ff80, #fff, #fff, #fff);
-  padding: 0px
+  background: rgba(93,84,240,8.5);
+  padding: 0px;
+  border: 1px solid rgba(93,84,240,8.5);
 }
 .profile-data-name{
   font-size: 14px;
   font-family: arial;
+  text-transform: capitalize;
+  color: #fff;
 }
 .profile-controls{
   font-size: 11px;
   font-family: arial;
   padding-left: 5px;
+  color: #fff;
 }
 .profile-controls p{
-  line-height: 0.3em;
+  line-height: 1.4em;
+  margin: 1px;
+  text-align: center;
 }
 
 
@@ -162,19 +164,29 @@
 *
 */
 .empty{
-  background:#00004d;
+  background: rgba(93,84,240,8.5);
   height:700px
 }
  .upload_item{
   margin-top: 20px;
   padding-left: 30px;
   padding-bottom: 90px;;
-  color: #4d4d4d
+  color:
 }
 .upload_item h3{
  text-transform: uppercase;
- font-family: cursive;
- color: #00004d
+ font-family: arial;
+ font-size: 21px;
+ color: rgba(93,84,240,8.5)
+}
+.upload_item h5{
+  font-size: 15px;
+  font-family: arial;
+  color: #6a6a6a;
+}
+.upload_item h3 .fa-gift{
+  font-size: 28px;
+  color: #ff0000;
 }
 .form{
   margin-top: 38px;
@@ -190,15 +202,4 @@
  .bt{
    margin-bottom: 10px
  }
-}
-
-
-
-/*
-*
-* ALL FEATURES/ITEMS
-*
-*/
-.all_items{
-  height: auto;
 }

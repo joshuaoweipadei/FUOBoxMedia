@@ -27,7 +27,7 @@ if(isset($_GET['email']) && !empty($_GET['email']) && isset($_GET['hash']) && !e
     if (mysqli_num_rows($result) == 0 ){
         $_SESSION['msg'] = "Account has already been activated or the URL is invalid!";
 
-        header("location: /myProject/admin-panel/page_404.php");
+        header("location: /FUOBoxMedia/admin-panel/page_404.php");
     } else {
 
         $_SESSION['msg'] = "Your account has been activated!";
@@ -37,10 +37,10 @@ if(isset($_GET['email']) && !empty($_GET['email']) && isset($_GET['hash']) && !e
         $sql = "UPDATE admin SET emailVerified = 1 WHERE email='$email'";
         mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-        header("location: /myProject/admin-panel/includes/success.php");
+        header("location: /FUOBoxMedia/admin-panel/includes/success.php");
     }
 } else {
     $_SESSION['msg'] = "Invalid parameters provided for account verification!";
-    header("location: /myProject/admin-panel/page_403.php");
+    header("location: /FUOBoxMedia/admin-panel/page_403.php");
 }
 ?>

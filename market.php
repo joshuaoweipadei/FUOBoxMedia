@@ -264,430 +264,135 @@ include ('database.php');
       </div>
     </div>
   </header><!--/header-->
-
   <!-- END OF HEADER -->
 
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12" style="padding:0">
-          <!-- CONTACT ITEM -->
-          <div class="col-sm-2" style="padding:2px">
-            <div class="panel panel-default">
-              <div class="panel-body profile">
-                <div class="profile-image">
-                    <img src="images/me/josh1.jpg" alt="" width="100%" height="150px"/>
-                </div>
-                <div class="profile-data">
-                    <div class="profile-data-name text-center"><b>Stove</b></div>
-                </div>
-                <div class="profile-controls">
-                  <p><i class="fa fa-money"></i> #1800</p>
-                  <p><i class="fa fa-info"></i> description of product</p>
-                  <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-                </div>
-              </div>
-            </div>
-          </div><!-- END CONTACT ITEM -->
 
-          <!-- CONTACT ITEM -->
-          <div class="col-sm-2" style="padding:2px">
-            <div class="panel panel-default">
-              <div class="panel-body profile">
-                <div class="profile-image">
-                    <img src="images/me/josh1.jpg" alt="" width="100%" height="150px"/>
-                </div>
-                <div class="profile-data">
-                    <div class="profile-data-name text-center"><b>Stove</b></div>
-                </div>
-                <div class="profile-controls">
-                  <p><i class="fa fa-money"></i> #1800</p>
-                  <p><i class="fa fa-info"></i> description of product</p>
-                  <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-                </div>
-              </div>
-            </div>
-          </div><!-- END CONTACT ITEM -->
-
-          <!-- CONTACT ITEM -->
-          <div class="col-sm-2" style="padding:2px">
-            <div class="panel panel-default">
-              <div class="panel-body profile">
-                <div class="profile-image">
-                    <img src="images/me/josh1.jpg" alt="" width="100%" height="150px"/>
-                </div>
-                <div class="profile-data">
-                    <div class="profile-data-name text-center"><b>Stove</b></div>
-                </div>
-                <div class="profile-controls">
-                  <p><i class="fa fa-money"></i> #1800</p>
-                  <p><i class="fa fa-info"></i> description of product</p>
-                  <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-                </div>
-              </div>
-            </div>
-          </div><!-- END CONTACT ITEM -->
-
-          <!-- CONTACT ITEM -->
-          <div class="col-sm-2" style="padding:2px">
-            <div class="panel panel-default">
-              <div class="panel-body profile">
-                <div class="profile-image">
-                    <img src="images/me/josh1.jpg" alt="" width="100%" height="150px"/>
-                </div>
-                <div class="profile-data">
-                    <div class="profile-data-name text-center"><b>Stove</b></div>
-                </div>
-                <div class="profile-controls">
-                  <p><i class="fa fa-money"></i> #1800</p>
-                  <p><i class="fa fa-info"></i> description of product</p>
-                  <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-                </div>
-              </div>
-            </div>
-          </div><!-- END CONTACT ITEM -->
-
-          <!-- CONTACT ITEM -->
-          <div class="col-sm-2" style="padding:2px">
-            <div class="panel panel-default">
-              <div class="panel-body profile">
-                <div class="profile-image">
-                    <img src="images/me/josh1.jpg" alt="" width="100%" height="150px"/>
-                </div>
-                <div class="profile-data">
-                    <div class="profile-data-name text-center"><b>Stove</b></div>
-                </div>
-                <div class="profile-controls">
-                  <p><i class="fa fa-money"></i> #1800</p>
-                  <p><i class="fa fa-info"></i> description of product</p>
-                  <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-                </div>
-              </div>
-            </div>
-          </div><!-- END CONTACT ITEM -->
-
-          <!-- CONTACT ITEM -->
-          <div class="col-sm-2" style="padding:2px">
-            <div class="panel panel-default">
-              <div class="panel-body profile">
-                <div class="profile-image">
-                    <img src="images/me/josh1.jpg" alt="" width="100%" height="150px"/>
-                </div>
-                <div class="profile-data">
-                    <div class="profile-data-name text-center"><b>Stove</b></div>
-                </div>
-                <div class="profile-controls">
-                  <p><i class="fa fa-money"></i> #1800</p>
-                  <p><i class="fa fa-info"></i> description of product</p>
-                  <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-                </div>
-              </div>
-            </div>
-          </div><!-- END CONTACT ITEM -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--slider-->
-  <section id="slider">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-							<li data-target="#slider-carousel" data-slide-to="1"></li>
-							<li data-target="#slider-carousel" data-slide-to="2"></li>
-						</ol>
-
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="col-sm-12" style="padding:0">
-                  <div class="item_box">
-                    <img src="images/advert/market_slide1.jpg" class="" alt="" height="400px" width="100%"/>
-                    <!-- <h3>Get someone to buy your item here on campus <span></span></h3>
-                    <a href="business/upload.php" class="btn btn-primary">upload item</a> -->
-                  </div>
-								</div>
-							</div>
-
-							<div class="item">
-                <div class="col-sm-12" style="padding:0">
-                  <div class="item_box">
-                    <img src="images/advert/market_slide2.jpg" class="" alt="" height="400px" width="100%"/>
-                    <!-- <h3>You have problems in your studies, you can ask questions and get instant answers.. <br>You can offer assist students campus by render the best answers to their questions </h3>
-                    <a href="" class="btn btn-primary">FAQ</a> -->
-                  </div>
-								</div>
-							</div>
-
-							<div class="item">
-                <div class="col-sm-12" style="padding:0">
-                  <div class="item_box">
-                    <img src="images/advert/market_slide3.jpg" class="" alt="" height="400px" width="100%"/>
-                    <!-- <h3>We bring to you all the latest gist on campus and Chat up your friends here in campus. </h3> -->
-                  </div>
-								</div>
-							</div>
-						</div>
-						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-							<i class="fa fa-angle-left"></i>
-						</a>
-						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-							<i class="fa fa-angle-right"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-  <!--/slider-->
 
   <section>
     <div class="container">
       <!-- LEFT SIDE -->
       <div class="row">
         <div class="ads">
-          <h3>Recently Added  <br><span> <i class="fa fa-cubes"></i> Your online marketsplace</span>
+          <h3><span> <i class="fa fa-cubes"></i> Your online marketsplace</span>
           </h3>
         </div>
 
         <div class="col-sm-12" style="padding:0">
-          <div class="" >
-            <div class="col-sm-3" style="padding:2px">
-              <!-- CONTACT ITEM -->
-              <div class="panel panel-default">
-                <div class="panel-body profile">
-                  <div class="profile-image">
-                      <img src="images/me/josh1.jpg" alt="Dmitry Ivaniuk" width="100%" height="250px"/>
+          <div class="">
+            <?php
+              $sql = "SELECT * FROM selling_item ORDER BY Id DESC LIMIT 0,6";
+              $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+              if ($query) {
+                while ($item = mysqli_fetch_array($query)) {
+                  ?>
+                  <div class="col-sm-2" style="padding:2px">
+                    <div class="panel panel-default">
+                      <div class="panel-body profile">
+                        <div class="profile-image">
+                            <img src="/FUOBoxMedia/uploaded_images/selling_images/<?php echo $item{'itemImage'} ?>" alt="Dmitry Ivaniuk" width="100%" height="200px"/>
+                        </div>
+                        <div class="profile-data">
+                            <div class="profile-data-name text-center"><b><?php echo $item{'itemName'} ?></b></div>
+                        </div>
+                        <div class="profile-controls">
+                          <p><i class="fa fa-money"></i> <?php echo $item{'itemPrice'} ?></p>
+                          <p><i class="fa fa-info"></i> <?php echo $item{'itemDesc'} ?></p>
+                          <p><i class="fa fa-phone"></i> <?php echo $item{'sellerMobile'} ?></p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="profile-data">
-                      <div class="profile-data-name text-center"><b>Stove</b></div>
-                  </div>
-                  <div class="profile-controls">
-                    <p><i class="fa fa-money"></i> #1800</p>
-                    <p><i class="fa fa-info"></i> description of product</p>
-                    <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
+                  <?php
+                }
+              }
+             ?>
+        </div>
+
+        <div class="">
+          <?php
+            $sql = "SELECT * FROM selling_item ORDER BY Id DESC LIMIT 6,4";
+            $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+            if ($query) {
+              while ($item = mysqli_fetch_array($query)) {
+                ?>
+                <div class="col-sm-3" style="padding:2px">
+                  <div class="panel panel-default">
+                    <div class="panel-body profile">
+                      <div class="profile-image">
+                          <img src="/FUOBoxMedia/uploaded_images/selling_images/<?php echo $item{'itemImage'} ?>" alt="Dmitry Ivaniuk" width="100%" height="200px"/>
+                      </div>
+                      <div class="profile-data">
+                          <div class="profile-data-name text-center"><b><?php echo $item{'itemName'} ?></b></div>
+                      </div>
+                      <div class="profile-controls">
+                        <p><i class="fa fa-money"></i> <?php echo $item{'itemPrice'} ?></p>
+                        <p><i class="fa fa-info"></i> <?php echo $item{'itemDesc'} ?></p>
+                        <p><i class="fa fa-phone"></i> <?php echo $item{'sellerMobile'} ?></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <!-- END CONTACT ITEM -->
-            </div>
-            <div class="col-sm-3" style="padding:2px">
-            <!-- CONTACT ITEM -->
-              <div class="panel panel-default">
-                <div class="panel-body profile">
+                <?php
+              }
+            }
+           ?>
+      </div>
+    </div>
+
+
+    <div class="row sec">
+      <div class="col-sm-4">
+        <div class="A">
+          <i class="fa fa-phone"></i>
+          <h4>0706 6654 1458</h4>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="B">
+          <i class="fa fa-envelope"></i>
+          <h4>oweipadeijoshie@gmail.com</h4>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="C">
+          <i class="fa fa-map-marker"></i>
+          <h4>Federal University Otuoke</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12" style="padding:0">
+      <div class="">
+        <?php
+          $sql = "SELECT * FROM selling_item ORDER BY Id DESC LIMIT 10,12";
+          $query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+          if ($query) {
+            while ($item = mysqli_fetch_array($query)) {
+              ?>
+              <div class="col-sm-2" style="padding:2px">
+                <div class="panel panel-default">
+                  <div class="panel-body profile">
                     <div class="profile-image">
-                        <img src="images/me/josh1.jpg" alt="Dmitry Ivaniuk" width="100%" height="250px"/>
+                        <img src="/FUOBoxMedia/uploaded_images/selling_images/<?php echo $item{'itemImage'} ?>" alt="Dmitry Ivaniuk" width="100%" height="200px"/>
                     </div>
                     <div class="profile-data">
-                        <div class="profile-data-name text-center"><b>Stove</b></div>
+                        <div class="profile-data-name text-center"><b><?php echo $item{'itemName'} ?></b></div>
                     </div>
                     <div class="profile-controls">
-                      <p><i class="fa fa-money"></i> #1800</p>
-                      <p><i class="fa fa-info"></i> description of product</p>
-                      <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
+                      <p><i class="fa fa-money"></i> <?php echo $item{'itemPrice'} ?></p>
+                      <p><i class="fa fa-info"></i> <?php echo $item{'itemDesc'} ?></p>
+                      <p><i class="fa fa-phone"></i> <?php echo $item{'sellerMobile'} ?></p>
                     </div>
+                  </div>
                 </div>
               </div>
-            <!-- END CONTACT ITEM -->
-            </div>
-            <div class="col-sm-3" style="padding:2px">
-              <!-- CONTACT ITEM -->
-            <div class="panel panel-default">
-              <div class="panel-body profile">
-                  <div class="profile-image">
-                      <img src="images/me/josh1.jpg" alt="Dmitry Ivaniuk" width="100%" height="250px"/>
-                  </div>
-                  <div class="profile-data">
-                      <div class="profile-data-name text-center"><b>Stove</b></div>
-                  </div>
-                  <div class="profile-controls">
-                    <p><i class="fa fa-money"></i> #1800</p>
-                    <p><i class="fa fa-info"></i> description of product</p>
-                    <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-                  </div>
-              </div>
-            </div>
-          <!-- END CONTACT ITEM -->
-          </div>
-          <div class="col-sm-3" style="padding:2px">
-            <!-- CONTACT ITEM -->
-          <div class="panel panel-default">
-            <div class="panel-body profile">
-                <div class="profile-image">
-                    <img src="images/me/josh1.jpg" alt="Dmitry Ivaniuk" width="100%" height="250px"/>
-                </div>
-                <div class="profile-data">
-                    <div class="profile-data-name text-center"><b>Stove</b></div>
-                </div>
-                <div class="profile-controls">
-                  <p><i class="fa fa-money"></i> #1800</p>
-                  <p><i class="fa fa-info"></i> description of product</p>
-                  <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-                </div>
-            </div>
-          </div>
-        <!-- END CONTACT ITEM -->
-        </div>
-        <div class="col-sm-4" style="padding:2px">
-          <!-- CONTACT ITEM -->
-        <div class="panel panel-default">
-          <div class="panel-body profile">
-            <div class="profile-image">
-              <img src="images/me/josh1.jpg" alt="Dmitry Ivaniuk" width="100%" height="250px"/>
-            </div>
-            <div class="profile-data">
-              <div class="profile-data-name text-center"><b>Stove</b></div>
-            </div>
-            <div class="profile-controls">
-              <p><i class="fa fa-money"></i> #1800</p>
-              <p><i class="fa fa-info"></i> description of product</p>
-              <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-            </div>
-          </div>
-        </div>
-        <!-- END CONTACT ITEM -->
-      </div>
-      <div class="col-sm-4" style="padding:2px">
-        <!-- CONTACT ITEM -->
-      <div class="panel panel-default">
-        <div class="panel-body profile">
-          <div class="profile-image">
-            <img src="images/me/josh1.jpg" alt="Dmitry Ivaniuk" width="100%" height="250px"/>
-          </div>
-          <div class="profile-data">
-            <div class="profile-data-name text-center"><b>Stove</b></div>
-          </div>
-          <div class="profile-controls">
-            <p><i class="fa fa-money"></i> #1800</p>
-            <p><i class="fa fa-info"></i> description of product</p>
-            <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-          </div>
-        </div>
-      </div>
-      <!-- END CONTACT ITEM -->
+              <?php
+            }
+          }
+         ?>
     </div>
-    <div class="col-sm-4" style="padding:2px">
-      <!-- CONTACT ITEM -->
-    <div class="panel panel-default">
-      <div class="panel-body profile">
-        <div class="profile-image">
-          <img src="images/me/josh1.jpg" alt="Dmitry Ivaniuk" width="100%" height="250px"/>
-        </div>
-        <div class="profile-data">
-          <div class="profile-data-name text-center"><b>Stove</b></div>
-        </div>
-        <div class="profile-controls">
-          <p><i class="fa fa-money"></i> #1800</p>
-          <p><i class="fa fa-info"></i> description of product</p>
-          <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-        </div>
-      </div>
     </div>
-    <!-- END CONTACT ITEM -->
-  </div>
 
-  <div class="row sec">
-    <div class="col-sm-4">
-      <div class="A">
-        <i class="fa fa-phone"></i>
-        <h4>0706 6654 1458</h4>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="B">
-        <i class="fa fa-envelope"></i>
-        <h4>oweipadeijoshie@gmail.com</h4>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="C">
-        <i class="fa fa-map-marker"></i>
-        <h4>Federal University Otuoke</h4>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-3" style="padding:2px">
-    <!-- CONTACT ITEM -->
-    <div class="panel panel-default">
-      <div class="panel-body profile">
-        <div class="profile-image">
-            <img src="images/me/josh1.jpg" alt="Dmitry Ivaniuk" width="100%" height="250px"/>
-        </div>
-        <div class="profile-data">
-            <div class="profile-data-name text-center"><b>Stove</b></div>
-        </div>
-        <div class="profile-controls">
-          <p><i class="fa fa-money"></i> #1800</p>
-          <p><i class="fa fa-info"></i> description of product</p>
-          <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-        </div>
-      </div>
-    </div>
-    <!-- END CONTACT ITEM -->
-  </div>
-  <div class="col-sm-3" style="padding:2px">
-  <!-- CONTACT ITEM -->
-    <div class="panel panel-default">
-      <div class="panel-body profile">
-          <div class="profile-image">
-              <img src="images/me/josh1.jpg" alt="Dmitry Ivaniuk" width="100%" height="250px"/>
-          </div>
-          <div class="profile-data">
-              <div class="profile-data-name text-center"><b>Stove</b></div>
-          </div>
-          <div class="profile-controls">
-            <p><i class="fa fa-money"></i> #1800</p>
-            <p><i class="fa fa-info"></i> description of product</p>
-            <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-          </div>
-      </div>
-    </div>
-  <!-- END CONTACT ITEM -->
-  </div>
-  <div class="col-sm-3" style="padding:2px">
-    <!-- CONTACT ITEM -->
-  <div class="panel panel-default">
-    <div class="panel-body profile">
-        <div class="profile-image">
-            <img src="images/me/josh1.jpg" alt="Dmitry Ivaniuk" width="100%" height="250px"/>
-        </div>
-        <div class="profile-data">
-            <div class="profile-data-name text-center"><b>Stove</b></div>
-        </div>
-        <div class="profile-controls">
-          <p><i class="fa fa-money"></i> #1800</p>
-          <p><i class="fa fa-info"></i> description of product</p>
-          <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-        </div>
-    </div>
-  </div>
-<!-- END CONTACT ITEM -->
-</div>
-<div class="col-sm-3" style="padding:2px">
-  <!-- CONTACT ITEM -->
-<div class="panel panel-default">
-  <div class="panel-body profile">
-      <div class="profile-image">
-          <img src="images/me/josh1.jpg" alt="Dmitry Ivaniuk" width="100%" height="250px"/>
-      </div>
-      <div class="profile-data">
-          <div class="profile-data-name text-center"><b>Stove</b></div>
-      </div>
-      <div class="profile-controls">
-        <p><i class="fa fa-money"></i> #1800</p>
-        <p><i class="fa fa-info"></i> description of product</p>
-        <p><i class="fa fa-phone"></i> (333) 333-33-22</p>
-      </div>
-  </div>
-</div>
-<!-- END CONTACT ITEM -->
-</div>
-    </div>
-          <!-- END OF LEFT SIDE -->
   </div>
 </div>
 
@@ -712,8 +417,66 @@ include ('database.php');
             </div>
         </div>
     </div>
-
 </section>
+
+
+<!--slider-->
+<section id="slider">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#slider-carousel" data-slide-to="1"></li>
+            <li data-target="#slider-carousel" data-slide-to="2"></li>
+          </ol>
+
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="col-sm-12" style="padding:0">
+                <div class="item_box">
+                  <img src="images/advert/market_slide1.jpg" class="" alt="" height="400px" width="100%"/>
+                  <!-- <h3>Get someone to buy your item here on campus <span></span></h3>
+                  <a href="business/upload.php" class="btn btn-primary">upload item</a> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="col-sm-12" style="padding:0">
+                <div class="item_box">
+                  <img src="images/advert/market_slide2.jpg" class="" alt="" height="400px" width="100%"/>
+                  <!-- <h3>You have problems in your studies, you can ask questions and get instant answers.. <br>You can offer assist students campus by render the best answers to their questions </h3>
+                  <a href="" class="btn btn-primary">FAQ</a> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="col-sm-12" style="padding:0">
+                <div class="item_box">
+                  <img src="images/advert/market_slide3.jpg" class="" alt="" height="400px" width="100%"/>
+                  <!-- <h3>We bring to you all the latest gist on campus and Chat up your friends here in campus. </h3> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+          </a>
+          <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/slider-->
+
+
+
 
   <!--PAGE FOOTER-->
   <footer id="main_footer">

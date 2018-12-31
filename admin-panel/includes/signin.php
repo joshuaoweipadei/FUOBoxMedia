@@ -45,7 +45,7 @@ if (isset($email) && isset($password)) {
           $_SESSION['profile_img'] = $user['profile_img'];
 
 
-          header("location: /myProject/admin-panel/index.php");
+          header("location: /FUOBoxMedia/admin-panel/index.php");
         }
 
       } else {

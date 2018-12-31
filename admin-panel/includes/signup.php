@@ -56,7 +56,7 @@ include ('includes/database.php');
 
                      Please click this link to activate your account:
 
-                     http://localhost/myProject/admin-panel/includes/verify.php?email='.$email.'&hash='.$hash;
+                     http://localhost/FUOBoxMedia/admin-panel/includes/verify.php?email='.$email.'&hash='.$hash;
 
                      if (mail( $to, $subject, $message_body, "From: $from\n" )) {
                        $Success = '<h4 style="font-size:18px; font-weight:arial">Registration successfully!</h4>

@@ -98,3 +98,16 @@ CREATE TABLE quotes (
     quote varchar(255) not null,
     time datetime not null
 );
+
+
+-- selling item
+CREATE TABLE selling_item(
+	Id int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    sellerName varchar(100) not null,
+    sellerMobile varchar(100) not null,
+    itemName varchar(255) not null,
+    itemDesc text not null,
+    itemPrice varchar(100) not null,
+    itemImage varchar(255) not null,
+    date_entered timestamp not null
+);
