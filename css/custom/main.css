@@ -6,15 +6,9 @@
   width: extend-to-zoom;
   zoom: 1.0;
 }
-/*************************
-*******Typography******
-**************************/
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
-@import url(http://fonts.googleapis.com/css?family=Abel);
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: arial;
   background: #fff;
   position: relative;
   font-weight:400px;
@@ -41,10 +35,6 @@ a {
     transition: 300ms;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif;
-}
-
 .btn:hover,
 .btn:focus{
   outline: none;
@@ -69,11 +59,11 @@ a#scrollUp i{
 }
 
 body section.background{
-  background: rgba(93,84,240,0.3);
-  background: -webkit-linear-gradient(left, rgba(0,168,255,0.3), rgba(185,0,255,0.3));
-  background: -o-linear-gradient(left, rgba(0,168,255,0.3), rgba(185,0,255,0.3));
-  background: -moz-linear-gradient(left, rgba(0,168,255,0.3), rgba(185,0,255,0.3));
-  background: linear-gradient(left, rgba(0,168,255,0.3), rgba(185,0,255,0.3));
+  background: rgba(0,168,255,0.8);
+  background: -webkit-linear-gradient(left, rgba(0,168,255,), rgba(185,0,255,0.9));
+  background: -o-linear-gradient(left, rgba(0,168,255,0.9), rgba(185,0,255,0.9));
+  background: -moz-linear-gradient(left, rgba(0,168,255,0.9), rgba(185,0,255,0.9));
+  background: linear-gradient(left, rgba(0,168,255,0.9), rgba(185,0,255,0.9));
 }
 
 
@@ -98,10 +88,10 @@ body section.background{
     background-size: cover;
     background-position: center;
     position: relative;
-    padding: 1rem 3rem 1rem 2rem;
 }
 .header_top {
-  background: none repeat scroll 0 0 #00004d;
+  background: none repeat scroll 0 0 rgba(93,84,240,8.5);
+  padding: 3px 0px;
 }
 .contactinfo ul li:first-child{
     margin-left: -15px;
@@ -109,56 +99,14 @@ body section.background{
 .contactinfo ul li a{
   font-size: 12px;
   color: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: arial;
 }
 .contactinfo ul li {
-	background: #00004d;
+	background: rgba(93,84,240,8.5);
 }
-.social-icons ul li a {
-  border: 0 none;
-  border-radius: 0;
-  color: #fff;
-  padding:0px;
+.top-contact-address li a:hover{
+  color: #ff0000 !important;
 }
-.social-icons ul li{
-	display:inline-block;
-}
-.social-icons ul li a i {
-  padding: 11px 15px;
-   transition: all 0.9s ease 0s;
-  -moz-transition: all 0.9s ease 0s;
-  -webkit-transition: all 0.9s ease 0s;
-  -o-transition: all 0.9s ease 0s;
-}
-.me li a:hover{
-  color: #00004d !important;
-}
-.social-icons ul li a i:hover{
-  color: #fff;
-   transition: all 0.9s ease 0s;
-  -moz-transition: all 0.9s ease 0s;
-  -webkit-transition: all 0.9s ease 0s;
-  -o-transition: all 0.9s ease 0s;
-}
-.fa-facebook:hover {
-  background: #0083C9;
-}
-.fa-twitter:hover  {
-	background:#5BBCEC;
-}
-.fa-linkedin:hover  {
-	background:#FF4518;
-}
-.fa-dribbble:hover  {
-	background:#90C9DC;
-}
-.fa-google-plus:hover  {
-	background:#CE3C2D;
-}
-.fa-whatsapp:hover  {
-	background:#00cc00;
-}
-
 /*
 *
 * THE TOP PROFILE ICON AND NOTIFICATION MESSAGES
@@ -171,8 +119,8 @@ a.profile_icon {
     display: none !important;
 }
 .profile_icon img {
-    width: 29px;
-    height: 29px;
+    width: 35px;
+    height: 35px;
     border: 1px solid #fff;
     border-radius: 50%;
     margin-right: 10px;
@@ -189,21 +137,26 @@ a.profile_icon {
 } */
 .info-number .badge {
   font-size: 14px;
-  font-weight: normal;
+  font-weight: 600;
+  font-family: arial;
   line-height: 13px;
   padding: 2px 6px;
   position: absolute;
-  right: 2px;
-  top: 8px;
-  background: #00ffff;
-  color: #00004d
+  right: 1px;
+  top: 18px;
+  background: #ff0000;
+  color: #ffffff;
 }
-.dropdown a i{
-  color: #fff
+.info-number:hover{
+  background: none !important;
 }
-#menu1{
-  width: 300px !important;
-  top: 11px !important;
+.navbar-nav li.top-notification{
+  color: #ffffff !important;
+  padding: 7px 12px 0px 18px !important;
+  margin: 0px !important;
+}
+.navbar-nav li.top-notification a i{
+  color: #ffffff;
 }
 @media only screen and (max-width: 768px) {
   a.profile_icon{
@@ -212,18 +165,20 @@ a.profile_icon {
   .contactinfo{
     display: none
   }
+  .info-number{
+    margin-bottom: 10px !important;
+  }
+  .navbar-nav li.top-notification{
+    padding: 2px 8px 0px 8px !important;
+  }
 }
 
 
 
 
-.header-middle .container .row {
-  margin-left: 0;
-  margin-right: 0;
+.header-middle .container .row{
+  background: #ffffff;
   padding-bottom: 5px;
-  padding-top: 0px;
-  margin-top: 2px;
-  background: #fff
 }
 .header-middle .container .row .col-sm-4{
   padding-left: 0;
@@ -240,6 +195,7 @@ a.profile_icon {
 .logo .logo-name span.a{
   font-size: 140%;
   font-weight: 600;
+  font-family: arial;
   color: rgb(255, 92, 51);
 }
 .logo .logo-name span.b{
@@ -272,7 +228,7 @@ a.profile_icon {
   color: #00004d
 }
 .btn-group.open .dropdown-toggle {
-  background: rgba(0, 0, 0, 0);
+  background: #fff;
   box-shadow: none;
 }
 .dropdown-menu  li  a:hover, .dropdown-menu  li  a:focus {
@@ -283,30 +239,33 @@ a.profile_icon {
 }
 .shop-menu ul li {
 	display:inline-block;
-  padding-left: 17px;
-  padding-right: 2px;
+  padding-left: 1px;
+  padding-right: 1px;
   text-transform: uppercase;
 }
 .shop-menu{
   padding-bottom: 2px;
+  padding-right: 3%;
 }
 .shop-menu ul li:last-child {
   padding-right: 0;
 }
 .shop-menu ul li a {
-  color: #00004d;
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
+  color: #ff0000;
+  font-family: arial;
+
+  border-radius: 5px;
+  font-size: 14px;
   font-weight: 700;
-  padding: 10px 0px;
+  padding: 5px 6px;
   margin-top: 10px;
 }
 .shop-menu ul li a i{
 	margin-right:3px;
 }
 .shop-menu ul li a:hover {
-	color: #00ffff;
-	background:#fff;
+	color: #ff0000;
+  background: #f2f2f2;
 }
 .header-bottom {
   padding-bottom: 0px;
@@ -331,37 +290,58 @@ a.profile_icon {
   position: relative;
   margin-right: 0.4%;
   border-radius: 9px;
-  border: 2px solid #fff
+  border: 2px solid #fff;
+  background: #fff;
 }
-.mainmenu .nav .list:hover{
+@media only screen and (max-width: 768px) {
+  .mainmenu{
+    background: rgb(93,84,240,8.5);
+    padding: 0px 2px;
+  }
+  .mainmenu .nav .list{
+    padding-right: 16px;
+    padding-left: 16px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(93,84,240,8.5);
+    position: relative;
+    margin-right: 0.4%;
+    border-radius: 0px;
+    border: none;
+    background: #fff;
+  }
+}
+.mainmenu .nav .list.active{
   border-bottom: 2px solid rgb(93,84,240,8.5);
 }
 /* @media only screen and (min-width: 720px) {
   .t {display: none}} */
 .mainmenu ul li a {
 	color: #fff;
-	font-family: 'Roboto', sans-serif;
+	font-family: arial;
 	font-size: 15px;
 	font-weight: 300;
 	padding: 8px 0px;
 }
 .mainmenu ul li a:hover, .mainmenu ul li a.active,  .shop-menu ul li a.active{
-	background: none;
+	background: #fff;
 	color: #fff;
 }
 .menubar a{
   display: inline-block;
   color: white;
   padding: 8px 29%;
-  font-size: 80%
+  font-size: 80%;
+  background: #fff;
 }
 /*THE FIRST HEADER MENU WITH DROPDOWN LIST*/
 .menu li a:hover, .dropmenu:hover .dropmenuBtn {
-    background-color: #0099FF;
+    background: #ff0000;
 }
 .menubar,.dropmenu {
-    display: inline-block;
-    position: inherit;
+  display: inline-block;
+  position: inherit;
 }
 
 
@@ -697,11 +677,17 @@ ul.timeline li {
 
 
 
-.account_steps{
-  padding: 13px 10% 10px 26px;
+.box-set{
+  padding: 10px 0px 10px 0px;
   position: relative;
-  border-bottom: 1px solid #e1e1e1;
-  margin-bottom: 8px
+  margin-bottom: 10px;
+  height: auto;
+}
+.box-set .box-content{
+  height: 300px;
+  margin-bottom: 6px;
+  padding-bottom: 50px;
+  background:#fff
 }
 .account_steps h5 .reg_acc{
   text-transform: uppercase;

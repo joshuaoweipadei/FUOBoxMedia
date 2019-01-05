@@ -6,10 +6,7 @@ if (isset($_SESSION['Id'])) {
 
   //SESSION VARIABLE DECLARED
   $userID = $_SESSION['Id'];
-  $firstname = $_SESSION['first_name'];
-  $lastname = $_SESSION['last_name'];
   $email = $_SESSION['email'];
-  $user_name = $_SESSION['username'];
   $active = $_SESSION['active'];
 
 } else {
@@ -125,13 +122,20 @@ include '../database.php';
             <div class="friend_profile_img">
               <img src="/FUOBoxMedia/uploaded_images/<?php echo $row['profile_img']; ?>" alt="">
             </div>
-            <h3 class="profile_name2">Joshua Oweipadei</h3>
-            <h6 class="profile_name_3"><i class="fa fa-at"></i>joshiee</h6>
+            <h3 class="profile_name2"><?php echo $row['first_name']. " " .$row['last_name']; ?></h3>
+            <h6 class="profile_name_3"><i class="fa fa-at"></i><?php echo $row['username']; ?></h6>
           </div>
           <div class="col-sm-9">
             <div class="col-sm-12 text-center">
               <div class="col-sm-4" style="background:; padding:0">
                 <div class="pro_box">
+                  <?php
+                    $sql_total_comment = "SELECT * FROM comments WHERE userId = '$friend_Id'";
+                    $query_total_comment = mysqli_query($conn, $sql_total_comment) or die(mysqli_error($conn));
+                    if ($query_total_comment) {
+                      # code...
+                    }
+                   ?>
                   <span>112</span>
                   <h4><i class="fa fa-comments"></i> Comment Entries</h4>
                 </div>

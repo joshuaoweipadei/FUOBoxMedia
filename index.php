@@ -1,19 +1,33 @@
 <?php
 
-  session_start();
+session_start();
 
-  // Check if user is logged in using the session variable
-  if (isset($_SESSION['Id']) && isset($_SESSION['email'])) {
+// Check if user is logged in using the session variable
+if (isset($_SESSION['Id']) && isset($_SESSION['email'])) {
 
-    //SESSION VARIABLE DECLARED
-    $userID = $_SESSION['Id'];
-    $email = $_SESSION['email'];
-    $active = $_SESSION['active'];
+  //SESSION VARIABLE DECLARED
+  $userID = $_SESSION['Id'];
+  $email = $_SESSION['email'];
+  $active = $_SESSION['active'];
 
+  include ('database.php');
+  
+  // GETTING THE LOGGED IN USER DETAILS FOR THE DATABASE
+  $sql = "SELECT * FROM users_account WHERE Id = '$userID' AND email = '$email'";
+  $fetch_user = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+  if ($fetch_user) {
+    if ($logged_in_user = mysqli_fetch_array($fetch_user)) {
+      $firstname = $logged_in_user['first_name'];
+      $lastname = $logged_in_user['last_name'];
+      $profile_img = $logged_in_user['profile_img'];
+      $nickname = $logged_in_user['username'];
+    }
   }
 
-include ('database.php');
+}
 
+
+include ('database.php');
 
 include ('functions/news_events.php');
 
@@ -107,8 +121,25 @@ include ('functions/news_events.php');
           <?php if (!isset($_SESSION['Id'])) { ?>
           <div class="">
             <div class="row">
-              <div class="account_steps">
-                <div class="stepss">
+
+              <div class="box-set">
+                <div class="col-md-4">
+                  <div class="box-content">
+                    <img src="images/user/friends3.png" alt="" width="100%" height="100%">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="box-content">
+                    <img src="images/wallpapers/wallpaper5.jpg" alt="" width="100%" height="100%">
+                    <span>fthgnhm yukhnd ihsdhsi</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="box-content">
+                    <img src="images/wallpapers/wallpaper4.jpg" alt="" width="100%" height="100%">
+                  </div>
+                </div>
+                <!-- <div class="stepss">
                   <h3>Everything you need in one package!!!</h3>
                   <h5>We offer you the best just in three steps to get started</h5>
 
@@ -122,7 +153,7 @@ include ('functions/news_events.php');
                     <h4><i class="fa fa-truck" style="color: #009999"></i> FUO marketplace</h4>
                     <p>Here is the opportunity you have being waiting for to sell your school items easily on campus.</p>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>

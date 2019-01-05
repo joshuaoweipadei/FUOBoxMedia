@@ -12,9 +12,9 @@ if (!isset($_SESSION['Id'])) {
 <div class="my_friends">
 
   <div class="content-frame-top">
-      <div class="page-title" style="padding-bottom:10px">
-          <h2><i class="fa fa-users"></i> My Friends</h2>
-      </div>
+    <div class="page-title" style="padding-bottom:10px">
+      <h3><i class="fa fa-users"></i> Friends List</h3>
+    </div>
   </div>
 
   <?php
@@ -35,14 +35,14 @@ if (!isset($_SESSION['Id'])) {
           if ($query2) {
             $row = mysqli_fetch_array($query2);
             ?>
-            <div class=" profile_">
+            <div class="friend_profile">
               <a href="/FUOBoxMedia/friends/friend_profile.php?friend_id=<?php echo $row['Id'] ?>">
                 <div class="profile-ima pull-left">
                   <img src="/FUOBoxMedia/uploaded_images/<?php echo $row['profile_img']; ?>" alt="<?php echo $row['first_name']." ".$row['last_name']; ?>">
                 </div>
                 <div class="profile-da pull-left"><?php echo $row['first_name']." ".$row['last_name']; ?> <br><span><?php echo "@".$row['username']; ?></span> </div>
               </a>
-              <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsg=<?php echo $row['Id'] ?>" class="send_msg btn btn-default pull-right"><i class="fa fa-envelope"></i> Send Message</a>
+              <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsg=<?php echo $row['Id'] ?>" class="send_msg btn btn-secondary pull-right"><i class="fa fa-envelope"></i> Send Message</a>
 
               <div class="clearfix"></div>
             </div>
@@ -55,14 +55,14 @@ if (!isset($_SESSION['Id'])) {
           if ($query3) {
             $row = mysqli_fetch_array($query3);
             ?>
-            <div class=" profile_">
+            <div class="friend_profile">
               <a href="/FUOBoxMedia/friends/friend_profile.php?friend_id=<?php echo $row['Id'] ?>">
                 <div class="profile-ima pull-left">
                   <img src="/FUOBoxMedia/uploaded_images/<?php echo $row['profile_img']; ?>" alt="<?php echo $row['first_name']." ".$row['last_name']; ?>">
                 </div>
                 <div class="profile-da pull-left"><?php echo $row['first_name']." ".$row['last_name']; ?> <br><span><?php echo "@".$row['username']; ?></span> </div>
               </a>
-              <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsg=<?php echo $row['Id'] ?>" class="send_msg btn btn-default pull-right"><i class="fa fa-envelope"></i> Send Message</a>
+              <a href="/FUOBoxMedia/friends/friend_personal_msg.php?fri11end1470msgfri36msge70ndmsg=<?php echo $row['Id'] ?>" class="send_msg btn btn-secondary pull-right"><i class="fa fa-envelope"></i> Send Message</a>
 
               <div class="clearfix"></div>
             </div>
