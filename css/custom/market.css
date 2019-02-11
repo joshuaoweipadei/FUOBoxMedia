@@ -69,35 +69,43 @@
 *
 */
 .sec {
-  margin-bottom: 10px;
-  margin-top: 0px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #006666;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-bottom: 1px;
+}
+.sec h3{
+  text-align: center;
+  font-size: 19px;
+  font-weight: 500;
+  font-family: cursive;
+  color: #595959;
+  text-transform: capitalize;
 }
 .sec .A{
+  width: 100%;
   text-align: center;
   padding: 20px 10px;
-  margin: 5px 55px;
-  background: #fff;
-  color: #00004d
+  margin: 5px 0px;
+  background: #f2f2f2;
 }
 .sec .B{
+  width: 100%;
   text-align: center;
   padding: 20px 10px;
-  margin: 5px 55px;
-  background: #fff;
-  color: #00004d
+  margin: 5px 0px;
+  background: #f2f2f2;
 }
 .sec .C{
+  width: 100%;
   text-align: center;
   padding: 20px 10px;
-  margin: 5px 55px;
-  background: #fff;
-  color: #00004d
+  margin: 5px 0px;
+  background: #f2f2f2;
 }
 .sec h4{
-  font-size: 15px;
-  color: #00004d
+  font-size: 14px;
+  font-weight: 600;
+  color: #595959;
 }
 .A i, .B i, .C i{
   font-size: 29px;
@@ -122,84 +130,36 @@
   border-bottom: 1px solid #e1e1e1
 }
 .ads i{
-  color: #00004d
+  color: #595959;
 }
 .ads span{
-  color: #4d4d4d;
+  color: #595959;
   padding: 1px 0px;
-  font-size: 14px
+  font-size: 24px;
 }
 .item_search input{
   border-radius: 5px
 }
 .panel .profile {
-  background: rgba(93,84,240,8.5);
-  padding: 0px;
+  background: #fff;
+  padding: 3px;
   border: 1px solid rgba(93,84,240,8.5);
+  box-shadow: 5px 4px 8px 5px #f2f2f2, 5px 6px 20px 5px #f2f2f2;
 }
 .profile-data-name{
   font-size: 14px;
   font-family: arial;
   text-transform: capitalize;
-  color: #fff;
+  color: rgba(93,84,240,8.5);
 }
 .profile-controls{
   font-size: 11px;
   font-family: arial;
   padding-left: 5px;
-  color: #fff;
+  color: #595959;
 }
 .profile-controls p{
   line-height: 1.4em;
   margin: 1px;
   text-align: center;
-}
-
-
-
-
-/*
-*
-* UPLAOD ITEMS
-*
-*/
-.empty{
-  background: rgba(93,84,240,8.5);
-  height:700px
-}
- .upload_item{
-  margin-top: 20px;
-  padding-left: 30px;
-  padding-bottom: 90px;;
-  color:
-}
-.upload_item h3{
- text-transform: uppercase;
- font-family: arial;
- font-size: 21px;
- color: rgba(93,84,240,8.5)
-}
-.upload_item h5{
-  font-size: 15px;
-  font-family: arial;
-  color: #6a6a6a;
-}
-.upload_item h3 .fa-gift{
-  font-size: 28px;
-  color: #ff0000;
-}
-.form{
-  margin-top: 38px;
-}
-@media only screen and (max-width: 768px) {
-  .empty{
-    height: 70px;
-    margin-bottom: 30px;
-  }
-  .upload_item{
-   padding-bottom: 310px;
- }
- .bt{
-   margin-bottom: 10px
- }
 }

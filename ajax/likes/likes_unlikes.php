@@ -9,7 +9,7 @@ function is_ajax(){
 
 if (is_ajax()) {
 
-  require '../../database.php';
+  include '../../includes/database.php';
 
   if (isset($_POST["userId"]) && isset($_POST["statusId"]) && isset($_POST["value"]) && isset($_POST['action']) && $_POST['action'] == 'likes_unlikes') {
     if (!empty($_POST["userId"]) && !empty($_POST["statusId"]) && !empty($_POST["value"]) && !empty($_POST["action"])) {
@@ -78,10 +78,10 @@ if (is_ajax()) {
 
     }
   }  else {
-    header('location: /FUOBoxMedia/profile_page.php');
+    header('location: /FUOBoxMedia/index.php');
   }
 } else {
-  header('location: /FUOBoxMedia/profile_page.php');
+  header('location: /FUOBoxMedia/index.php');
 }
 
 

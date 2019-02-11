@@ -56,7 +56,7 @@ img.emoji {
     cursor: pointer;
     position: absolute;
     right: 30px;
-    bottom: 30px;
+    bottom: 50px;
     font-size: 27px;
     opacity: 0.8;
     z-index: 100;

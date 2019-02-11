@@ -41,7 +41,7 @@ function comment_post_btn_click(){
 
     //PROCESS WITH AJAX CALLBACK
     //PASSING TO THE SERVER USING AJAX(to the PHP Script)
-    jQuery.post("/FUOBoxMedia/ajax/status-insert.php",{
+    jQuery.post("/welcome/ajax/status-insert.php",{
       task: "status_insert",
       status: _status,
       userId: _userId,
@@ -58,7 +58,7 @@ function comment_post_btn_click(){
 
           setInterval(function(){
             window.location.reload();
-          }, 5000);
+          }, 4000);
 
         });
         console.log("ResponseText: " + _status +" "+ _userId +" "+ _userEmail);
@@ -67,7 +67,7 @@ function comment_post_btn_click(){
     //The textarea is empty
     //Remove the text from the textarea, ready for another comment!
     //Possibly...
-    $('.comment-insert-text').css('border' , '1px solid #ff0000');
+    $('.comment-insert-text').css('border' , '1px solid #ff9999');
     console.log("The text field is empty");
   }
   //Remove the text from the textarea, ready for another comment!
@@ -90,7 +90,7 @@ function add_comment(){
 
       if (_comment != null && _comment.length > 0) {
         $.ajax({
-          url : "/FUOBoxMedia/ajax/add_comment.php",
+          url : "/welcome/ajax/add_comment.php",
           method : "POST",
           data : {
             task : "adding_comment",
@@ -117,7 +117,7 @@ function comment(data){
     var c = '';
     //comment reply
     c += '<div class="comment-cont">';
-      c += '<img src="uploaded_images/'+data.user_img+'"/>';
+      c += '<img src="images/uploaded_images/profile_photos/'+data.user_img+'"/>';
         c += '<p class="comment-head">';
           c += '<a href="friends/friend_profile.php?friend_id='+data.user_id+'">'+data.user_first+' '+data.user_last+'</a> <span class="text-muted" style="font-size:11px">@'+data.user_name+'</span>';
         c += '</p>';
@@ -144,7 +144,7 @@ function comment(data){
         var _userId = $('#commented_userID').val();
         // alert(comment_id);
         $.ajax({
-          url : "/FUOBoxMedia/ajax/delete_comment.php",
+          url : "/welcome/ajax/delete_comment.php",
           method : "POST",
           data : {
             action : "delete_comment",
@@ -195,7 +195,7 @@ function comment_count(){
     var send = this;
     var comment_id = send.id;
         $.ajax({
-          url : "/FUOBoxMedia/ajax/add_comment.php",
+          url : "/welcome/ajax/add_comment.php",
           method : "POST",
           data : {
             count : "count_comment",
@@ -205,7 +205,7 @@ function comment_count(){
             if (data == 0) {
               $('#comment_count_'+comment_id).html("<span style='font-size:10px; color:#c1c1c1'>Be the first to comment on this.</span>");
             }else {
-              $('#comment_count_'+comment_id).html(data);
+              $('#comment_count_'+comment_id).html(data+"<a href='single_status_timeline.php?status-post-id="+comment_id+"'> More Comment(s)</a>");
             }
           }
         });
@@ -235,7 +235,7 @@ function add_delete_handlers(){
 
 //delete STATUS function
 function status_delete(_status_id){
-  $.post("/FUOBoxMedia/ajax/status-delete.php",
+  $.post("/welcome/ajax/status-delete.php",
     {
       task : "status_delete",
       status_id : _status_id,
@@ -259,7 +259,7 @@ function status_insert(data){
   t += '<div class="container-area" style="padding-bottom:10px; padding-top:10px">';
     //user image
     t += '<div class="user-img">';
-      t += '<a href="#" style="text-decoration:none"><img src="uploaded_images/'+data.user.profile_img+'" class="user-img-pic" alt="upload picture"></a>';
+      t += '<a href="#" style="text-decoration:none"><img src="images/uploaded_images/profile_photos/'+data.user.profile_img+'" class="user-img-pic" alt="upload picture"></a>';
     t += '</div>';
   //comment body
     t += '<div class="comment-body" style="padding-bottom: 10px; border-bottom:1px solid rgba(93,84,240,8.5)">';

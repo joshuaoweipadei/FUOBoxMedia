@@ -14,7 +14,7 @@ function is_ajax(){
 
 if (is_ajax()) {
 
-  require '../../database.php';
+  require '../../includes/database.php';
 
   if (isset($_POST["friend_id"]) && isset($_POST["userID"]) && isset($_POST['msg']) && isset($_POST['action']) && $_POST['action'] == 'send_message') {
     if (!empty($_POST["friend_id"]) && !empty($_POST["userID"]) && !empty($_POST["msg"]) && !empty($_POST["action"])) {
@@ -54,7 +54,7 @@ if (is_ajax()) {
                   <div class='chat'>
                     <div class='col-xs-3 col-sm-2 col-md-2 col-lg-2 pull-left'>
                       <div class='user-photo' style='margin-right'>
-                        <img src='/FUOBoxMedia/uploaded_images/".$row['profile_img']."' alt='".$row['username']."'>
+                        <img src='/FUOBoxMedia/images/uploaded_images/profile_photos/".$row['profile_img']."' alt='".$row['username']."'>
                       </div>
                     </div>
                     <div class='col-xs-9 pull-left send'>

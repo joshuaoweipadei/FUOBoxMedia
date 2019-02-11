@@ -9,7 +9,7 @@ function is_ajax(){
 
 if (is_ajax()) {
 
-  require '../../database.php';
+  require '../../includes/database.php';
 
   if (isset($_POST["friend_id"]) && isset($_POST["userID"]) && isset($_POST['action']) && $_POST['action'] == 'delete_request') {
     if (!empty($_POST["friend_id"]) && !empty($_POST["userID"]) && !empty($_POST["action"])) {

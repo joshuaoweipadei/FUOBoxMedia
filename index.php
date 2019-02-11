@@ -10,8 +10,8 @@ if (isset($_SESSION['Id']) && isset($_SESSION['email'])) {
   $email = $_SESSION['email'];
   $active = $_SESSION['active'];
 
-  include ('database.php');
-  
+  include ('includes/database.php');
+
   // GETTING THE LOGGED IN USER DETAILS FOR THE DATABASE
   $sql = "SELECT * FROM users_account WHERE Id = '$userID' AND email = '$email'";
   $fetch_user = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -26,160 +26,71 @@ if (isset($_SESSION['Id']) && isset($_SESSION['email'])) {
 
 }
 
+include ('includes/database.php');
 
-include ('database.php');
-
-include ('functions/news_events.php');
+// include ('functions/news_events.php');
 
 ?>
 
 
-<!doctype html>
-<html lang="en">
-<head>
+<!DOCTYPE html>
+<html>
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="veiwport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="veiwport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Welcome | Home of FUO</title>
-
-    <!-- <link rel="stylesheet" href="css/plugins/bootstrap-4.0.0/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="css/plugins/theme-default.css"> -->
+    <link rel="stylesheet" href="css/plugins/bootstrap.min.css">
     <link rel="stylesheet" href="css/plugins/font-awesome/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="css/plugins/w3css/w3css.css"> -->
-    <!-- <link rel="stylesheet" href="css/plugins/default/theme-default.css"> -->
-    <link href="css/plugins/font-awesome.min.css" rel="stylesheet">
-    <link href="css/plugins/prettyPhoto.css" rel="stylesheet">
-    <link href="css/plugins/price-range.css" rel="stylesheet">
-    <link href="css/plugins/animate.css" rel="stylesheet">
-    <link href="css/plugins/responsive.css" rel="stylesheet" media="all">
-    <link href="css/plugins/bootstrap.min.css" rel="stylesheet">
-
-    <!-- comment popup styling -->
-    <link href="css/plugins/dist/custom.css" rel="stylesheet">
-
-    <!-- main custom style -->
-    <link rel="stylesheet" href="css/custom/main.css">
-    <link rel="stylesheet" href="css/custom/style.css">
 
     <!-- light-box -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/plugins/jquery.fancybox.css" media="screen" />
 
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/custom/main.css">
+    <link rel="stylesheet" href="css/custom/timeline.css">
 
-    <!-- steps to register DEMO (index.php) -->
-    <link rel="stylesheet" href="css/external/et-line.css">
-    <link rel="stylesheet" href="css/external/style.css">
+    <!-- Begin emoji-picker Stylesheets -->
+    <link href="assets/emoji/lib/css/emoji.css" rel="stylesheet">
+    <!-- End emoji-picker Stylesheets -->
+  </head>
+  <body>
+    <?php
+    include 'includes/header.php';
+     ?>
 
-
-
-
-
-
-
-
-
-
-    <script type="text/javascript" src="js/custom/user_scriptsheet.js"></script>
-    <!-- <script type="text/javascript" src="js/plugins/bootstrap-4.0.0/bootstrap.min.js"></script> -->
-    <script type="text/javascript" src="js/plugins/jquery/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/comment/comment-insert.js?t=<?php echo time(); ?> "></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</head>
-<body>
-  <!--PAGE HEADER-->
-
-  <?php include 'includes/header.php'; ?>
-
-  <?php if (isset($_SESSION['Id'])): ?>
-    <input type="hidden" id="userID" value="<?php echo $userID; ?>">
-  <?php endif; ?>
-
-  <section class="background">
+    <!-- MAIN BODY -->
     <div class="container">
       <div class="row">
-        <!-- LEFT HNAD SIDE -->
-        <div class="col-sm-9 left_side">
-          <!-- ABOUT OUR WEBSITE -->
-          <?php if (!isset($_SESSION['Id'])) { ?>
-          <div class="">
-            <div class="row">
-
-              <div class="box-set">
-                <div class="col-md-4">
-                  <div class="box-content">
-                    <img src="images/user/friends3.png" alt="" width="100%" height="100%">
-                  </div>
+        <div class="col-md-9">
+          <?php if(!isset($_GET['timeline'])){ ?>
+          <div class="news_section">
+            <h3><i class="fa fa-puzzle-piece"></i> Trending Gist on campus
+              <i class="fa fa-star-half pull-right" style="font-size:18px; color:#ff0000"></i>
+              <i class="fa fa-star pull-right" style="font-size:18px; color:#ff0000"></i>
+              <i class="fa fa-star pull-right" style="font-size:18px; color:#ff0000"></i>
+              <i class="fa fa-star pull-right" style="font-size:18px; color:#ff0000"></i>
+            </h3>
+            <!-- MINOR NEWS -->
+            <?php
+            $sql = "SELECT * FROM news_single ORDER BY Id DESC LIMIT 20";
+            $singleNews_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+            if ($singleNews_query) {
+              while ($row = mysqli_fetch_array($singleNews_query)) {
+            ?>
+            <div class="col-md-6" style="padding:2px; margin:0">
+              <div class="small_news">
+                <div class="news_img_box">
+                  <img src="/FUOBoxMedia/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="<?php echo $row['news_title']; ?>">
                 </div>
-                <div class="col-md-4">
-                  <div class="box-content">
-                    <img src="images/wallpapers/wallpaper5.jpg" alt="" width="100%" height="100%">
-                    <span>fthgnhm yukhnd ihsdhsi</span>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="box-content">
-                    <img src="images/wallpapers/wallpaper4.jpg" alt="" width="100%" height="100%">
-                  </div>
-                </div>
-                <!-- <div class="stepss">
-                  <h3>Everything you need in one package!!!</h3>
-                  <h5>We offer you the best just in three steps to get started</h5>
-
-                  <div class="_steps">
-                    <h4><i class="fa fa-sign-in" style="color: #009999"></i> Register </h4>
-                    <p>Create an account to start reaching out to your friends and coursemate on campus.</p>
-
-                    <h4><i class="fa fa-plus-square" style="color: #009999"></i> Add Friends</h4>
-                    <p>Send friend request to your friends and start chat with them.</p>
-
-                    <h4><i class="fa fa-truck" style="color: #009999"></i> FUO marketplace</h4>
-                    <p>Here is the opportunity you have being waiting for to sell your school items easily on campus.</p>
-                  </div>
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <?php } ?>
-          <!-- END OF ABOUT OUR WESITE -->
-
-          <div class="col-sm-12" style="padding:0">
-            <div class="news_section">
-              <?php trendingNews(); ?>
-
-                <!-- MINOR NEWS -->
-                <?php
-                $sql = "SELECT * FROM news_single ORDER BY Id DESC LIMIT 2";
-                $singleNews_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                if ($singleNews_query) {
-                  while ($row = mysqli_fetch_array($singleNews_query)) {
-                ?>
-                <div class="col-sm-6" style="padding:2px; margin:0">
-                  <div class="small_news">
-                    <div class="news_img_box">
-                      <a href="news_details.php?news_id=<?php echo $row['Id']; ?>">
-                        <img src="/FUOBoxMedia/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="">
-                        <h5><?php echo $row['news_title']; ?></h5>
-                      </a>
-                    </div>
-                    <div class="newss">
+                <div class="news_desc_box">
+                  <a href="news_details.php?news_id=<?php echo $row['Id']; ?>">
+                    <h5><?php echo $row['news_title']; ?></h5>
+                  </a>
+                  <p><?php echo (strlen($row['news_desc']) > 100 ) ? substr($row['news_desc'], 0, 100) : $row['news_desc']; ?><?php echo "...."; ?></p>
+                    <div class="news_likes_box">
                       <?php
                        $sql2 = "SELECT * FROM news_comments WHERE unique_no = '".$row['Id']."'";
                        $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
@@ -191,154 +102,43 @@ include ('functions/news_events.php');
                          if ($query3) {
                            $like_count = mysqli_num_rows($query3);
                            ?>
-                           <span><?php echo $like_count; ?> <i class="fa fa-heart-o"></i></span>
-                           <span><?php echo $comm_count; ?> <i class="fa fa-comments-o"></i></span>
+                           <span style="color:rgba(93,84,240,8.5)"> <i class="fa fa-globe"></i> </span>
+                           <span><?php echo $like_count; ?> <i class="fa fa-thumbs-o-up" style="color:rgba(93,84,240,8.5)"></i></span>
+                           <span ><i class="fa fa-comments-o" style="color:rgba(93,84,240,8.5)"></i> <?php echo $comm_count; ?>Comments</span>
+                           <span class="pull-right date"><i class="fa fa-clock-o"></i> 07 Jul '18</span>
                            <?php
                          }
                        }
                        ?>
-                      <div class="pull-right">
-                        <button class="btn panel-heading collapsed" role="tab" id="heading_<?php echo $row['Id']; ?>" data-toggle="collapse"
-                          data-parent="#accordion" href="#collapse_<?php echo $row['Id']; ?>" aria-expanded="false" aria-controls="collapse_<?php echo $row['Id']; ?>"> <i class="fa fa-bars"></i>
-                        </button>
-                      </div>
-                      <div class="panel">
-                        <div id="collapse_<?php echo $row['Id']; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_<?php echo $row['Id']; ?>">
-                          <div class="panel-body news_desc">
-                              <?php echo $row['news_desc']; ?>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <?php
-                  }
-                }
-                 ?>
-               <div class="clearfix"></div>
-
-              <?php
-              $sql = "SELECT * FROM news_single ORDER BY Id DESC LIMIT 2,3";
-              $singleNews_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-              if ($singleNews_query) {
-                while ($row = mysqli_fetch_array($singleNews_query)) {
-              ?>
-              <div class="col-sm-4" style="padding:2px; margin:0">
-                <div class="small_news">
-                  <div class="news_img_box">
-                    <a href="news_details.php?news_id=<?php echo $row['Id']; ?>">
-                      <img src="/FUOBoxMedia/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="">
-                      <h5><?php echo $row['news_title']; ?></h5>
-                    </a>
-                  </div>
-                  <div class="newss">
-                    <?php
-                     $sql2 = "SELECT * FROM news_comments WHERE unique_no = '".$row['Id']."'";
-                     $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
-                     if ($query2) {
-                       $comm_count = mysqli_num_rows($query2);
-
-                       $sql3 = "SELECT * FROM news_likes WHERE news_unique_no = '".$row['Id']."'";
-                       $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
-                       if ($query3) {
-                         $like_count = mysqli_num_rows($query3);
-                         ?>
-                         <span><?php echo $like_count; ?> <i class="fa fa-heart-o"></i></span>
-                         <span><?php echo $comm_count; ?> <i class="fa fa-comments-o"></i></span>
-                         <?php
-                       }
-                     }
-                     ?>
-                    <div class="pull-right">
-                      <button class="btn panel-heading collapsed" role="tab" id="heading_<?php echo $row['Id']; ?>" data-toggle="collapse"
-                        data-parent="#accordion" href="#collapse_<?php echo $row['Id']; ?>" aria-expanded="false" aria-controls="collapse_<?php echo $row['Id']; ?>"> <i class="fa fa-bars"></i>
-                      </button>
-                    </div>
-                    <!-- <div class="clearfix"></div> -->
-                    <div class="panel">
-                      <div id="collapse_<?php echo $row['Id']; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_<?php echo $row['Id']; ?>">
-                        <div class="panel-body news_desc">
-                            <?php echo $row['news_desc']; ?>
-                        </div>
-                      </div>
                     </div>
                     <div class="clearfix"></div>
-                  </div>
                 </div>
+
               </div>
-              <?php
-                }
-              }
-               ?>
-               <div class="clearfix"></div>
-
-               <?php
-               $sql = "SELECT * FROM news_single ORDER BY Id DESC LIMIT 5,3";
-               $singleNews_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-               if ($singleNews_query) {
-                 while ($row = mysqli_fetch_array($singleNews_query)) {
-               ?>
-               <div class="col-sm-4" style="padding:2px; margin:0">
-                 <div class="small_news">
-                   <div class="news_img_box">
-                     <a href="news_details.php?news_id=<?php echo $row['Id']; ?>">
-                       <img src="/FUOBoxMedia/admin-panel/uploaded_images/<?php echo $row['news_img']; ?>" alt="">
-                       <h5><?php echo $row['news_title']; ?></h5>
-                     </a>
-                   </div>
-                   <div class="newss">
-                     <?php
-                      $sql2 = "SELECT * FROM news_comments WHERE unique_no = '".$row['Id']."'";
-                      $query2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
-                      if ($query2) {
-                        $comm_count = mysqli_num_rows($query2);
-
-                        $sql3 = "SELECT * FROM news_likes WHERE news_unique_no = '".$row['Id']."'";
-                        $query3 = mysqli_query($conn, $sql3) or die(mysqli_error($conn));
-                        if ($query3) {
-                          $like_count = mysqli_num_rows($query3);
-                          ?>
-                          <span><?php echo $like_count; ?> <i class="fa fa-heart-o"></i></span>
-                          <span><?php echo $comm_count; ?> <i class="fa fa-comments-o"></i></span>
-                          <?php
-                        }
-                      }
-                      ?>
-                     <div class="pull-right">
-                       <button class="btn panel-heading collapsed" role="tab" id="heading_<?php echo $row['Id']; ?>" data-toggle="collapse"
-                         data-parent="#accordion" href="#collapse_<?php echo $row['Id']; ?>" aria-expanded="false" aria-controls="collapse_<?php echo $row['Id']; ?>"> <i class="fa fa-bars"></i>
-                       </button>
-                     </div>
-                     <!-- <div class="clearfix"></div> -->
-                     <div class="panel">
-                       <div id="collapse_<?php echo $row['Id']; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_<?php echo $row['Id']; ?>">
-                         <div class="panel-body news_desc">
-                             <?php echo $row['news_desc']; ?>
-                         </div>
-                       </div>
-                     </div>
-                     <div class="clearfix"></div>
-                   </div>
-                 </div>
-               </div>
-               <?php
-                 }
-               }
-                ?>
-                <div class="clearfix"></div>
-
             </div>
+            <?php
+              }
+            }
+             ?>
+           <div class="clearfix"></div>
+          </div>
+          <?php } ?>
+
+          <div class="timeline_box">
+            <?php
+            if (isset($_GET['timeline'])) {
+                include ('user/timeline.php');
+              }
+            ?>
           </div>
 
-        </div><!-- END OF RIGHT SIDE -->
+        </div>
 
-
-        <!-- LEFT SIDE -->
-        <div class="col-sm-3 right_side">
+        <!-- FAVOURITE QUOTES -->
+        <div class="col-md-3">
           <!-- STUDENTS LATEST QUOTE POST -->
           <div class="co-blog-sidebar">
-            <h5 class="sidebar-title text-center">Latest Daily Quotes</h5>
+            <h5 class="sidebar-title text-center">Daily Favourite Quotes</h5>
             <?php
             $get_quote = "SELECT * FROM quotes ORDER BY time DESC LIMIT 30";
             $query_quote = mysqli_query($conn, $get_quote) or die(mysqli_error($conn));
@@ -418,20 +218,23 @@ include ('functions/news_events.php');
                     ?>
                     <div class="co-sidebar-post "><!-- fix -->
                       <div class="img_section magnifier2">
-                        <a href="uploaded_images/<?php echo $user['profile_img']; ?>" data-fancybox-group="gallery" class="fancybox image pull-left" title="<?php echo $user['first_name']." ".$user['last_name']; ?>">
+                        <a href="images/uploaded_images/profile_photos/<?php echo $user['profile_img']; ?>" data-fancybox-group="gallery" class="fancybox image pull-left" title="<?php echo $user['first_name']." ".$user['last_name']; ?>">
                           <div class="img_container">
-                            <img src="/FUOBoxMedia/uploaded_images/<?php echo $user['profile_img']; ?>" alt="" width="100%" height="100%">
+                            <img src="/FUOBoxMedia/images/uploaded_images/profile_photos/<?php echo $user['profile_img']; ?>" alt="photo" width="100%" height="100%">
                           </div>
                         </a>
                       </div>
-                      <div class="content ">
-                        <a href="friends/friend_profile.php?friend_id=<?php echo $user['Id']; ?>" class="title">
-                          <i class="fa fa-quote-left" style="font-size:6px; color:rgb(255, 92, 51)"></i>
+                      <a href="friends/friend_profile.php?friend_id=<?php echo $user['Id']; ?>" style="text-decoration:none;">
+                        <h6 class="quote_username"><?php echo $user['first_name']." ".$user['last_name']; ?></h6>
+                      </a>
+                      <div class="content">
+                        <span class="">
+                          <i class="fa fa-quote-left" style="font-size:6px; color:rgba(93,84,240,8.5)"></i>
                           <?php if($quotes['quote']){ echo $quotes['quote']; } ?>
-                          <i class="fa fa-quote-right" style="font-size:6px; color:rgb(255, 92, 51)"></i>
-                        </a>
-                        <span class="date"><?php echo $ago; ?></span>
+                        </span>
                       </div>
+                      <span class="date"><?php echo $ago; ?></span>
+                      <div class="clearfix"></div>
                     </div>
                     <?php
                   }
@@ -442,65 +245,50 @@ include ('functions/news_events.php');
           </div>
           <!-- END OF STUDENTS LATEST QUOTE POST -->
         </div>
-        <!-- END OF LEFT SIDE -->
       </div>
-    </div>
-  </section>
+    </div><!-- MAIN BODY -->
+  </body>
 
 
+  <!-- jQuery -->
+  <script src="js/plugins/jquery/jquery-3.3.1.min.js"></script>
+  <!-- timeline comments js -->
+  <script type="text/javascript" src="js/comment/comment-insert.js?t=<?php echo time(); ?> "></script>
+  <!-- bootstrap js -->
+  <script src="js/plugins/bootstrap.min.js"></script>
+  <!-- custom js -->
+  <script type="text/javascript" src="js/custom/main.js"></script>
+  <script type="text/javascript" src="js/custom/status_likes.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      // Simple image gallery. Uses default settings
+      $('.fancybox').fancybox();
+    });
+  </script>
+  <!-- light-box -->
+  <script src="js/plugins/jquery.fancybox.js"></script>
 
 
+  <!-- Begin emoji-picker JavaScript -->
+  <script src="assets/emoji/lib/js/config.js"></script>
+  <script src="assets/emoji/lib/js/util.js"></script>
+  <script src="assets/emoji/lib/js/jquery.emojiarea.js"></script>
+  <script src="assets/emoji/lib/js/emoji-picker.js"></script>
+  <!-- End emoji-picker JavaScript -->
 
-    <!---->
-    <!-- jQuery latest version -->
-    <!-- <script src="pixal/js/vendor/jquery-3.1.1.min.js"></script> -->
-    <!-- Bootstrap js -->
-    <!-- <script src="pixal/js/bootstrap.min.js"></script> -->
-    <!-- Plugins js -->
-    <!-- <script src="pixal/js/plugins.js"></script> -->
-    <!-- Ajax Mail js -->
-    <!-- <script src="pixal/js/ajax-mail.js"></script> -->
-    <!-- Main js -->
-    <!-- <script src="pixal/js/main.js"></script> -->
-    <!-- jQuery -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!--Jquery-->
-  <script src="js/plugins/jquery/jquery.js"></script>
-
-    <script src="js/plugins/dist/jquery.min.js"></script>
-    <script src="js/plugins/bootstrap.min.js"></script>
-    <script src="js/custom/dist/custom.min.js"></script>
-
-    <!-- CUSTOM -->
-    <script src="js/custom/main.js"></script>
-
-
-    <script>
-      $(document).ready(function(){
-        // Simple image gallery. Uses default settings
-        $('.fancybox').fancybox();
-
+  <script>
+    $(function() {
+      // Initializes and creates emoji set from sprite sheet
+      window.emojiPicker = new EmojiPicker({
+        emojiable_selector: '[data-emojiable=true]',
+        assetsPath: 'assets/emoji/lib/img/',
+        popupButtonClasses: 'fa fa-smile-o'
       });
-    </script>
-    <!-- light-box -->
-	  <script type="text/javascript" src="js/jquery.fancybox.js"></script>
-
-
-</body>
+      // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+      // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+      // It can be called as many times as necessary; previously converted input fields will not be converted again
+      window.emojiPicker.discover();
+    });
+  </script>
 </html>

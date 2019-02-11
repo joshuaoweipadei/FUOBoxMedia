@@ -1,0 +1,333 @@
+.friend_details{
+  background: #f2f2f2;
+  padding: 4px;
+}
+.friend_details .friend_details_img_box{
+  width: 65px;
+  height: 65px;
+  border: 1px solid rgba(93,84,240,8.5);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.friend_details .friend_details_img_box img{
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.friend_details .friend_details_name{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.friend_details .friend_details_name h4{
+  font-size: 22px;
+  font-weight: 600;
+  color: #595959;
+}
+.friend_details .friend_details_back_btn{
+  margin-right: 10px;
+  margin-top: 15px;
+}
+.friend_details .friend_details_back_btn a{
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(93,84,240,8.5);
+}
+.bar_container {
+    display: inline-block;
+    cursor: pointer;
+}
+.bar_container .header-title h4{
+  margin-top: 19px;
+  margin-left: 18px;
+  font-size: 20px;
+}
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    border-right: 1px solid #fff;
+    background-color: #fff; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+/* The navigation menu links */
+.sidenav a {
+    padding: 5px 6px 5px 18px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: arial;
+    color: #595959;
+    display: block;
+    transition: 0.3s;
+    margin: 2px
+}
+/* Position and style the close button (top right corner) */
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px !important;
+  margin-left: 50px;
+  color: #ff0000 !important;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+.sidebar-name{
+		padding-left: 0px;
+		padding-right: 0px;
+		margin-bottom: 2px;
+		font-size: 12px;
+    border-bottom: 1px solid rgba(93,84,240,8.5)
+}
+.sidebar-name span{
+		padding-left: 1px;
+    font-size: 13px;
+}
+.sidebar-name span.fullname{
+		color: rgba(93,84,240,8.5);
+}
+.sidebar-name a{
+		display: block;
+		height: 100%;
+		text-decoration: none;
+		color: inherit;
+    background: #fff;
+    font-weight: 600;}
+.sidebar-name a:hover{
+		background-color: #c1c1c1;
+}
+.sidebar-name img{
+		width: 36px;
+		height: 36px;
+		vertical-align:middle;
+}
+
+
+
+
+
+/*
+*
+* SENDING AND RECIEVING MESSAGES
+*
+*/
+.message_container{
+  padding: 4px 1px;
+  padding-bottom: 60px;
+}
+.message_container .message_head h3{
+  color: rgba(93,84,240,8.5)
+}
+.chatBox{
+	height: auto;
+	padding: 0px;
+	margin: auto;
+	position: relative;
+	width: 100%
+}
+.chatLog{
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	position: relative;
+	background: #fff;
+	border-radius: 3px
+}
+.chatLog::-webkit-scrollbar, .chatLog::-moz-scrollbar {
+	width: 10px;
+}
+.chatLog::-webkit-scrollbar-thumb, .chatLog::-moz-scrollbar-thumb{
+	border-radius: 5px;
+	background: rgba(0,0,0,.1);
+}
+.chat{
+	display: ;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	margin: 6px 0px;
+	width: auto;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #f2f2f2;
+  border-radius: 9px;
+  content: " ";
+}
+.chat .user-photo{
+	width: 42px;
+	height: 42px;
+	background: #ccc;
+	border-radius: 50%;
+	overflow: hidden;
+  border: 1px solid #595959;
+  overflow: hidden;
+}
+.chat .user-photo img{
+	width: 100%;
+  height: 100%;
+}
+.sending{
+  width: 85%;
+  float: right;
+  margin-right: 10px;
+  border: 1px solid #595959;
+  overflow: hidden;
+  background: #fff;
+}
+.chat .send{
+	color: #595959;
+	font-size: 13px;
+  font-family: arial;
+}
+.chat .send .sender_name{
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 47px;
+}
+.chat .send .sender_name a{
+  color: rgba(93,84,240,8.5);
+}
+.chat .send .sender_name a:hover{
+  text-decoration: none;
+  color: #e1e1e1;
+}
+.chat .send .sender_massage{
+  font-size: 14px;
+  font-family: arial;
+  text-align: left;
+  color: #595959;
+  padding-left: 7px;
+  overflow: hidden;
+}
+.recieving{
+  width: 85%;
+  margin-left: 10px;
+  overflow: hidden;
+  border: 1px solid #595959;
+  background: #e1e1e1;
+}
+.chat .recieve{
+	color: #595959;
+	font-size: 13px;
+  font-family: arial;
+}
+.chat .recieve .recieve_name{
+  font-size: 16px;
+  font-weight: 600;
+  padding-right: 47px;
+  text-align: right;
+}
+.chat .recieve .recieve_name a{
+  color: rgba(93,84,240,8.5);
+}
+.chat .recieve .recieve_name a:hover{
+  color: #e1e1e1;
+  text-decoration: none;
+}
+.chat .recieve .recieve_massage{
+  font-size: 14px;
+  font-family: arial;
+  text-align: left;
+  color: #595959;
+  padding-right: 4px;
+  overflow: hidden;
+}
+.chat .send .heading a{
+	font-size: 16px
+}
+.chatLog .txt{
+  border: 1px solid #e1e1e1;
+  border-radius: 1px;
+  padding: 10px 5px;
+  margin-bottom: 17px;
+}
+.text_message{
+  margin: auto;
+  margin-bottom: 1px;
+  padding: 12px;
+  background: #;
+  width: 100%;
+  border: 1px solid #;
+}
+.sending_msg{
+  margin-top: 8px;
+  border: 1px solid #c1c1c1;
+  background: #f2f2f2;
+  color: rgba(185,0,255,0.9);
+}
+.sending_msg:hover{
+  background: rgba(185,0,255,0.9);
+  border: 1px solid #fff;
+}
+.msg_area{
+  color: #595959
+}
+.send .message_delete_btn, .recieve .message_delete_btn{
+  border: none;
+  background: inherit;
+  margin-right: 9px;
+  font-size: 10px;
+  color: rgba(185,0,255,0.9);
+}
+.send .message_delete_btn:hover, .recieve .message_delete_btn:hover{
+  color: #ff0000
+}
+/*
+*
+* END OF SENDING AND RECIEVING MESSAGES
+*
+*/
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 53%; /* Could be more or less, depending on screen size */
+    text-align: center;
+}
+
+/* The Close Button */
+.modal-content span {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

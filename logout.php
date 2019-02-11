@@ -3,7 +3,7 @@
 
 session_start();
 
-include_once 'database.php';
+include 'includes/database.php';
 
 
 // Check if user is logged in using the session variable
@@ -15,10 +15,7 @@ if (!isset($_SESSION['Id'])) {
   //SESSION VARIABLE DECLARED
   // Makes it easier to read
   $userID = $_SESSION['Id'];
-  $firstname = $_SESSION['first_name'];
-  $lastname = $_SESSION['last_name'];
   $email = $_SESSION['email'];
-  $user_name = $_SESSION['username'];
 
 }
 

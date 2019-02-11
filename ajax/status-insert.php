@@ -6,7 +6,7 @@ function is_ajax(){
 
   if (is_ajax()) {
 
-    include '../database.php';
+    include '../includes/database.php';
 
     if (isset($_POST["status"]) && isset($_POST["userId"]) && isset($_POST["userEmail"]) && isset($_POST['task']) && $_POST['task'] == 'status_insert') {
       if (!empty($_POST["status"]) && !empty($_POST["userId"]) && !empty($_POST["userEmail"])) {

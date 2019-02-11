@@ -1,5 +1,4 @@
 <?php
-// //START SESSION
 
 // Escape all $_POST variables to protect against SQL injections
 function test_input($data) {

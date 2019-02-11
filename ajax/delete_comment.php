@@ -11,7 +11,7 @@ function is_ajax(){
 
 if (is_ajax()) {
 
-  require '../database.php';
+  require '../includes/database.php';
 
   if (isset($_POST["StatusId"]) && isset($_POST['CommentId']) && isset($_POST['userId']) && isset($_POST['action']) && $_POST['action'] == 'delete_comment') {
     if (!empty($_POST["StatusId"]) && !empty($_POST["CommentId"]) && !empty($_POST["userId"]) && !empty($_POST["action"])) {

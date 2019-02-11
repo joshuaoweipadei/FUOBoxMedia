@@ -27,14 +27,21 @@ $(document).ready(function(){
     } else {
       form_data.append("file", document.getElementById('newAvatar').files[0]);
       $.ajax({
-        url : "/FUOBoxMedia/users/change_pro_img.php",
+        url : "/welcome/user/change_pro_img.php",
         method : "POST",
         data : form_data,
         contentType : false,
         cache : false,
         processData : false,
         success:function(data){
-          $('.img_container').html(data);
+          $('.upload_pic').css('background', '#00cc00');
+          setInterval(function(){
+            $('.upload_pic').css('background', '#008000');
+          }, 1000);
+          // the time it takes for the profile picture to change and reloading the page
+          setInterval(function(){
+            window.location.reload();
+          }, 2000);
         }
       });
     }
@@ -49,7 +56,7 @@ $(document).ready(function(){
     var user_id = $('#userID').val();
 
       $.ajax({
-        url : "/FUOBoxMedia/ajax/friends/friend_request.php",
+        url : "/welcome/ajax/friends/friend_request.php",
         method : "POST",
         data : {
           action : "send_friend",
@@ -58,7 +65,7 @@ $(document).ready(function(){
         },
         beforeSend:function(){
           $('.request').attr('disabled', 'disabled');
-          $('.request').html('<img src"/FUOBoxMedia/images/advert/crate.gif">');
+          $('.request').html('<div class="loader"></div>');
         },
         success:function(data){
           setInterval(function(){
@@ -77,7 +84,7 @@ $(document).ready(function(){
     var user_id = $('#userID').val();
 
     $.ajax({
-      url : "/FUOBoxMedia/ajax/friends/accept_friend_request.php",
+      url : "/welcome/ajax/friends/accept_friend_request.php",
       method : "POST",
       data : {
         action : "accept_request",
@@ -93,6 +100,9 @@ $(document).ready(function(){
         $('#accept_'+accept_friend_id).attr('disabled', 'disabled');
         $('#delete_'+accept_friend_id).hide();
         $('#accept_'+accept_friend_id).html(data);
+        setInterval(function(){
+          location.reload();
+        }, 3000);
       }
     });
   });
@@ -106,7 +116,7 @@ $(document).ready(function(){
     var user_id = $('#userID').val();
 
     $.ajax({
-      url : "/FUOBoxMedia/ajax/friends/delete_friend_request.php",
+      url : "/welcome/ajax/friends/delete_friend_request.php",
       method : "POST",
       data : {
         action : "delete_request",
@@ -122,72 +132,14 @@ $(document).ready(function(){
         $('#delete_'+delete_friend_id).attr('disabled', 'disabled');
         $('#accept_'+delete_friend_id).hide();
         $('#delete_'+delete_friend_id).html(data);
+        setInterval(function(){
+          location.reload();
+        }, 3000);
       }
     });
   });
 
 
-
-  // send personal message
-  $('.sending_msg').click(function(event){
-    event.preventDefault();
-    var msg_friend_id = $(this).attr('id');
-    var user_id = $('#userID_msg').val();
-    var message = $('#text_msg_'+msg_friend_id).val();
-
-    if (message != null && message.length > 1) {
-      $.ajax({
-        url : "/FUOBoxMedia/ajax/message/personal_msg.php",
-        method : "POST",
-        data : {
-          action : "send_message",
-          userID : user_id,
-          friend_id : msg_friend_id,
-          msg : message,
-        },
-        beforeSend:function(){
-          $('#sending_msg').attr('disabled', 'disabled');
-          $('#sending_msg').html('Sending');
-          $('#text_msg_'+msg_friend_id).val('');
-        },
-        success:function(data){
-          $('#text_msg_'+msg_friend_id).val('');
-          setInterval(function(){
-            $('#sender_'+user_id).html(data);
-          }, 1000);
-        }
-      });
-
-    } else {
-      $('.msg_area').css('border' , '1px solid #8c8c8c');
-      $('.msg_area').focus();
-      $('#text_msg_'+msg_friend_id).val('');
-    }
-  });
-
-
-
-  // LIKES AND UNLIKES
-  $('.like').click(function(event){
-    event.preventDefault();
-    var status_id = $(this).attr('id');
-    var likes_value = $(this).attr('value');
-    var user_id = $('#userID').val();
-
-    $.ajax({
-      url : "/FUOBoxMedia/ajax/likes/likes_unlikes.php",
-      method : "POST",
-      data : {
-        action : "likes_unlikes",
-        userId : user_id,
-        statusId : status_id,
-        value : likes_value
-      },
-      success:function(data){
-        $('#'+likes_value+'_'+status_id).html(data);
-      }
-    });
-  });
 
 
 
@@ -202,7 +154,7 @@ $(document).ready(function(){
         var user_id = $('#userID').val();
 
         $.ajax({
-          url : "/FUOBoxMedia/ajax/news/quote.php",
+          url : "/welcome/ajax/news/quote.php",
           method : "POST",
           data : {
             action : "daily_quote",
@@ -233,7 +185,7 @@ $(document).ready(function(){
     var user_id = $('#userID').val();
 
     $.ajax({
-      url : "/FUOBoxMedia/ajax/news/quote.php",
+      url : "/welcome/ajax/news/quote.php",
       method : "POST",
       data : {
         action : "delete_quote",

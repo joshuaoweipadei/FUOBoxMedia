@@ -6,7 +6,7 @@ function is_ajax(){
 
   if (is_ajax()) {
 
-    include '../../database.php';
+    include '../../includes/database.php';
 
     if (isset($_POST["uniqueid"]) && isset($_POST["news_comment"]) && isset($_POST["userID"]) && isset($_POST['action']) && $_POST['action'] == 'news_comment') {
       if (!empty($_POST["uniqueid"]) && !empty($_POST["news_comment"]) && !empty($_POST["userID"])) {
@@ -144,7 +144,7 @@ function is_ajax(){
 
 
 } else {
-  header('Location: /FUOBoxMedia/profile_page.php?tine');
+  header('Location: /FUOBoxMedia/index.php?tine');
 }
 
 

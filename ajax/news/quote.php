@@ -6,7 +6,7 @@ function is_ajax(){
 
   if (is_ajax()) {
 
-    include '../../database.php';
+    include '../../includes/database.php';
 
     // Escape all $_POST variables to protect against SQL injections
     function test_input($data) {
@@ -34,7 +34,7 @@ function is_ajax(){
                 if ($query2) {
                   echo "<div class='alert alert-success alert-dismissible fade in' role='alert' style='background:#fff; color:green; padding:7px 10px; border:none'>
                           <button style='color:green' type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true' style='color:red'>×</span>
-                          </button>
+                          </button> <i class='fa fa-check'></i>
                           You just updated your daily status.
                         </div>";
                 }
@@ -44,7 +44,7 @@ function is_ajax(){
                 if ($query3) {
                   echo "<div class='alert alert-success alert-dismissible fade in' role='alert' style='background:#fff; color:green; padding:7px 10px; border:none'>
                           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true' style='color:red'>×</span>
-                          </button>
+                          </button> <i class='fa fa-check'></i>
                           You have uploaded your new daily status.
                         </div>";
 

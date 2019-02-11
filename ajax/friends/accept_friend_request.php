@@ -13,7 +13,7 @@ if (is_ajax()) {
   //   echo $_POST['idd'];
   // }
 
-  require '../../database.php';
+  require '../../includes/database.php';
 
   if (isset($_POST["friend_id"]) && isset($_POST["userID"]) && isset($_POST['action']) && $_POST['action'] == 'accept_request') {
     if (!empty($_POST["friend_id"]) && !empty($_POST["userID"]) && !empty($_POST["action"])) {

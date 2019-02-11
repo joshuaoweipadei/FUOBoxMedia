@@ -6,7 +6,7 @@ function is_ajax(){
 
 if (is_ajax()) {
 
-  require '../../database.php';
+  require '../../includes/database.php';
 
   if (isset($_POST["friend"]) && isset($_POST["userID"]) && isset($_POST['action']) && $_POST['action'] == 'send_friend') {
     if (!empty($_POST["friend"]) && !empty($_POST["userID"]) && !empty($_POST["action"])) {

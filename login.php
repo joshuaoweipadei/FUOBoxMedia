@@ -6,7 +6,7 @@ if (isset($_SESSION['Id'])) {
   header('location: index.php');
 }
 
-include ('database.php');
+include ('includes/database.php');
 
  ?>
 
@@ -16,15 +16,77 @@ include ('database.php');
   <meta charset="utf-8">
   <title>Login | Home of FUO</title>
   <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
-  <meta name="author" content="Vincent Garreau" />
+  <meta name="author" content="Oweipadei Joshua" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" media="screen" href="css/particles/css/style.css">
-  <link rel="stylesheet" href="css/plugins/font-awesome/css/font-awesome.min.css">
-
 
   <link rel="stylesheet" href="css/plugins/bootstrap.min.css">
+  <link rel="stylesheet" href="css/plugins/font-awesome/css/font-awesome.min.css">
   <!-- EOF CSS INCLUDE -->
-
+  <style media="screen">
+    .login-box{
+      background: #fff;
+      top: 92px;
+      padding: 54px 26px 35px 26px;
+      border-radius: 4px;
+      margin: auto;
+    }
+    .logo{
+      margin-bottom: 17px
+    }
+    .login-box .login-title{
+      font-size: 110%;
+      padding-top: 17px
+    }
+    .logo .logo-img{
+      margin: auto;
+    }
+    .logo .logo-name{
+      margin: auto;
+    }
+    .logo .logo-name span.a{
+      font-size: 100%;
+      font-weight: 600;
+      color: rgba(93,84,240,8.5);
+    }
+    .logo .logo-name span.b{
+      font-size: 115%;
+      font-weight: 700;
+      font-family: arial;
+      font-style: italic;
+      color: rgba(185,0,255,0.9);
+    }
+    .form-horizontal{
+      padding-top: 10px
+    }
+    .form-horizontal input{
+      font-size: 15px;
+    }
+    .login-footer{
+      margin-top: 9px;
+    }
+    .login-footer .foot-side1{
+      font-size: 13px
+    }
+    .login-footer .foot-side2{
+      font-size: 13px
+    }
+    @media only screen and (max-width: 768px) {
+      .login-box{
+        padding: 50px 1px 60px 1px;
+      }
+      .login-footer{
+        padding: 1px 1px
+      }
+      .logo .logo-name{
+        font-size: 110%;
+      }
+      .login-box .login-title{
+        font-size: 90%;
+      }
+      .login-footer .foot-side2{
+      }
+    }
+  </style>
 </head>
 <?php
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
